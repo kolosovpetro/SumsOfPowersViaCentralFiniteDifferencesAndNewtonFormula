@@ -1,0 +1,30 @@
+﻿By the identity
+\begin{align*}
+    \delta^k x^m = \Delta^k \left( x-\frac{k}{2} \right)^m
+\end{align*}
+Therefore,
+\begin{proposition}[Multifold sums of powers]
+    \begin{mdframed}
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1+r}{k+r} \Delta^k \left(-\frac{k}{2} \right)^m
+        \end{align*}
+    \end{mdframed}
+\end{proposition}
+
+\begin{lemma}[Finite difference via Eulerian numbers at a half-shift]
+    \label{lem:finite-differences-via-eulerian-numbers-half-shift}
+    For non-negative integers $k,m$
+    \begin{align*}
+        \Delta^{k}\!\left(-\frac{k}{2}\right)^{m} = \sum_{r=0}^{m} \eulerian{m}{r} \binom{r-\frac{k}{2}}{m-k}
+    \end{align*}
+\end{lemma}
+
+\begin{lemma}[Finite differences via Stirling numbers at a half-shift]
+    \label{lem:finite-differences-via-stirling-numbers-half-shift}
+    For non-negative integers $k,m$
+    \begin{align*}
+        \Delta^{k}\!\left(-\frac{k}{2}\right)^{m} = \sum_{r=0}^{m} \binom{-\frac{k}{2}}{r} \stirlingii{m}{k+r} (k+r)!
+    \end{align*}
+\end{lemma}
+Therefore,
+

@@ -11,3 +11,5 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Initialize template
 - Add formulas for sums of powers via central differences
+- Add proof of Knuth's formula
+- Add sums of powers in Stirling and Eulerian numbers
