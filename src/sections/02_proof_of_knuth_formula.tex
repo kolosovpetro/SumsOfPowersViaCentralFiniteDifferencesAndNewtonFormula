@@ -39,12 +39,11 @@
             n^{2m-1} = \sum_{k=1}^{m} (2k-1)! \binom{n+k-1}{2k-1} T(2m,2k)
         \end{align*}
         which is the base identity for odd powers.
-
         Now, the ordinary sum of odd powers is
         \begin{align*}
             \KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} (2k-1)! T(2m,2k) \sum_{j=1}^{n} \binom{j+k-1}{2k-1}
         \end{align*}
-        By hockey-stick identity $\sum_{j=1}^{n} \binom{j+k-1}{2k-1} = \binom{n+k}{2k}$, thus
+        By hockey-stick identity $\sum_{j=1}^{n} \binom{j+k-1}{2k-1} = \binom{n+k}{2k}$
         \begin{align*}
             \KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} (2k-1)! T(2m,2k) \binom{n+k}{2k}
         \end{align*}
