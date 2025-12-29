@@ -1,25 +1,11 @@
-\begin{theorem}[Newton series via central difference]
+\begin{proposition}[Newton's series in central differences]
+    \label{prop:newtons-series-in-central-differences}
     \begin{align*}
         f(x) &= \sum_{k=0}^{\infty} \frac{\centralFactorial{x}{k}}{k!} \delta^{k} f(0)
     \end{align*}
-\end{theorem}
-
-\begin{theorem}[Newton series for power via central difference]
-    \begin{align*}
-        x^n = \sum_{k=0}^{\infty} \frac{\centralFactorial{x}{k}}{k!} \delta^{k} 0^n
-    \end{align*}
-\end{theorem}
-
-Where
-
-\begin{corollary}[Central difference of power in zero]
-    \label{corollary:central-difference-of-power-in-zero}
-    \begin{align*}
-        \delta^{k} 0^{n}
-        = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j}
-        \left(\frac{k}{2} - j\right)^{n}
-    \end{align*}
-\end{corollary}
+    where $\delta^{k} f(0)= \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f\left(\frac{k}{2} - j\right)$
+    is central finite difference in zero, and $\centralFactorial{x}{k} = n \left( n + \frac{k}{2} -1 \right)\left( n + \frac{k}{2} -2 \right) \cdots \left( n - \frac{k}{2} +1 \right)$ is central factorial.
+\end{proposition}
 
 \begin{lemma}[Central factorial]
     \begin{align*}
@@ -28,85 +14,87 @@ Where
         = n \prod_{j=1}^{k-1} \left( n + \frac{k}{2} -j \right)
     \end{align*}
 \end{lemma}
-Such that
+We observe that central factorials are closely related to falling factorials $\fallingFactorial{x}{n} = x(x-1)(x-2)(x-3)\cdots(x-n+1)$.
+Therefore,
 \begin{proposition}
     \begin{align*}
         \centralFactorial{n}{k} = n \fallingFactorial{n+\frac{k}{2}-1}{k-1}
     \end{align*}
 \end{proposition}
-
+To derive formula for multifold sums of powers, we follow the strategy to express the Newton's formula [eq ref] in terms
+of binomial coefficients, then to reach closed forms of column sum of binomial coefficients by means of hockey stick pattern.
+Therefore,
 \begin{proposition}
     For $k \geq 1$
     \begin{align*}
         \frac{\centralFactorial{n}{k}}{k!}
-        &= \frac{1}{k!} n \fallingFactorial{n+\frac{k}{2}-1}{k-1}
-        = \frac{n}{k (k-1)!} \fallingFactorial{n+\frac{k}{2}-1}{k-1} \\
-        &= \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1}
-    \end{align*}
-\end{proposition}
-
-Because
-
-\begin{proposition}
-    \begin{align*}
-        \frac{\fallingFactorial{x}{n}}{n!} = \binom{x}{n}
-    \end{align*}
-\end{proposition}
-
-Thus
-\begin{proposition}
-    \begin{align*}
-        x^n = \sum_{k=1}^{n} \frac{x}{k} \binom{x+\frac{k}{2}-1}{k-1} \delta^{k} 0^n
-    \end{align*}
-\end{proposition}
-We start from $k=1$ there because for all $k=0$ the central difference $\delta^{k} 0^n$ is zero.
-
-Thus
-
-\begin{proposition}
-    \begin{align*}
-        x^{n-1} = \sum_{k=1}^{n} \frac{1}{k} \binom{x+\frac{k}{2}-1}{k-1} \delta^{k} 0^n
-    \end{align*}
-\end{proposition}
-
-Thus
-
-\begin{proposition}
-    \begin{align*}
-        x^{n} = \sum_{k=0}^{n} \frac{1}{k+1} \binom{x+\frac{k+1}{2}-1}{k} \delta^{k+1} 0^{n+1}
-    \end{align*}
-\end{proposition}
-
-Thus
-
-\begin{proposition}
-    \begin{align*}
-        \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1+r}{k+r} \delta^{k+1} 0^{m+1}
+        &= \frac{n}{k!}\fallingFactorial{n+\frac{k}{2}-1}{k-1}
+        = \frac{n}{k (k-1)!} \fallingFactorial{n+\frac{k}{2}-1}{k-1}
+        = \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1}
     \end{align*}
     \begin{proof}
-        By hockey stick identity.
+        The identity above is true because $\frac{\fallingFactorial{x}{n}}{n!} = \binom{x}{n}$.
     \end{proof}
 \end{proposition}
 
-\begin{lemma} [Central factorial numbers]
-    \begin{align*}
-        \delta^k 0^n = k! T(n, k)
-    \end{align*}
-\end{lemma}
+Which yields Newton's formula for powers, in terms of central differences.
+For positive integers $n \geq 1$ and $m \geq 1$
+\begin{align*}
+    n^m = \sum_{k=1}^{m} \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^m
+\end{align*}
 
-Thus
+In the proposition above,
+we start the summation from $k=1$ to avoid division by zero in $\frac{n}{k}$.
+It is a valid trick, because the central difference $\delta^{k} 0^n$ is zero for all $n \geq 1$ and $k=0$.
 
-\begin{proposition}
+By factoring out and simplifying the term $n$, we get
+\begin{align*}
+    n^{m-1} = \sum_{k=1}^{m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^m
+\end{align*}
+By reindexing the sum yields
+\begin{proposition} [Newton's series for power in zero]
     \begin{align*}
-        \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1+r}{k+r} (k+1)! T(m+1, k+1)
+        n^{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1}{k} \delta^{k+1} 0^{m+1}
     \end{align*}
 \end{proposition}
-
-Thus
-
-\begin{proposition}
+Thus, formula for ordinary sums of powers follows
+\begin{proposition} [Ordinary sums of powers]
     \begin{align*}
-        \KnuthRFoldSum{r}{n}{m-1} = \sum_{k=0}^{m} k! \binom{n+\frac{k+1}{2}-1+r}{k+r} T(m, k+1)
+        \KnuthRFoldSum{1}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}}{k+1} \delta^{k+1} 0^{m+1}
     \end{align*}
+    \begin{proof}
+        We have
+        $\KnuthRFoldSum{1}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \delta^{k+1} 0^{m+1} \sum_{j=1}^{n} \binom{j+\frac{k+1}{2}-1}{k}$.
+        By hockey stick identity $\sum_{j=1}^{n} \binom{j+\frac{k+1}{2}-1}{k} = \binom{n+\frac{k+1}{2}}{k+1}$.
+        Thus, the claim follows.
+    \end{proof}
+\end{proposition}
+Continuing similarly, we get formula for multifold sums of powers
+\begin{theorem}[Multifold sums of powers]
+    \begin{mdframed}
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1+r}{k+r} \delta^{k+1} 0^{m+1}
+        \end{align*}
+    \end{mdframed}
+\end{theorem}
+Additionally, the formula for multifold sums of powers can be expressed in terms of central factorial numbers of the second kind [references].
+In Riordan notation,
+
+\begin{lemma} [Central factorial numbers]
+    \begin{align*}
+        T(n, k) = \frac{\delta^k 0^n}{k!}
+    \end{align*}
+\end{lemma}
+Note that central factorial numbers of the second kind $T(n,k)$ are non-zero
+only for pairs $(n,k)$ such that $n-k$ is even.
+Meaning that $T(2n,2k)$ is always non-zero.
+The triangle of central factorial numbers $T(2n,2k)$ is the sequence [ID] in the OEIS~\cite{sloane2003line}.
+
+\begin{proposition}[Multifold sums of powers via central factorial numbers]
+    \begin{mdframed}
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m} k! \binom{n+\frac{k+1}{2}-1+r}{k+r} T(m+1, k+1)
+        \end{align*}
+    \end{mdframed}
 \end{proposition}
 
