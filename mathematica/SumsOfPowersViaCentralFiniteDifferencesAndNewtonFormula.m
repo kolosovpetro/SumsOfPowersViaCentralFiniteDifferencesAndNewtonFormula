@@ -10,6 +10,8 @@ NewtonSeriesForPowerInZero::usage=""
 MultifoldSumOfPowersRecurrence::usage=""
 MultifoldSumsOfPowers::usage=""
 MultifoldSumsOfPowersOddPowers::usage=""
+EvenPower::usage=""
+SumsOfEvenPower::usage=""
 (*END: Definitions *)
 (* =========================================================================DOCS END=================================================================== *)
 
@@ -31,11 +33,19 @@ MultifoldSumOfPowersRecurrence[r_, n_, m_]:= 0;
 MultifoldSumOfPowersRecurrence[r_, n_, m_]:= n^m /; r==0;
 MultifoldSumOfPowersRecurrence[r_, n_, m_]:= Sum[MultifoldSumOfPowersRecurrence[r-1, k, m], {k, 1, n}] /; r>0;
 MultifoldSumsOfPowers[r_, n_, m_]:= Sum[1/(k+1) * Binomial[n+(k+1)/2 - 1 + r, k+r] * CentralDifference[0, m+1, k+1], {k, 0, m}];
-MultifoldSumsOfPowersOddPowers[r_, n_, m_]:= Sum[1/(k+1) * Binomial[n+(k+1)/2 - 1 + r, k+r] * CentralDifference[0, 2m-1, k+1], {k, 0, 2m-1}];
+MultifoldSumsOfPowersOddPowers[r_, n_, m_]:= Sum[1/(k+1) * Binomial[n+(k+1)/2 - 1 + r, k+r] * CentralDifference[0, 2m+2, k+1], {k, 0, 2m}];
+EvenPower[n_, m_] := Sum[1/(2k+1) * Binomial[n+(2k+1)/2-1, 2k] * CentralDifference[0, 2m+1, 2k+1], {k, 0, m}];
+SumsOfEvenPower[r_, n_, m_] := Sum[1/(2k+1) * Binomial[n+(2k+1)/2-1+r, 2k+r] * CentralDifference[0, 2m+1, 2k+1], {k, 0, m}];
 (*END: Definitions *)
 
 End[ ]
 EndPackage[ ]
+
+
+
+
+
+
 
 
 
