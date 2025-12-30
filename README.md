@@ -2,10 +2,9 @@
 
 ## Abstract
 
-In this manuscript we derive formula for multifold sums of powers
-using Newton's formula and central differences.
+In this manuscript we derive formula for multifold sums of powers using Newton's formula and central differences.
 
-**DOI**: https://doi.org/10.5281/zenodo.18040979
+**DOI**: https://doi.org/10.5281/zenodo.18096789
 
 **MSC2010**: 05A19, 05A10, 11B73, 11B83.
 
