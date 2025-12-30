@@ -1,3 +1,13 @@
+In this manuscript we derive formula for multifold sums of powers
+using Newton's formula and central differences.
+The topic of sums of powers is well-developed since Johann Faulhaber (1631).
+We define the following recurrence for multifold sums of powers, which we utilize throughout the paper.
+\begin{align*}
+    \KnuthRFoldSum{0}{n}{m}   &= n^m \\
+    \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
+    \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
+\end{align*}
+Consider the Newton's formula~\cite{newton1850newton} in central differences
 \begin{proposition}[Newton's series in central differences]
     \label{prop:newtons-series-in-central-differences}
     \begin{align*}
@@ -20,7 +30,7 @@ Therefore,
     \centralFactorial{n}{k} = n \fallingFactorial{n+\frac{k}{2}-1}{k-1}
 \end{align*}
 To derive formula for multifold sums of powers, we follow the strategy to express the Newton's formula [eq ref] in terms
-of binomial coefficients, then to reach closed forms of column sum of binomial coefficients by means of hockey stick pattern.
+of binomial coefficients, then to reach closed forms of column sum of binomial coefficients by means of hockey stick identity.
 Therefore,
 \begin{proposition}
     For $k \geq 1$
@@ -41,58 +51,71 @@ For positive integers $n \geq 1$ and $m \geq 1$
     n^m = \sum_{k=1}^{m} \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^m
 \end{align*}
 
-In the proposition above,
-we start the summation from $k=1$ to avoid division by zero in $\frac{n}{k}$.
+Although based on Newton's interpolation series, the formula above
+begins the summation from $k=1$ to avoid division by zero in $\frac{n}{k}$.
 It is a valid trick, because the central difference $\delta^{k} 0^n$ is zero for all $n \geq 1$ and $k=0$.
 
 By factoring out and simplifying the term $n$, we get
 \begin{align*}
     n^{m-1} = \sum_{k=1}^{m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^m
 \end{align*}
-By reindexing the sum yields
-\begin{proposition} [Newton's series for power in zero]
+We may observe that the operator of central finite difference of power $\delta^{k} 0^m$ requires the parity of
+its arguments $m$ and $k$ meaning that both $m$ and $k$ must be $m\bmod2 = k\bmod2$ so that
+$\delta^{k} 0^m$ is non-zero.
+
+By letting $m \rightarrow 2m$ we get
+\begin{align*}
+    n^{2m-1} = \sum_{k=1}^{2m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^{2m}
+\end{align*}
+Thus the central difference $\delta^{k} 0^{2m}$ for odd $k$ is zero.
+Since $k$ runs over all integers in the range $0\leq k \leq 2m$,
+we are able to omit odd values of $k$
+\begin{align*}
+    n^{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1}{k-1} \delta^{2k} 0^{2m}
+\end{align*}
+Thus, formula for ordinary sums of odd powers is
+\begin{proposition}[Ordinary sums of powers]
     \begin{align*}
-        n^{m} = \sum_{k=0}^{m+1} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1}{k} \delta^{k+1} 0^{m+1}
-    \end{align*}
-\end{proposition}
-Thus, formula for ordinary sums of powers follows
-\begin{proposition} [Ordinary sums of powers]
-    \begin{align*}
-        \KnuthRFoldSum{1}{n}{m} = \sum_{k=0}^{m+1} \frac{1}{k+1} \binom{n+\frac{k+1}{2}}{k+1} \delta^{k+1} 0^{m+1}
+        \KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k}{k} \delta^{2k} 0^{2m}
     \end{align*}
     \begin{proof}
         We have
-        $\KnuthRFoldSum{1}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \delta^{k+1} 0^{m+1} \sum_{j=1}^{n} \binom{j+\frac{k+1}{2}-1}{k}$.
-        By hockey stick identity $\sum_{j=1}^{n} \binom{j+\frac{k+1}{2}-1}{k} = \binom{n+\frac{k+1}{2}}{k+1}$.
-        Thus, the claim follows.
+        $\KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \delta^{2k} 0^{2m} \sum_{j=1}^{n} \binom{j+k-1}{k-1}$.
+
+        By hockey stick identity $\sum_{j=1}^{n} \binom{j+k-1}{k-1} = \binom{n+k}{k}$, thus the statement follows.
     \end{proof}
 \end{proposition}
-Continuing similarly, we get formula for multifold sums of powers
-\begin{theorem}[Multifold sums of powers]
+Therefore,
+
+\begin{theorem}[Multifold sums of odd powers]
     \begin{mdframed}
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m+1} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1+r}{k+r} \delta^{k+1} 0^{m+1}
+            \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1+r}{k+r} \delta^{2k} 0^{2m}.
         \end{align*}
     \end{mdframed}
+    \begin{proof}
+        We have
+        $\KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \delta^{2k} 0^{2m} \sum_{j=1}^{n} \binom{j+k-1}{k-1}$.
+
+        By hockey stick identity $\sum_{j=1}^{n} \binom{j+k-1}{k-1} = \binom{n+k}{k}$.
+        By induction the claim follows.
+    \end{proof}
 \end{theorem}
-Additionally, the formula for multifold sums of powers can be expressed in terms of central factorial numbers of the second kind [references].
-In Riordan notation,
 
-\begin{lemma} [Central factorial numbers]
-    \begin{align*}
-        T(n, k) = \frac{\delta^k 0^n}{k!}
-    \end{align*}
-\end{lemma}
-Note that central factorial numbers of the second kind $T(n,k)$ are non-zero
-only for pairs $(n,k)$ such that $n-k$ is even.
-Meaning that $T(2n,2k)$ is always non-zero.
-The triangle of central factorial numbers $T(2n,2k)$ is the sequence [ID] in the OEIS~\cite{sloane2003line}.
-
-\begin{proposition}[Multifold sums of powers via central factorial numbers]
+The formula for multifold sums of odd powers can be rewritten in terms of central factorial numbers of the second kind $T(n,k)$,
+because
+\begin{align*}
+    k! T(n, k) = \delta^k 0^n
+\end{align*}
+The identity above is well discussed in~\cite{steffensen1927interpolation, carlitz1963divided, riordan1968combinatorial}.
+The non-zero central factorial numbers are registered as \href{https://oeis.org/A008957}{\texttt{A008957}} in the OEIS~\cite{sloane2003line}.
+Thus,
+\begin{proposition}[Multifold sums of odd powers in central factorial numbers]
     \begin{mdframed}
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m} k! \binom{n+\frac{k+1}{2}-1+r}{k+r} T(m+1, k+1)
+            \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=1}^{m} (2k-1)! \binom{n+k-1+r}{k+r} T(2m,2k).
         \end{align*}
     \end{mdframed}
 \end{proposition}
-
+It is remarkable that exactly this formula can be found in Donald Knuth's work
+\textit{Johann Faulhaber and sums of powers}, see~\cite{knuth1993johann}.
