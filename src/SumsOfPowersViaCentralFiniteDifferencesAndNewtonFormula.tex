@@ -31,35 +31,15 @@
 %\newcommand \anglePower [2]{\langle #1 \rangle \sp{#2}}
 %\newcommand \curvePower [2]{\{#1\}\sp{#2}}
 
-% central factorials and related symbols
+% Falling, rising and central factorials
+\newcommand{\fallingFactorial}[2]{\left(#1\right)_{#2}}
+\newcommand{\risingFactorial}[2]{#1^{\left(#2\right)}}
 \newcommand \centralFactorial [2] {#1^{[#2]}}
-\newcommand \fallingFactorial [2] {\left(#1 \right)^{\underline{#2}}}
+
 \newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
 \newcommand{\eulerian}[2]{\genfrac{\langle}{\rangle}{0pt}{}{#1}{#2}} % Eulerian
 
 \newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
-
-% for llceil coeffcient
-\newcommand{\nobarfrac}{\genfrac{}{}{0pt}{}}
-\def\llceil{\left\lceil\kern-3.5pt\left\lceil}
-\def\rrfloor{\right\rfloor\kern-3.5pt\right\rfloor}
-\newcommand \llceilCoefficient [3] {\llceil \nobarfrac{#1}{#2} \rrfloor_{#3}}
-
-% ~~~ Rascal numbers ~~~
-%\newcommand \rascalNumber [3] {\binom{#1}{#2}_{#3}}
-%\newcommand \north[0] {\mathbf{North}}
-%\newcommand \south[0] {\mathbf{South}}
-%\newcommand \west[0] {\mathbf{West}}
-%\newcommand \east[0] {\mathbf{East}}
-
-% ~~~~ 1-q pascal notation~~~~
-%\newcommand{\genstirlingI}[3]{%
-%    \genfrac{[}{]}{0pt}{#1}{#2}{#3}%
-%}
-%\newcommand{\genstirlingII}[3]{%
-%    \genfrac{\{}{\}}{0pt}{#1}{#2}{#3}%
-%}
-%\newcommand{\oneQBinomial}[3]{\genstirlingI{}{#1}{#2}^{#3}}
 
 
 \newtheorem{theorem}{Theorem}[section]
@@ -77,8 +57,8 @@
 
 %\numberwithin{equation}{section}
 
-\title[LaTeX Template for GitHub]
-{LaTeX Template for GitHub}
+\title[Sums of powers via central finite differences and Newton's formula]
+{Sums of powers via central finite differences and Newton's formula}
 \author[Petro Kolosov]{Petro Kolosov}
 \date{\today}
 
@@ -88,10 +68,10 @@
 % 11B68 — Bernoulli and Euler numbers and polynomials
 % 11B73 — Bell and Stirling numbers
 % 11B83 — Special sequences and polynomials
-\subjclass[2010]{05A19, 05A10, 41A15, 11B68, 11B73, 11B83}
+\subjclass[2010]{05A19, 05A10, 11B73, 11B83}
 
 % metadata
-\email{kolosovp94@gmail.com}
+%\email{kolosovp94@gmail.com}
 \address{Software Developer, DevOps Engineer}
 \urladdr{https://kolosovpetro.github.io}
 \keywords{Sums of powers,
@@ -102,7 +82,6 @@
     Bernoulli numbers,
     Bernoulli polynomials,
     Interpolation,
-    Approximation,
     Discrete convolution,
     Combinatorics,
     Polynomial identities,
@@ -113,11 +92,11 @@
     Pascal's triangle,
     OEIS}
 \hypersetup{
-    pdftitle={LaTeX Template for GitHub},
+    pdftitle={Sums of powers via central finite differences and Newton's formula},
     pdfproducer={LaTeX},
     pdfcreator={pdflatex},
     pdfauthor={Petro Kolosov},
-    pdfsubject={LaTeX Template for GitHub},
+    pdfsubject={Sums of powers via central finite differences and Newton's formula},
     pdfkeywords={Sums of powers,
     Power sums,
     Polynomials,
@@ -126,27 +105,18 @@
     Newton's interpolation formula,
     Finite differences,
     Interpolation,
-    Approximation,
     Binomial coefficients,
     Multinomial coefficients,
     Binomial theorem,
     Faulhaber's formula,
     Bernoulli numbers,
     Bernoulli polynomials,
-    Derivatives,
-    Differential calculus,
-    Partial differential equations,
-    Discrete convolution,
-    Sums of convolved powers,
-    Convolved power sums,
     Combinatorics,
     Central factorial numbers,
     Stirling numbers,
     Eulerian numbers,
     Worpitzky identity,
     Pascal's triangle,
-    Dynamic systems,
-    Time scales,
     OEIS}
 }
 
@@ -163,19 +133,23 @@
 %    \tableofcontents
 
 
-    \section{Introduction} \label{sec:introduction}
+    \section{Introduction and main results} \label{sec:introduction}
     \input{sections/01_introduction}
+
+
+%    \section{Proof of Knuth's formula}\label{sec:proof-of-knuth's-formula}
+%    \input{sections/02_proof_of_knuth_formula}
 
 
     \section{Conclusions}\label{sec:conclusions}
     \input{sections/conclusions}
 
 
-    \section{Acknowledgements}\label{sec:acknowledgements}
-    \input{sections/acknowledgements}
+%    \section{Acknowledgements}\label{sec:acknowledgements}
+%    \input{sections/acknowledgements}
 
     \bibliographystyle{unsrt}
-    \bibliography{github-latex-template}
+    \bibliography{SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula}
 
     \input{metadata/footer}
 

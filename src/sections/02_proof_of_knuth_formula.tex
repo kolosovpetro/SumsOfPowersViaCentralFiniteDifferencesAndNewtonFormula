@@ -1,0 +1,61 @@
+\begin{proposition}[Knuth's formula for Multifold sums of odd powers]
+    \label{prop:knuth-sums-of-odd-powers}
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{2m-1} &= \sum_{k=1}^{m} (2k-1)! \binom{n+k-1+r}{2k-1+r} T(2m, 2k)
+    \end{align*}
+    where $T(n, k)$ is central factorial number $T(n, k) = \frac{1}{k!} \delta^k 0^n$ and $\delta^k 0^n$
+    is the central finite difference of power in zero.
+    \begin{proof}
+        Consider the Riordan's power identity, see [cite]
+        \begin{lemma} [Riordan's power identity]
+            \begin{align*}
+                n^m = \sum_{k=1}^{m} T(m,k) \centralFactorial{n}{k}
+            \end{align*}
+            where $\centralFactorial{n}{k}$ is central factorial [eq ref].
+        \end{lemma}
+        It is easy to see that Riordan's power identity is a direct consequence of Newton's series for central difference [eq ref],
+        with $T(m,k)=\frac{1}{k!} \delta^k 0^m$, where $\delta^k 0^m$ is central difference of power in zero.
+        Now we notice that $T(m,k) =0$ whether $m-k$ is odd.
+        Thus,
+        \begin{align*}
+            n^{2m} = \sum_{k=1}^{2m} T(2m,k) \centralFactorial{n}{k}
+        \end{align*}
+        We allow $k$ to run over the integers $k=2,4,6,\ldots, 2m$ to maintain the condition $T(2m,k) \neq 0$,
+        hence
+        \begin{align*}
+            n^{2m} = \sum_{k=1}^{m} T(2m,2k) \centralFactorial{n}{2k}
+        \end{align*}
+        By expressing the central factorials $\centralFactorial{n}{2k}$ in terms of falling factorials
+        \begin{align*}
+            \centralFactorial{n}{2k}
+            = n \fallingFactorial{n+k-1}{2k-1}
+        \end{align*}
+        Yields
+        \begin{align*}
+            n^{2m} = \sum_{k=1}^{m} T(2m,2k) n \fallingFactorial{n+k-1}{2k-1}
+        \end{align*}
+        By dividing by $n$ an applying the identity $\frac{\fallingFactorial{x}{n}}{n!} = \binom{x}{n}$, we get
+        \begin{align*}
+            n^{2m-1} = \sum_{k=1}^{m} (2k-1)! \binom{n+k-1}{2k-1} T(2m,2k)
+        \end{align*}
+        which is the base identity for odd powers.
+        Now, the ordinary sum of odd powers is
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} (2k-1)! T(2m,2k) \sum_{j=1}^{n} \binom{j+k-1}{2k-1}
+        \end{align*}
+        By hockey-stick identity $\sum_{j=1}^{n} \binom{j+k-1}{2k-1} = \binom{n+k}{2k}$
+        \begin{align*}
+            \KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} (2k-1)! T(2m,2k) \binom{n+k}{2k}
+        \end{align*}
+        By induction yields
+        \begin{align*}
+            \KnuthRFoldSum{r}{n}{2m-1} &= \sum_{k=1}^{m} (2k-1)! \binom{n+k-1+r}{2k-1+r} T(2m, 2k)
+        \end{align*}
+    \end{proof}
+\end{proposition}
+We can compare the Knuth's formula and special case of [eqref] for $m \rightarrow 2m-1$, that is
+\begin{corollary}
+    \begin{align*}
+        \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=0}^{m} k! \binom{n+\frac{k+1}{2}-1+r}{k+r} T(2m, 2k)
+    \end{align*}
+\end{corollary}
