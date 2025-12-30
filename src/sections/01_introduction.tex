@@ -52,13 +52,13 @@ By factoring out and simplifying the term $n$, we get
 By reindexing the sum yields
 \begin{proposition} [Newton's series for power in zero]
     \begin{align*}
-        n^{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1}{k} \delta^{k+1} 0^{m+1}
+        n^{m} = \sum_{k=0}^{m+1} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1}{k} \delta^{k+1} 0^{m+1}
     \end{align*}
 \end{proposition}
 Thus, formula for ordinary sums of powers follows
 \begin{proposition} [Ordinary sums of powers]
     \begin{align*}
-        \KnuthRFoldSum{1}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}}{k+1} \delta^{k+1} 0^{m+1}
+        \KnuthRFoldSum{1}{n}{m} = \sum_{k=0}^{m+1} \frac{1}{k+1} \binom{n+\frac{k+1}{2}}{k+1} \delta^{k+1} 0^{m+1}
     \end{align*}
     \begin{proof}
         We have
@@ -71,7 +71,7 @@ Continuing similarly, we get formula for multifold sums of powers
 \begin{theorem}[Multifold sums of powers]
     \begin{mdframed}
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1+r}{k+r} \delta^{k+1} 0^{m+1}
+            \KnuthRFoldSum{r}{n}{m} = \sum_{k=0}^{m+1} \frac{1}{k+1} \binom{n+\frac{k+1}{2}-1+r}{k+r} \delta^{k+1} 0^{m+1}
         \end{align*}
     \end{mdframed}
 \end{theorem}
