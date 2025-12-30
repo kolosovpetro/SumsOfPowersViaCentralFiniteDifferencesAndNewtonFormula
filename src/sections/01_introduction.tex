@@ -63,26 +63,26 @@ We may observe that the operator of central finite difference of power $\delta^{
 its arguments $m$ and $k$ meaning that both $m$ and $k$ must be $m\bmod2 = k\bmod2$ so that
 $\delta^{k} 0^m$ is non-zero.
 
-By letting $m \rightarrow 2m$ we get
+By setting $m \rightarrow 2m$ we get
 \begin{align*}
     n^{2m-1} = \sum_{k=1}^{2m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^{2m}
 \end{align*}
-Thus the central difference $\delta^{k} 0^{2m}$ for odd $k$ is zero.
+Thus, the central difference $\delta^{k} 0^{2m}$ for odd $k$ is zero.
 Since $k$ runs over all integers in the range $0\leq k \leq 2m$,
 we are able to omit odd values of $k$
 \begin{align*}
-    n^{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1}{k-1} \delta^{2k} 0^{2m}
+    n^{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1}{2k-1} \delta^{2k} 0^{2m}
 \end{align*}
 Thus, formula for ordinary sums of odd powers is
 \begin{proposition}[Ordinary sums of powers]
     \begin{align*}
-        \KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k}{k} \delta^{2k} 0^{2m}
+        \KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k}{2k} \delta^{2k} 0^{2m}
     \end{align*}
     \begin{proof}
         We have
         $\KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \delta^{2k} 0^{2m} \sum_{j=1}^{n} \binom{j+k-1}{k-1}$.
 
-        By hockey stick identity $\sum_{j=1}^{n} \binom{j+k-1}{k-1} = \binom{n+k}{k}$, thus the statement follows.
+        By hockey stick identity $\sum_{j=1}^{n} \binom{j+k-1}{2k-1} = \binom{n+k}{2k}$, thus the statement follows.
     \end{proof}
 \end{proposition}
 Therefore,
@@ -90,14 +90,14 @@ Therefore,
 \begin{theorem}[Multifold sums of odd powers]
     \begin{mdframed}
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1+r}{k+r} \delta^{2k} 0^{2m}.
+            \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1+r}{2k-1+r} \delta^{2k} 0^{2m}.
         \end{align*}
     \end{mdframed}
     \begin{proof}
         We have
-        $\KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \delta^{2k} 0^{2m} \sum_{j=1}^{n} \binom{j+k-1}{k-1}$.
+        $\KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \delta^{2k} 0^{2m} \sum_{j=1}^{n} \binom{j+k-1}{2k-1}$.
 
-        By hockey stick identity $\sum_{j=1}^{n} \binom{j+k-1}{k-1} = \binom{n+k}{k}$.
+        By hockey stick identity $\sum_{j=1}^{n} \binom{j+k-1}{k-1} = \binom{n+k}{2k}$.
         By induction the claim follows.
     \end{proof}
 \end{theorem}
@@ -108,12 +108,13 @@ because
     k! T(n, k) = \delta^k 0^n
 \end{align*}
 The identity above is well discussed in~\cite{steffensen1927interpolation, carlitz1963divided, riordan1968combinatorial}.
-The non-zero central factorial numbers are registered as \href{https://oeis.org/A008957}{\texttt{A008957}} in the OEIS~\cite{sloane2003line}.
-Thus,
+The non-zero central factorial numbers $T(2m,2k)$ are registered as \href{https://oeis.org/A008957}{\texttt{A008957}} in the OEIS~\cite{sloane2003line}.
+
+Hence,
 \begin{proposition}[Multifold sums of odd powers in central factorial numbers]
     \begin{mdframed}
         \begin{align*}
-            \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=1}^{m} (2k-1)! \binom{n+k-1+r}{k+r} T(2m,2k).
+            \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=1}^{m} (2k-1)! \binom{n+k-1+r}{2k-1+r} T(2m,2k).
         \end{align*}
     \end{mdframed}
 \end{proposition}
