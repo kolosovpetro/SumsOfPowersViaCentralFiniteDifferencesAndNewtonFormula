@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 56 items.
 Database file #1: SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.bib
-You've used 6 entries,
+You've used 8 entries,
             1791 wiz_defined-function locations,
-            487 strings with 4912 characters,
-and the built_in function-call counts, 1089 in all, are:
-= -- 103
-> -- 28
+            496 strings with 5184 characters,
+and the built_in function-call counts, 1347 in all, are:
+= -- 123
+> -- 36
 < -- 1
-+ -- 13
-- -- 7
-* -- 47
-:= -- 178
-add.period$ -- 23
-call.type$ -- 6
-change.case$ -- 3
++ -- 17
+- -- 9
+* -- 53
+:= -- 216
+add.period$ -- 29
+call.type$ -- 8
+change.case$ -- 5
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 53
-empty$ -- 122
-format.name$ -- 7
-if$ -- 245
+cite$ -- 8
+duplicate$ -- 63
+empty$ -- 158
+format.name$ -- 9
+if$ -- 305
 int.to.chr$ -- 0
-int.to.str$ -- 6
+int.to.str$ -- 8
 missing$ -- 8
-newline$ -- 38
-num.names$ -- 6
-pop$ -- 24
+newline$ -- 48
+num.names$ -- 8
+pop$ -- 38
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 17
+skip$ -- 23
 stack$ -- 0
 substring$ -- 47
-swap$ -- 7
+swap$ -- 9
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 10
-width$ -- 7
-write$ -- 75
+while$ -- 12
+width$ -- 9
+write$ -- 95

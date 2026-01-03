@@ -39,6 +39,14 @@
 \newcommand{\stirlingii}{\genfrac{\{}{\}}{0pt}{}}
 \newcommand{\eulerian}[2]{\genfrac{\langle}{\rangle}{0pt}{}{#1}{#2}} % Eulerian
 
+% free foot note
+\let\svthefootnote\thefootnote
+\newcommand\freefootnote[1]{%
+    \let\thefootnote\relax%
+    \footnotetext{#1}%
+    \let\thefootnote\svthefootnote%
+}
+
 \newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
 
 
@@ -130,23 +138,17 @@
 
     \addcontentsline{toc}{section}{Abstract}
 
-%    \tableofcontents
+    \tableofcontents
+
+    \freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18096789}}
 
 
     \section{Introduction and main results} \label{sec:introduction}
     \input{sections/01_introduction}
 
 
-%    \section{Proof of Knuth's formula}\label{sec:proof-of-knuth's-formula}
-%    \input{sections/02_proof_of_knuth_formula}
-
-
     \section{Conclusions}\label{sec:conclusions}
     \input{sections/conclusions}
-
-
-%    \section{Acknowledgements}\label{sec:acknowledgements}
-%    \input{sections/acknowledgements}
 
     \bibliographystyle{unsrt}
     \bibliography{SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula}
