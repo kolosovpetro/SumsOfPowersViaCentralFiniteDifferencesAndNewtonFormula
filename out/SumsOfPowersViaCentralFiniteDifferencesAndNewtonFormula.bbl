@@ -1,5 +1,16 @@
 \begin{thebibliography}{1}
 
+\bibitem{kolosov_2026_18135998}
+Petro Kolosov.
+\newblock Newton's interpolation formula and sums of powers, January 2026.
+\newblock \url{https://doi.org/10.5281/zenodo.18040979}.
+
+\bibitem{kolosov_2026_18136163}
+Petro Kolosov.
+\newblock Sums of powers via backward finite differences and newton's formula,
+  January 2026.
+\newblock \url{https://doi.org/10.5281/zenodo.18118011}.
+
 \bibitem{newton1850newton}
 {Newton, Isaac and Chittenden, N.W.}
 \newblock {\em {Newton's Principia: the mathematical principles of natural
