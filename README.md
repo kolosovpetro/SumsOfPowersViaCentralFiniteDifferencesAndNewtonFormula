@@ -6,6 +6,8 @@ In this manuscript we derive formula for multifold sums of powers using Newton's
 
 **DOI**: https://doi.org/10.5281/zenodo.18096789
 
+**HTML**: https://kolosovpetro.github.io/sums-of-powers-central-differences/
+
 **MSC2010**: 05A19, 05A10, 11B73, 11B83.
 
 **Keywords**: Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula,
