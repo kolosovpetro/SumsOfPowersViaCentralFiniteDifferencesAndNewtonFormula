@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Rework metadata
 - Update build script
 - Update initialize script
+- Deleted unnecessary github actions files
+- Deleted unnecessary renovate configs
 
 ## [1.1.0] - 03-Jan-2026
 
