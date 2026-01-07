@@ -13,6 +13,7 @@ MultifoldSumsOfPowers::usage=""
 MultifoldSumsOfPowersOddPowers::usage=""
 EvenPower::usage=""
 SumsOfEvenPower::usage=""
+CentralFactorialNumber::usage=""
 (*END: Definitions *)
 (* =========================================================================DOCS END=================================================================== *)
 
@@ -29,6 +30,7 @@ Protect[Power];
 CentralFactorial[n_, k_]:= n * Product[n+ k/2 - j, {j, 1, k-1}];
 FallingFactorial[n_, k_] := Product[n-j, {j, 0, k-1}];
 CentralDifference[x_, n_, k_] := Sum[(-1)^j * Binomial[k, j] * (x + k/2 -j)^n, {j, 0, k}];
+CentralFactorialNumber[n_, k_]:= 1/k! * CentralDifference[0, n, k];
 NewtonSeriesForPowerInZero[n_, m_] := Sum[1/(k+1) * Binomial[n+(k+1)/2-1, k] * CentralDifference[0, m+1, k+1], {k, 0, m+1}];
 NewtonSeriesForPower[t_, n_, m_] := Sum[1/(k+1) * Binomial[n-t+(k+1)/2-1, k] * CentralDifference[t, m+1, k+1], {k, 0, m+1}];
 MultifoldSumOfPowersRecurrence[r_, n_, m_]:= 0;
@@ -42,21 +44,6 @@ SumsOfEvenPower[r_, n_, m_] := Sum[1/(2k+1) * Binomial[n+(2k+1)/2-1+r, 2k+r] * C
 
 End[ ]
 EndPackage[ ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
