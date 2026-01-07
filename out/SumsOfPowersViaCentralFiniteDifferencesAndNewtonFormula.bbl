@@ -11,6 +11,12 @@ Petro Kolosov.
   January 2026.
 \newblock \url{https://doi.org/10.5281/zenodo.18118011}.
 
+\bibitem{knuth1993johann}
+{Knuth, Donald E.}
+\newblock {Johann Faulhaber and sums of powers}.
+\newblock {\em {Mathematics of Computation}}, 61(203):277--294, 1993.
+\newblock \url{https://arxiv.org/abs/math/9207222}.
+
 \bibitem{newton1850newton}
 {Newton, Isaac and Chittenden, N.W.}
 \newblock {\em {Newton's Principia: the mathematical principles of natural
@@ -41,13 +47,7 @@ John Riordan.
 
 \bibitem{sloane2003line}
 {Sloane, Neil J.A. and others}.
-\newblock {The on-line encyclopedia of integer sequences}, 2003.
-\newblock \url{https://oeis.org/}.
-
-\bibitem{knuth1993johann}
-{Knuth, Donald E.}
-\newblock {Johann Faulhaber and sums of powers}.
-\newblock {\em {Mathematics of Computation}}, 61(203):277--294, 1993.
-\newblock \url{https://arxiv.org/abs/math/9207222}.
+\newblock {The on-line encyclopedia of integer sequences}.
+\newblock \url{https://oeis.org/}, 2003.
 
 \end{thebibliography}

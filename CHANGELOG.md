@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Deleted unnecessary github actions files
 - Deleted unnecessary renovate configs
 - Enable pandoc in github actions
+- Improve manuscript flow
 
 ## [1.1.0] - 03-Jan-2026
 

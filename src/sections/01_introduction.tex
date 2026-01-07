@@ -5,20 +5,26 @@ The idea to derive sums of powers using difference operator and Newton's series 
 thus, formulas for sums of powers using forward and backward differences can be found
 in the works~\cite{kolosov_2026_18135998, kolosov_2026_18136163}.
 
-We define the following recurrence for multifold sums of powers, which we utilize throughout the paper.
+We define the recurrence for multifold sums of powers introduced by Donald Knuth in~\cite{knuth1993johann}, 
+which we utilize throughout the paper.
+
 \begin{align*}
     \KnuthRFoldSum{0}{n}{m}   &= n^m \\
     \KnuthRFoldSum{1}{n}{m}   &= \KnuthRFoldSum{0}{1}{m} + \KnuthRFoldSum{0}{2}{m} + \cdots + \KnuthRFoldSum{0}{n}{m} \\
     \KnuthRFoldSum{r+1}{n}{m} &= \KnuthRFoldSum{r}{1}{m} + \KnuthRFoldSum{r}{2}{m} + \cdots + \KnuthRFoldSum{r}{n}{m}
 \end{align*}
+
 Consider the Newton's formula~\cite{newton1850newton} in central differences
-\begin{proposition}[Newton's series in central differences]
-    \label{prop:newtons-series-in-central-differences}
+
+\begin{proposition}[Newton's formula in central differences]
+    \label{prop:newtons-formula-in-central-differences}
     \begin{align*}
         f(x) &= \sum_{k=0}^{\infty} \frac{\centralFactorial{x}{k}}{k!} \delta^{k} f(0)
     \end{align*}
     where $\delta^{k} f(0)= \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f\left(\frac{k}{2} - j\right)$
-    is central finite difference in zero, and $\centralFactorial{x}{k} = n \left( n + \frac{k}{2} -1 \right)\left( n + \frac{k}{2} -2 \right) \cdots \left( n - \frac{k}{2} +1 \right)$ is central factorial.
+    are central finite differences in zero, 
+    and $\centralFactorial{x}{k} = n \left( n + \frac{k}{2} -1 \right)\left( n + \frac{k}{2} -2 \right) \cdots \left( n - \frac{k}{2} +1 \right)$ 
+    are central factorials.
 \end{proposition}
 
 \begin{lemma}[Central factorial]
@@ -28,14 +34,20 @@ Consider the Newton's formula~\cite{newton1850newton} in central differences
         = n \prod_{j=1}^{k-1} \left( n + \frac{k}{2} -j \right)
     \end{align*}
 \end{lemma}
+
 We observe that central factorials are closely related to falling factorials $\fallingFactorial{x}{n} = x(x-1)(x-2)(x-3)\cdots(x-n+1)=\prod_{k=0}^{n-1}(x-k)$.
 Therefore,
+
 \begin{align*}
     \centralFactorial{n}{k} = n \fallingFactorial{n+\frac{k}{2}-1}{k-1}
 \end{align*}
-To derive formula for multifold sums of powers, we follow the strategy to express the Newton's formula [eq ref] in terms
-of binomial coefficients, then to reach closed forms of column sum of binomial coefficients by means of hockey stick identity.
+
+To derive formula for multifold sums of powers, 
+we follow the strategy to express the Newton's formula~\eqref{prop:newtons-formula-in-central-differences} 
+in terms of binomial coefficients, 
+then to reach closed forms of column sum of binomial coefficients by means of hockey stick identity.
 Therefore,
+
 \begin{proposition}
     For $k \geq 1$
     \begin{align*}
@@ -51,6 +63,7 @@ Therefore,
 
 Which yields Newton's formula for powers, in terms of central differences.
 For positive integers $n \geq 1$ and $m \geq 1$
+
 \begin{align*}
     n^m = \sum_{k=1}^{m} \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^m
 \end{align*}
@@ -60,24 +73,32 @@ begins the summation from $k=1$ to avoid division by zero in $\frac{n}{k}$.
 It is a valid trick, because the central difference $\delta^{k} 0^n$ is zero for all $n \geq 1$ and $k=0$.
 
 By factoring out and simplifying the term $n$, we get
+
 \begin{align*}
     n^{m-1} = \sum_{k=1}^{m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^m
 \end{align*}
-We may observe that the operator of central finite difference of power $\delta^{k} 0^m$ requires the parity of
-its arguments $m$ and $k$ meaning that both $m$ and $k$ must be $m\bmod2 = k\bmod2$ so that
-$\delta^{k} 0^m$ is non-zero.
+
+We may observe that the operator of central finite difference $\delta^{k} 0^m$ requires the parity of its arguments $m$ and $k$ 
+meaning that both $m$ and $k$ required to be: $m\bmod2 = k\bmod2$, 
+such that finite differences $\delta^{k} 0^m$ are non-zero.
 
 By setting $m \rightarrow 2m$ we get
+
 \begin{align*}
     n^{2m-1} = \sum_{k=1}^{2m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^{2m}
 \end{align*}
-Thus, the central difference $\delta^{k} 0^{2m}$ for odd $k$ is zero.
+
+Thus, the central differences $\delta^{k} 0^{2m}$ are zero for all odd $k$.
+
 Since $k$ runs over all integers in the range $0\leq k \leq 2m$,
-we are able to omit odd values of $k$
+we can omit odd values of $k$
+
 \begin{align*}
     n^{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1}{2k-1} \delta^{2k} 0^{2m}
 \end{align*}
-Thus, formula for ordinary sums of odd powers is
+
+Hence, formula for ordinary sums of odd powers is
+
 \begin{proposition}[Ordinary sums of powers]
     \begin{align*}
         \KnuthRFoldSum{1}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k}{2k} \delta^{2k} 0^{2m}
@@ -89,9 +110,11 @@ Thus, formula for ordinary sums of odd powers is
         By hockey stick identity $\sum_{j=1}^{n} \binom{j+k-1}{2k-1} = \binom{n+k}{2k}$, thus the statement follows.
     \end{proof}
 \end{proposition}
+
 Therefore,
 
 \begin{theorem}[Multifold sums of odd powers]
+    \label{theorem:multifold-sums-of-odd-powers}
     \begin{mdframed}
         \begin{align*}
             \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1+r}{2k-1+r} \delta^{2k} 0^{2m}.
@@ -106,15 +129,23 @@ Therefore,
     \end{proof}
 \end{theorem}
 
-The formula for multifold sums of odd powers can be rewritten in terms of central factorial numbers of the second kind $T(n,k)$,
+It is quite interesting to notice that theorem~\eqref{theorem:multifold-sums-of-odd-powers}
+is a central difference form of the formula of sums of odd-powers given by Donald Knuth in
+\textit{Johann Faulhaber and sums of powers}, see~\cite{knuth1993johann}.
+
+The reason is straightforward, instead of using Central factorial numbers of the second kind $T(n,k)$,
+the theorem~\eqref{theorem:multifold-sums-of-odd-powers} utilizes central differences explicitly,
 because
-\begin{align*}
+
+\begin{lemma} [Central factorial numbers of the second kind]
+    \label{lem:central-factorial-numbers-of-the-second-kind}
+    \begin{align*}
     k! T(n, k) = \delta^k 0^n
 \end{align*}
-The identity above is well discussed in~\cite{steffensen1927interpolation, carlitz1963divided, riordan1968combinatorial}.
-The non-zero central factorial numbers $T(2m,2k)$ are registered as \href{https://oeis.org/A008957}{\texttt{A008957}} in the OEIS~\cite{sloane2003line}.
+\end{lemma}
 
-Hence,
+Meaning that the Knuth's formula
+
 \begin{proposition}[Multifold sums of odd powers in central factorial numbers]
     \begin{mdframed}
         \begin{align*}
@@ -122,5 +153,11 @@ Hence,
         \end{align*}
     \end{mdframed}
 \end{proposition}
-It is remarkable that exactly this formula can be found in Donald Knuth's work
-\textit{Johann Faulhaber and sums of powers}, see~\cite{knuth1993johann}.
+
+originates from Newton's interpolation formula in central differences~\eqref{prop:newtons-formula-in-central-differences}.
+
+The lemma~\eqref{lem:central-factorial-numbers-of-the-second-kind} 
+is well discussed in~\cite{steffensen1927interpolation, carlitz1963divided, riordan1968combinatorial}.
+
+The non-zero central factorial numbers $T(2m,2k)$ are registered as \href{https://oeis.org/A008957}{\texttt{A008957}} 
+in the OEIS~\cite{sloane2003line}.
