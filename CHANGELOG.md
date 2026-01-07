@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 07-Jan-2026
+
+### Changed
+
+- Rework metadata
+- Update build script
+- Update initialize script
+- Deleted unnecessary github actions files
+- Deleted unnecessary renovate configs
+- Enable pandoc in github actions
+- Improve manuscript flow
+
 ## [1.1.0] - 03-Jan-2026
 
 ### Changed

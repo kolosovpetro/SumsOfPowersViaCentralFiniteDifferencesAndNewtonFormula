@@ -8,14 +8,14 @@ Database file #1: SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.bib
 You've used 8 entries,
             1791 wiz_defined-function locations,
             496 strings with 5184 characters,
-and the built_in function-call counts, 1347 in all, are:
-= -- 123
+and the built_in function-call counts, 1349 in all, are:
+= -- 124
 > -- 36
 < -- 1
 + -- 17
 - -- 9
 * -- 53
-:= -- 216
+:= -- 217
 add.period$ -- 29
 call.type$ -- 8
 change.case$ -- 5
@@ -24,13 +24,13 @@ cite$ -- 8
 duplicate$ -- 63
 empty$ -- 158
 format.name$ -- 9
-if$ -- 305
+if$ -- 306
 int.to.chr$ -- 0
 int.to.str$ -- 8
 missing$ -- 8
 newline$ -- 48
 num.names$ -- 8
-pop$ -- 38
+pop$ -- 37
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
