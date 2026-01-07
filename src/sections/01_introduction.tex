@@ -161,3 +161,19 @@ is well discussed in~\cite{steffensen1927interpolation, carlitz1963divided, rior
 
 The non-zero central factorial numbers $T(2m,2k)$ are registered as \href{https://oeis.org/A008957}{\texttt{A008957}} 
 in the OEIS~\cite{sloane2003line}.
+For example,
+\begin{align*}
+    \KnuthRFoldSum{1}{n}{1} &= \tbinom{n+1}{2} \\
+    \KnuthRFoldSum{1}{n}{3} &= 6 \tbinom{n+2}{4} + \tbinom{n+1}{2} \\
+    \KnuthRFoldSum{1}{n}{5} &= 120 \tbinom{n+3}{6} + 30 \tbinom{n+2}{4} + \tbinom{n+1}{2} \\
+    \KnuthRFoldSum{1}{n}{7} &= 5040 \tbinom{n+4}{8} + 1680 \tbinom{n+3}{6} + 126 \tbinom{n+2}{4} + \tbinom{n+1}{2}
+\end{align*}
+While multifold sums of odd powers are
+\begin{align*}
+    \KnuthRFoldSum{r}{n}{1} &= \tbinom{n+1+r}{2+r} \\
+    \KnuthRFoldSum{r}{n}{3} &= 6 \tbinom{n+2+r}{4+r} + \tbinom{n+1+r}{2+r} \\
+    \KnuthRFoldSum{r}{n}{5} &= 120 \tbinom{n+3+r}{6+r} + 30 \tbinom{n+2+r}{4+r} + \tbinom{n+1+r}{2+r} \\
+    \KnuthRFoldSum{r}{n}{7} &= 5040 \tbinom{n+4+r}{8+r} + 1680 \tbinom{n+3+r}{6+r} + 126 \tbinom{n+2+r}{4+r} + \tbinom{n+1+r}{2+r}
+\end{align*}
+The coefficients $1, 6, 1, 120, 30, 1,\ldots$ is the sequence \href{https://oeis.org/A303675}{\texttt{A303675}} 
+in the OEIS~\cite{sloane2003line}.
