@@ -10,6 +10,12 @@ In this manuscript we derive formula for multifold sums of powers using Newton's
 - [Sums of powers via central finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
 - [Sums of powers via backward finite differences and Newton's formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
 
+## OEIS
+
+- https://oeis.org/A387597 — Triangle read by rows: T(n,k) = Sum_{j=0..2k} (-1)^j * binomial(2k,j) * (0+k-j)^(2n).
+- https://oeis.org/A392337 — Triangle read by rows: T(n,k) = Sum_{j=0..2k} (-1)^j * binomial(2k,j) * (1+k-j)^(2n).
+- https://oeis.org/A390029 — Triangle read by rows: T(n,k) = Sum_{j=0..2k} (-1)^j * binomial(2k,j) * (2+k-j)^(2n).
+
 ## Metadata
 
 - **MSC2010:** 05A19, 05A10, 41A15, 11B83
