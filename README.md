@@ -4,21 +4,28 @@
 
 In this manuscript we derive formula for multifold sums of powers using Newton's formula and central differences.
 
-**DOI**: https://doi.org/10.5281/zenodo.18096789
-
-**HTML**: https://kolosovpetro.github.io/sums-of-powers-central-differences/
-
-**MSC2010**: 05A19, 05A10, 11B73, 11B83.
-
-**Keywords**: Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula,
-Bernoulli numbers, Bernoulli polynomials, Interpolation, Combinatorics, Central factorial numbers, OEIS, Stirling numbers,
-Eulerian numbers, Worpitzky identity.
-
 ## Related projects
 
 - [Newton's interpolation formula and sums of powers (2025)](https://github.com/kolosovpetro/NewtonsInterpolationFormulaAndSumsOfPowers)
 - [Sums of powers via central finite differences and Newton's formula (2025)](https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula)
 - [Sums of powers via backward finite differences and Newton's formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
+
+## OEIS
+
+- https://oeis.org/A387597 — Triangle read by rows: T(n,k) = Sum_{j=0..2k} (-1)^j * binomial(2k,j) * (0+k-j)^(2n).
+- https://oeis.org/A392337 — Triangle read by rows: T(n,k) = Sum_{j=0..2k} (-1)^j * binomial(2k,j) * (1+k-j)^(2n).
+- https://oeis.org/A390029 — Triangle read by rows: T(n,k) = Sum_{j=0..2k} (-1)^j * binomial(2k,j) * (2+k-j)^(2n).
+
+## Metadata
+
+- **MSC2010:** 05A19, 05A10, 41A15, 11B83
+- **Keywords:** Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials Interpolation, Approximation, Discrete convolution, Combinatorics, Polynomial identities, Central factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky identity, Pascal's triangle, OEIS
+- **License:** This work is licensed under a [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/)
+- **DOI:** https://doi.org/10.5281/zenodo.18096789
+- **Web Version:** https://kolosovpetro.github.io/sums-of-powers-central-differences/
+- **Sources:** https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula
+- **ORCID:** https://orcid.org/0000-0002-6544-8880
+- **Email:** kolosovp94@gmail.com
 
 ## References
 
@@ -31,7 +38,3 @@ Eulerian numbers, Worpitzky identity.
 - Kolosov, P. (2025). Newton's interpolation formula and sums of powers. Zenodo. https://doi.org/10.5281/zenodo.18040979
 - Kolosov, P. (2025). Sums of powers via central finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
 - Kolosov, P. (2026). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
-
-## Pandoc compile command
-
-- `pandoc SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.tex --mathjax --standalone --citeproc --bibliography=SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.bib --csl=chicago-author-date.csl -o index.html`

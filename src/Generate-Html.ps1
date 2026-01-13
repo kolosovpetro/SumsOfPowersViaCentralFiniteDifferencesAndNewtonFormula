@@ -1,4 +1,4 @@
-$CurrentPath = Get-Location
+$InitialDirectory = Get-Location
 cd $PSScriptRoot
 
 $LatexFileName = (Get-ChildItem -Filter "*.tex" | Select-Object -First 1).BaseName
@@ -8,4 +8,8 @@ pandoc "$LatexFileName.tex" --mathjax --standalone --citeproc `
     --bibliography="$LatexFileName.bib" `
     --csl=chicago-author-date.csl -o index.html
 
-cd $CurrentPath
+$EncodingScriptPath = "$InitialDirectory/scripts/Test-Encoding.ps1"
+
+& $EncodingScriptPath -Autofix
+
+cd $InitialDirectory
