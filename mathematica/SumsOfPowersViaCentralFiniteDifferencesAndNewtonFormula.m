@@ -24,6 +24,12 @@ ValidateOrdinarySumsOfOddPowersInCentralDifferences::usage=""
 MultifoldSumsOfOddPowersInCentralDifferences::usage=""
 ValidateMultifoldSumsOfOddPowersInCentralDifferences::usage=""
 
+NewtonsFormulaForPowers::usage=""
+ValidateNewtonsFormulaForPowers::usage=""
+
+PowersInCentralBinomialForm::usage=""
+ValidatePowersInCentralBinomialForm::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -66,15 +72,24 @@ ValidateNewtonsFormulaForPowersInZero[max_] := Table[n^m - NewtonsFormulaForPowe
 
 OrdinarySumsOfOddPowersInCentralDifferences[n_, m_] := Sum[1/(2k) * Binomial[n+k, 2k] * CentralDifference[0, 2m, 2k], {k, 1, m}];
 
-ValidateOrdinarySumsOfOddPowersInCentralDifferences[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, 2m-1] - OrdinarySumsOfPowersInCentralDifferences[n, m], {n,1, max}, {m, 1, max}] //Flatten
+ValidateOrdinarySumsOfOddPowersInCentralDifferences[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, 2m-1] - OrdinarySumsOfOddPowersInCentralDifferences[n, m], {n,1, max}, {m, 1, max}] //Flatten
 
 MultifoldSumsOfOddPowersInCentralDifferences[r_, n_, m_] := Sum[1/(2k) * Binomial[n+k-1+r, 2k-1+r] * CentralDifference[0, 2m, 2k], {k, 1, m}];
 ValidateMultifoldSumsOfOddPowersInCentralDifferences[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, 2m-1] - MultifoldSumsOfOddPowersInCentralDifferences[r, n, m], {n,1, max}, {m, 1, max}, {r, 0, max}] //Flatten
+
+NewtonsFormulaForPowers[n_, m_, t_] := Sum[CentralFactorial[n-t, k] / k! * CentralDifference[t, m, k], {k, 0, m}];
+ValidateNewtonsFormulaForPowers[max_] := Table[n^m - NewtonsFormulaForPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+PowersInCentralBinomialForm[n_, m_, t_] := t^m + Sum[(n-t)/k * Binomial[n-t+k/2-1, k-1] * CentralDifference[t, m, k], {k, 1, m}];
+ValidatePowersInCentralBinomialForm[max_] := Table[n^m - PowersInCentralBinomialForm[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
 
 (*END: Definitions *)
 
 End[ ]
 EndPackage[ ]
+
+
+
 
 
 

@@ -259,3 +259,46 @@ While multifold sums of odd powers are
 The coefficients $1, 6, 1, 120, 30, 1,\ldots$
 is the sequence \href{https://oeis.org/A303675}{\texttt{A303675}}
 in the OEIS~\cite{sloane2003line}.
+
+This approach can be generalized even further.
+Consider Newton's interpolation formula around arbitrary integer $t$
+\begin{proposition}[Newton's interpolation formula in central differenes]
+  \label{prop:newtons-interpolation-formula-in-central-differences}
+  \begin{mdframed}
+    \begin{align*}
+      f(x+t)
+      = \sum_{k=0}^{\infty} \frac{\centralFactorial{x}{k}}{k!} \delta^{k} f(t)
+    \end{align*}
+  \end{mdframed}
+  \begin{proof}
+    See~\cite[p. 462]{butzer1989central}.
+  \end{proof}
+\end{proposition}
+Thus, for powers we have identity
+\begin{proposition}[Newton's formula for powers]
+  \label{prop:newtons-formula-for-powers}
+  \begin{mdframed}
+    For integers $n,t$ and $m \geq 0$
+    \begin{align*}
+      n^m = \sum_{k=0}^{m} \frac{\centralFactorial{(n-t)}{k}}{k!} \delta^{k} t^m
+    \end{align*}
+  \end{mdframed}
+\end{proposition}
+
+By binomial form of central
+factorials~\eqref{prop:binomial-form-of-central-factorials},
+we have for $k \geq 1$
+\begin{align*}
+  \frac{\centralFactorial{(n-t)}{k}}{k!}
+  = \frac{n-t}{k} \binom{n-t+\frac{k}{2}-1}{k-1}
+\end{align*}
+Thus,
+\begin{proposition}[Powers in central binomial form]
+  \label{prop:powers-in-central-binomial-form}
+  For integers $n,t$ and $m \geq 0$
+  \begin{align*}
+    n^m
+    &= \frac{\centralFactorial{(n-t)}{0}}{0!} \delta^{0} t^m + \sum_{k=1}^{m} \frac{n-t}{k} \binom{n+t+\frac{k}{2}-1}{k-1} \delta^{k} t^m \\
+    &= t^m + \sum_{k=1}^{m} \frac{n-t}{k} \binom{n-t+\frac{k}{2}-1}{k-1} \delta^{k} t^m
+  \end{align*}
+\end{proposition}
