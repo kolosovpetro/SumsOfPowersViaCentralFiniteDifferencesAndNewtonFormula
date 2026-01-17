@@ -39,6 +39,7 @@ OddPowerIdentity1[n_, m_] := Sum[Binomial[n+k-1, 2k-1] * 1/(2k) * CentralDiffere
 KnuthOddPowerIdentity[n_, m_] := Sum[(2k-1)! * T[2m, 2k] * Binomial[n+k-1, 2k-1], {k, 1, m}];
 TestIdentity[n_, m_, t_] := Sum[Binomial[n+k-1, 2k-1] * 1/(2k) * CentralDifference[t, 2m, 2k], {k, 1, m}];
 
+CentralFactorial[x_, k_] := 0 /; k<0;
 CentralFactorial[x_, k_] := 1 /; k==0;
 CentralFactorial[x_, k_] := x * Product[(x + k/2 -j), {j, 1, k-1}] /; k>0;
 
