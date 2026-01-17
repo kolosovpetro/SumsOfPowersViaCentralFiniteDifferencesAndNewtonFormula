@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Boxed important formulas
 - Add Mathematica documentation
 - Update abstract
+- Update conclusions
 
 ## [1.2.1] - 07-Jan-2026
 
