@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Configure vscode
 - More precise definitions
 - Boxed important formulas
+- Add Mathematica documentation
 
 ## [1.2.1] - 07-Jan-2026
 

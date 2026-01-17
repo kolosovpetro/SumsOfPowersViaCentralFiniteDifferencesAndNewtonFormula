@@ -81,6 +81,7 @@ by means of hockey stick identity.
 Therefore,
 
 \begin{proposition}[Binomial form of central factorials]
+  \label{prop:binomial-form-of-central-factorials}
   \begin{mdframed}
     For integers $n$ and $k \geq 1$
     \begin{align*}
@@ -153,8 +154,9 @@ we can omit odd values of $k$
 Hence, formula for ordinary sums of odd powers yields
 
 \begin{proposition}[Ordinary sums of odd powers in central differences]
+  \label{prop:ordinary-sums-of-odd-powers-in-central-differences}
   \begin{mdframed}
-    For positive integers $n,m$
+    For integers $n\geq 1, \; m\geq 1$
     \begin{align*}
       \KnuthRFoldSum{1}{n}{2m-1}
       = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k}{2k} \delta^{2k} 0^{2m}
@@ -175,9 +177,9 @@ Hence, formula for ordinary sums of odd powers yields
 Therefore,
 
 \begin{theorem}[Multifold sums of odd powers in central differences]
-  \label{theorem:multifold-sums-of-odd-powers}
+  \label{theorem:multifold-sums-of-odd-powers-in-central-differences}
   \begin{mdframed}
-    For positive integers $n,m$ and $r\geq0$
+    For integers $n \geq 1, \; m \geq 1$ and $r\geq0$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{2m-1}
       = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1+r}{2k-1+r} \delta^{2k} 0^{2m}.
@@ -195,7 +197,7 @@ Therefore,
 \end{theorem}
 
 It is quite interesting to notice that
-theorem~\eqref{theorem:multifold-sums-of-odd-powers}
+theorem~\eqref{theorem:multifold-sums-of-odd-powers-in-central-differences}
 is a central difference form of the formula of sums of odd-powers
 given by Donald Knuth in
 \textit{Johann Faulhaber and sums of powers},
@@ -203,8 +205,8 @@ see~\cite{knuth1993johann}.
 
 The reason is straightforward, instead of using Central factorial numbers
 of the second kind $T(n,k)$,
-the theorem~\eqref{theorem:multifold-sums-of-odd-powers} utilizes
-central differences explicitly,
+the theorem~\eqref{theorem:multifold-sums-of-odd-powers-in-central-differences}
+utilizes central differences explicitly,
 because
 
 \begin{lemma} [Central factorial numbers of the second kind]
@@ -217,9 +219,12 @@ because
 Meaning that the Knuth's formula
 
 \begin{proposition}[Multifold sums of odd powers in central factorial numbers]
+  \label{prop:multifold-sums-of-odd-powers-in-central-factorial-numbers}
   \begin{mdframed}
+    For integers $n \geq 1, \; m \geq 1$ and $r\geq0$
     \begin{align*}
-      \KnuthRFoldSum{r}{n}{2m-1} = \sum_{k=1}^{m} (2k-1)! \binom{n+k-1+r}{2k-1+r} T(2m,2k).
+      \KnuthRFoldSum{r}{n}{2m-1}
+      = \sum_{k=1}^{m} (2k-1)! \binom{n+k-1+r}{2k-1+r} T(2m,2k).
     \end{align*}
   \end{mdframed}
 \end{proposition}
@@ -232,8 +237,9 @@ is well discussed
 in~\cite{steffensen1927interpolation, carlitz1963divided, riordan1968combinatorial}.
 
 The non-zero central factorial numbers $T(2m,2k)$
-are registered as \href{https://oeis.org/A008957}{\texttt{A008957}}
+is the sequence \href{https://oeis.org/A008957}{\texttt{A008957}}
 in the OEIS~\cite{sloane2003line}.
+
 For example,
 \begin{align*}
   \KnuthRFoldSum{1}{n}{1} &= \tbinom{n+1}{2} \\

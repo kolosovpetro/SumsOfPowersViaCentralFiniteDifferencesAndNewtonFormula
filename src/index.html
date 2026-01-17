@@ -301,9 +301,9 @@ data-reference="prop:newtons-formula-in-central-differences">[prop:newtons-formu
 in terms of binomial coefficients, then to reach closed forms of column
 sum of binomial coefficients by means of hockey stick identity.
 Therefore,</p>
-<div class="proposition">
+<div id="prop:binomial-form-of-central-factorials" class="proposition">
 <p><strong>Proposition 5</strong> (Binomial form of central factorials).
-</p>
+<em></em></p>
 <div class="mdframed">
 <p><em>For integers <span class="math inline">\(n\)</span> and <span
 class="math inline">\(k \geq 1\)</span> <span
@@ -392,12 +392,13 @@ class="math display">\[\begin{align*}
   = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1}{2k-1} \delta^{2k} 0^{2m}
 \end{align*}\]</span> Hence, formula for ordinary sums of odd powers
 yields</p>
-<div class="proposition">
+<div id="prop:ordinary-sums-of-odd-powers-in-central-differences"
+class="proposition">
 <p><strong>Proposition 7</strong> (Ordinary sums of odd powers in
-central differences). </p>
+central differences). <em></em></p>
 <div class="mdframed">
-<p><em>For positive integers <span class="math inline">\(n,m\)</span>
-<span class="math display">\[\begin{align*}
+<p><em>For integers <span class="math inline">\(n\geq 1, \; m\geq
+1\)</span> <span class="math display">\[\begin{align*}
       \Sigma^{1}\,{n}^{2m-1}
       = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k}{2k} \delta^{2k} 0^{2m}
 \end{align*}\]</span></em></p>
@@ -414,12 +415,13 @@ class="math inline">\(\sum_{j=1}^{n} \binom{j+k-1}{2k-1} =
 </div>
 </div>
 <p>Therefore,</p>
-<div id="theorem:multifold-sums-of-odd-powers" class="theorem">
+<div id="theorem:multifold-sums-of-odd-powers-in-central-differences"
+class="theorem">
 <p><strong>Theorem 8</strong> (Multifold sums of odd powers in central
 differences). <em></em></p>
 <div class="mdframed">
-<p><em>For positive integers <span class="math inline">\(n,m\)</span>
-and <span class="math inline">\(r\geq0\)</span> <span
+<p><em>For integers <span class="math inline">\(n \geq 1, \; m \geq
+1\)</span> and <span class="math inline">\(r\geq0\)</span> <span
 class="math display">\[\begin{align*}
       \Sigma^{r}\,{n}^{2m-1}
       = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1+r}{2k-1+r} \delta^{2k}
@@ -437,17 +439,19 @@ class="math inline">\(\sum_{j=1}^{n} \binom{j+k-1}{k-1} =
 </div>
 </div>
 <p>It is quite interesting to notice that theorem <a
-href="#theorem:multifold-sums-of-odd-powers" data-reference-type="eqref"
-data-reference="theorem:multifold-sums-of-odd-powers">[theorem:multifold-sums-of-odd-powers]</a>
+href="#theorem:multifold-sums-of-odd-powers-in-central-differences"
+data-reference-type="eqref"
+data-reference="theorem:multifold-sums-of-odd-powers-in-central-differences">[theorem:multifold-sums-of-odd-powers-in-central-differences]</a>
 is a central difference form of the formula of sums of odd-powers given
 by Donald Knuth in <em>Johann Faulhaber and sums of powers</em>,
 see <span class="citation" data-cites="knuth1993johann">(Knuth, Donald
 E. 1993)</span>.</p>
 <p>The reason is straightforward, instead of using Central factorial
 numbers of the second kind <span class="math inline">\(T(n,k)\)</span>,
-the theorem <a href="#theorem:multifold-sums-of-odd-powers"
+the theorem <a
+href="#theorem:multifold-sums-of-odd-powers-in-central-differences"
 data-reference-type="eqref"
-data-reference="theorem:multifold-sums-of-odd-powers">[theorem:multifold-sums-of-odd-powers]</a>
+data-reference="theorem:multifold-sums-of-odd-powers-in-central-differences">[theorem:multifold-sums-of-odd-powers-in-central-differences]</a>
 utilizes central differences explicitly, because</p>
 <div id="lem:central-factorial-numbers-of-the-second-kind"
 class="lemma">
@@ -457,13 +461,16 @@ kind). <em><span class="math display">\[\begin{align*}
 \end{align*}\]</span></em></p>
 </div>
 <p>Meaning that the Knuth’s formula</p>
-<div class="proposition">
+<div id="prop:multifold-sums-of-odd-powers-in-central-factorial-numbers"
+class="proposition">
 <p><strong>Proposition 10</strong> (Multifold sums of odd powers in
-central factorial numbers). </p>
+central factorial numbers). <em></em></p>
 <div class="mdframed">
-<p><em><span class="math display">\[\begin{align*}
-      \Sigma^{r}\,{n}^{2m-1} = \sum_{k=1}^{m} (2k-1)!
-\binom{n+k-1+r}{2k-1+r} T(2m,2k).
+<p><em>For integers <span class="math inline">\(n \geq 1, \; m \geq
+1\)</span> and <span class="math inline">\(r\geq0\)</span> <span
+class="math display">\[\begin{align*}
+      \Sigma^{r}\,{n}^{2m-1}
+      = \sum_{k=1}^{m} (2k-1)! \binom{n+k-1+r}{2k-1+r} T(2m,2k).
 \end{align*}\]</span></em></p>
 </div>
 </div>
@@ -478,11 +485,11 @@ is well discussed in <span class="citation"
 data-cites="steffensen1927interpolation carlitz1963divided riordan1968combinatorial">(Steffensen,
 Johan Frederik 1927; Carlitz and Riordan 1963; Riordan 1968)</span>.</p>
 <p>The non-zero central factorial numbers <span
-class="math inline">\(T(2m,2k)\)</span> are registered as <a
+class="math inline">\(T(2m,2k)\)</span> is the sequence <a
 href="https://oeis.org/A008957"><code>A008957</code></a> in the
 OEIS <span class="citation" data-cites="sloane2003line">(Sloane, Neil
-J.A. and others 2003)</span>. For example, <span
-class="math display">\[\begin{align*}
+J.A. and others 2003)</span>.</p>
+<p>For example, <span class="math display">\[\begin{align*}
   \Sigma^{1}\,{n}^{1} &amp;= \tbinom{n+1}{2} \\
   \Sigma^{1}\,{n}^{3} &amp;= 6 \tbinom{n+2}{4} + \tbinom{n+1}{2} \\
   \Sigma^{1}\,{n}^{5} &amp;= 120 \tbinom{n+3}{6} + 30 \tbinom{n+2}{4} +
@@ -511,6 +518,68 @@ using Newton’s formula and central differences. Additionally, we
 discussed the connection with the classical formulas for sums of
 powers <span class="citation" data-cites="knuth1993johann">(Knuth,
 Donald E. 1993)</span>.</p>
+<h1 id="mathematica-programs">Mathematica programs</h1>
+<p>Use the <em>Mathematica</em> package <span class="citation"
+data-cites="GitHubSourceCode">(Kolosov, Petro 2025)</span> to validate
+the results</p>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Mathematica Function</strong></th>
+<th style="text-align: left;"><strong>Validates / Prints</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>MultifoldSumOfPowersRecurrence[r, n, m]</code></td>
+<td style="text-align: left;">Computes <span
+class="math inline">\(\Sigma^{r}\,{n}^{m}\)</span></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateCentralFactorialsInTermsOfFalling[10]</code></td>
+<td style="text-align: left;">Validates Proposition <a
+href="#prop:central-factorials-in-terms-of-falling"
+data-reference-type="eqref"
+data-reference="prop:central-factorials-in-terms-of-falling">[prop:central-factorials-in-terms-of-falling]</a></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateBinomialFormOfCentralFactorials[10]</code></td>
+<td style="text-align: left;">Validates Proposition <a
+href="#prop:binomial-form-of-central-factorials"
+data-reference-type="eqref"
+data-reference="prop:binomial-form-of-central-factorials">[prop:binomial-form-of-central-factorials]</a></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateNewtonsFormulaForPowersInZero[20]</code></td>
+<td style="text-align: left;">Validates Proposition <a
+href="#prop:newtons-formula-for-powers-in-zero"
+data-reference-type="eqref"
+data-reference="prop:newtons-formula-for-powers-in-zero">[prop:newtons-formula-for-powers-in-zero]</a></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateOrdinarySumsOfOddPowersInCentralDifferences[20]</code></td>
+<td style="text-align: left;">Validates Prop. <a
+href="#prop:ordinary-sums-of-odd-powers-in-central-differences"
+data-reference-type="eqref"
+data-reference="prop:ordinary-sums-of-odd-powers-in-central-differences">[prop:ordinary-sums-of-odd-powers-in-central-differences]</a></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateMultifoldSumsOfOddPowersInCentralDifferences[5]</code></td>
+<td style="text-align: left;">Validates Thm. <a
+href="#theorem:multifold-sums-of-odd-powers-in-central-differences"
+data-reference-type="eqref"
+data-reference="theorem:multifold-sums-of-odd-powers-in-central-differences">[theorem:multifold-sums-of-odd-powers-in-central-differences]</a></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><span><strong>Metadata</strong></span></p>
 <ul>
 <li><p><strong>Version:</strong> <code>Local-0.1.0</code></p></li>
@@ -554,6 +623,12 @@ Knuth, Donald E. 1993. <span>“<span class="nocase">Johann Faulhaber and
 sums of powers</span>.”</span> <em><span class="nocase">Mathematics of
 Computation</span></em> 61 (203): 277–94. <a
 href="https://arxiv.org/abs/math/9207222">https://arxiv.org/abs/math/9207222</a>.
+</div>
+<div id="ref-GitHubSourceCode" class="csl-entry" role="listitem">
+Kolosov, Petro. 2025. <em><span class="nocase">Source code for Central
+Finite Differences and Newton Formula manuscript</span></em>. <a
+href="https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula"
+class="uri">Https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula</a>.
 </div>
 <div id="ref-kolosov_2026_18135998" class="csl-entry" role="listitem">
 Kolosov, Petro. 2026a. <em>Newton’s Interpolation Formula and Sums of
