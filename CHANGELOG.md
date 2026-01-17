@@ -5,13 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
-## [1.x] - In progress
+## [1.3.0] - 17-Jan-2026
 
 ### Changed
 
 - Mathematica programs
 - Updates in README
-- Edits in bibliogrpahy
+- Edits in bibliography
+- Fix links in HTML
+- Flow improvements
+- Configure vscode
+- More precise definitions
+- Boxed important formulas
+- Add Mathematica documentation
+- Update abstract
+- Update conclusions
 
 ## [1.2.1] - 07-Jan-2026
 

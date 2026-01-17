@@ -2,7 +2,12 @@
 
 ## Abstract
 
-In this manuscript we derive formula for multifold sums of powers using Newton's formula and central differences.
+In this manuscript we derive formula for multifold sums of powers
+using Newton's formula in central differences.
+Furthermore, we show that famous Knuth's formula for
+multifold sums of odd powers originates from Newton's interpolation formula
+in central differences.
+
 
 ## Related projects
 
