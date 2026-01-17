@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{kolosov_2026_18135998}
 Petro Kolosov.
@@ -25,6 +25,14 @@ Petro Kolosov.
 \newblock
   \url{https://archive.org/details/bub_gb_KaAIAAAAIAAJ/page/466/mode/2up}.
 
+\bibitem{butzer1989central}
+Paul~Leo Butzer, K.~Schmidt, E.L. Stark, and L.~Vogt.
+\newblock Central factorial numbers; their main properties and some
+  applications.
+\newblock {\em Numerical Functional Analysis and Optimization},
+  10(5-6):419--488, 1989.
+\newblock \url{https://doi.org/10.1080/01630568908816313}.
+
 \bibitem{steffensen1927interpolation}
 {Steffensen, Johan Frederik}.
 \newblock {\em Interpolation}.
@@ -49,5 +57,13 @@ John Riordan.
 {Sloane, Neil J.A. and others}.
 \newblock {The on-line encyclopedia of integer sequences}.
 \newblock \url{https://oeis.org/}, 2003.
+
+\bibitem{GitHubSourceCode}
+{Kolosov, Petro}.
+\newblock {Source code for Central Finite Differences and Newton Formula
+  manuscript}.
+\newblock
+  \url{https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula},
+  2025.
 
 \end{thebibliography}

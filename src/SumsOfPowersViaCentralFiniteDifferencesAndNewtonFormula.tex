@@ -1,11 +1,8 @@
 \documentclass[12pt,letterpaper,oneside,reqno]{amsart}
-\usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{float}
-\usepackage{mathrsfs}
-\usepackage{colonequals}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage[unicode,pdfpagelabels,hyperindex,colorlinks=true,linkcolor=red,urlcolor=blue,citecolor=red]{hyperref}
 \usepackage{graphicx}
@@ -13,7 +10,6 @@
 \usepackage{array}
 \usepackage{enumitem}
 \usepackage{etoolbox}
-\usepackage{physics}
 \usepackage{booktabs}
 \usepackage{url}
 \usepackage{mdframed}
@@ -24,12 +20,7 @@
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \raggedbottom
 
-\newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
-\newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
 \newcommand \bernoulli [2][B] {{#1}\sb{#2}}
-
-%\newcommand \anglePower [2]{\langle #1 \rangle \sp{#2}}
-%\newcommand \curvePower [2]{\{#1\}\sp{#2}}
 
 % Falling, rising and central factorials
 \newcommand{\fallingFactorial}[2]{\left(#1\right)_{#2}}
@@ -42,9 +33,9 @@
 % free foot note
 \let\svthefootnote\thefootnote
 \newcommand\freefootnote[1]{%
-    \let\thefootnote\relax%
-    \footnotetext{#1}%
-    \let\thefootnote\svthefootnote%
+  \let\thefootnote\relax%
+  \footnotetext{#1}%
+  \let\thefootnote\svthefootnote%
 }
 
 \newcommand{\KnuthRFoldSum}[3]{\Sigma^{#1}\,{#2}^{#3}}
@@ -80,31 +71,33 @@
 
 \begin{document}
 
-    \begin{abstract}
-        \input{sections/abstract}
-    \end{abstract}
+\begin{abstract}
+  \input{sections/abstract}
+\end{abstract}
 
-    \maketitle
+\maketitle
 
-    \addcontentsline{toc}{section}{Abstract}
+\tableofcontents
 
-    \tableofcontents
+\freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18096789}}
 
-    \freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18096789}}
-
-
-    \section{Introduction and main results} \label{sec:introduction}
-    \input{sections/01_introduction}
+\section{Introduction}
+\input{sections/01_introduction}
 
 
-    \section*{Conclusions}
-    \input{sections/conclusions}
+\section*{Conclusions}
+\input{sections/conclusions}
 
-    \bibliographystyle{unsrt}
-    \bibliography{SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula}
+\bibliographystyle{unsrt}
+\bibliography{SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula}
 
-    \clearpage
+\clearpage
 
-    \input{metadata/footer}
+\section{Mathematica programs} \label{sec:mathematica}
+\input{sections/mathematica_programs.tex}
+
+\clearpage
+
+\input{metadata/footer}
 
 \end{document}
