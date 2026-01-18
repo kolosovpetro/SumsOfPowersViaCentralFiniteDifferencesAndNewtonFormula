@@ -40,6 +40,10 @@ CenteredOrdinarySumsOfPowers::usage=""
 
 ValidateCenteredOrdinarySumsOfPowers::usage=""
 
+CenteredDecompositionOfPowerSums::usage=""
+
+ValidateCenteredDecompositionOfPowerSums::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -97,7 +101,7 @@ EvenPowersInCentralBinomialForm[n_, m_, t_] := t^(2m) + Sum[(n-t)/ (2k) * Binomi
 
 ValidateBinomialRefactorization[max_] := Table[n*Binomial[n+r, m]-((m+1)*Binomial[n+r, m+1] - (r-m)* Binomial[n+r,m]), {n, 0, max}, {r, 0, max}, {m, 0, max}] //Flatten
 
-ValidateCentralBinomialRefactorization[max_] := Table[j*Binomial[j-t+k/2-1,k-1]-(k*Binomial[j-t+k/2-1,k]-(-t-k/2)*Binomial[j-t+k/2-1,k-1]),{j,0,max},{t,0,max},{k,0,max}]//Flatten
+ValidateCentralBinomialRefactorization[max_] := Table[j*Binomial[j-t+k/2-1,k-1]-(k*Binomial[j-t+k/2-1,k]+(t+k/2)*Binomial[j-t+k/2-1,k-1]),{j,0,max},{t,0,max},{k,0,max}]//Flatten
 
 ClearAll[CenteredOrdinarySumsOfPowers]
 
@@ -120,6 +124,28 @@ CenteredOrdinarySumsOfPowers[n_, m_, t_] :=
   ];
   
 ValidateCenteredOrdinarySumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - CenteredOrdinarySumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+CenteredDecompositionOfPowerSums[n_, m_, t_] :=
+  Sum[t^m, {j, 1, n}] +
+  Sum[
+    CentralDifference[t, m, k]/k *
+      (
+        k*
+        Sum[
+          Binomial[j - t + k/2 - 1, k],
+          {j, 1, n}
+        ]
+        + (k/2)*
+        Sum[
+          Binomial[j - t + k/2 - 1, k - 1],
+          {j, 1, n}
+        ]
+      ),
+    {k, 1, m}
+  ];
+  
+ValidateCenteredDecompositionOfPowerSums[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - CenteredDecompositionOfPowerSums[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
 
 (*END: Definitions *)
 

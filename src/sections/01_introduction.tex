@@ -342,7 +342,10 @@ yields
     \binom{j+-t+\frac{k}{2} -1}{k-1} \\
     &= k \binom{j-t+\frac{k}{2}-1}{k}
     - \left [-t-\frac{k}{2} \right ]
-    \binom{j-t+\frac{k}{2}-1}{k-1}
+    \binom{j-t+\frac{k}{2}-1}{k-1} \\
+    &= k \binom{j-t+\frac{k}{2}-1}{k}
+    + \left [t+\frac{k}{2} \right ]
+    \binom{j-t+\frac{k}{2}-1}{k-1} \\
   \end{align*}
 \end{proposition}
 Thus, formula for sums of powers yields
@@ -351,37 +354,34 @@ Thus, formula for sums of powers yields
   &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
   \Bigg [
     \sum_{j=1}^{n} \left \{ k \binom{j-t+\frac{k}{2}-1}{k}
-      - \left [-t-\frac{k}{2} \right ]
+      + \left [t+\frac{k}{2} \right ]
     \binom{j-t+\frac{k}{2}-1}{k-1} \right \} \\
     &- t \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k-1}
   \Bigg ] \\
   &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
   \Bigg [
     \left \{ k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
-      - \left [-t-\frac{k}{2} \right ]
+      + \left [t+\frac{k}{2} \right ]
     \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right \} \\
     &- t \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k-1}
   \Bigg ] \\
-  % &= t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
-  % \Bigg [
-  %   k
-  %   \left( \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k} \right)
-  %   - \left [-t-\frac{k}{2} \right ]
-  %   \left( \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right)
-  %   - t \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k-1}
-  % \Bigg ]
+  &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+  \Bigg [
+    \left \{ k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+      + \frac{k}{2}
+    \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right \}
+  \Bigg ]
 \end{align*}
-% To maintain parity of the arguments $m,k$ of central differences
-% $\delta^{k} t^m$, we set $m \rightarrow 2m$ and let degree $k$ to runs
-% over even values, so that $\delta^{k} t^m \neq 0$.
-% Therefore,
-
-% \begin{proposition}[Even powers in central binomial form]
-%   \label{prop:even-powers-in-central-binomial-form}
-%   For integers $n,t$ and $m \geq 0$
-%   \begin{align*}
-%     n^{2m}
-%     = t^{2m} + \sum_{k=1}^{m} \frac{n-t}{2k}
-%     \binom{n-t+k-1}{2k-1} \delta^{2k} t^{2m}
-%   \end{align*}
-% \end{proposition}
+Therefore,
+\begin{proposition}[Centered decomposition of power sums]
+  \label{prop:centered-decomposition-of-power-sums}
+  For integers $t, \; m\geq 0, \; n \geq 0$
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{m} = \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+    \left [
+      k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+      + \frac{k}{2}
+      \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1}
+    \right ]
+  \end{align*}
+\end{proposition}
