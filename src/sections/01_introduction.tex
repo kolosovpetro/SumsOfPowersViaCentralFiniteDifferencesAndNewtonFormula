@@ -286,12 +286,15 @@ Thus, for powers we have identity
 \end{proposition}
 
 By binomial form of central
-factorials~\eqref{prop:binomial-form-of-central-factorials},
-we have for $k \geq 1$
-\begin{align*}
-  \frac{\centralFactorial{(n-t)}{k}}{k!}
-  = \frac{n-t}{k} \binom{n-t+\frac{k}{2}-1}{k-1}
-\end{align*}
+factorials~\eqref{prop:binomial-form-of-central-factorials}, we have
+\begin{proposition}[Double binomial form of central factorials]
+  For integers $n$ and $k\geq 1$
+  \begin{align*}
+    \frac{\centralFactorial{n}{k}}{k!}
+    = \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1}
+    = \binom{n+\frac{k}{2}}{k} + \binom{n+\frac{k}{2}-1}{k}
+  \end{align*}
+\end{proposition}
 Thus,
 \begin{proposition}[Powers in central binomial form]
   \label{prop:powers-in-central-binomial-form}
@@ -308,12 +311,64 @@ Now we expand the brackets in central binomial form above
   = t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
   \left[ n \binom{n-t+\frac{k}{2}-1}{k-1} - t \binom{n-t+\frac{k}{2}-1}{k-1} \right]
 \end{align*}
-Thus, ordinary sum of powers is
+Hence, we get ordinary sum of powers
+\begin{corollary}[Centered ordinary sums of powers]
+  For integers $t, \; m\geq 0, \; n \geq 1$
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{m}
+    = \sum_{j=1}^n t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+    \left[ \sum_{j=1}^n j \binom{j-t+\frac{k}{2}-1}{k-1}
+    - t \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right]
+  \end{align*}
+\end{corollary}
+Now we notice that
+\begin{proposition}[Binomial re-factorization]
+  \label{prop:binomial-refactorization}
+  For integers $n\geq 0, \; r \geq 0, \; m\geq 0$
+  \begin{align*}
+    n \binom{n+r}{m} = (m+1) \binom{n+r}{m+1} - (r-m) \binom{n+r}{m}
+  \end{align*}
+\end{proposition}
+Thus, by setting $n=j$ and $r=-t+\frac{k}{2} -1$ and $m=k-1$
+yields
+\begin{proposition}[Central binomial re-factorization]
+  \label{prop:central-binomial-refactorization}
+  For integers $j\geq 0, \; t \geq 0, \; k\geq 0$
+  \begin{align*}
+    j \binom{j-t+\frac{k}{2} -1}{k-1}
+    &= (k-1+1) \binom{j-t+\frac{k}{2} -1}{k-1+1}
+    - \left [-t+\frac{k}{2} -1-(k-1)\right ]
+    \binom{j+-t+\frac{k}{2} -1}{k-1} \\
+    &= k \binom{j-t+\frac{k}{2}-1}{k}
+    - \left [-t-\frac{k}{2} \right ]
+    \binom{j-t+\frac{k}{2}-1}{k-1}
+  \end{align*}
+\end{proposition}
+Thus, formula for sums of powers yields
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
-  = t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
-  \left[ \sum_{j=1}^n j \binom{j-t+\frac{k}{2}-1}{k-1}
-  - t \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right]
+  &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+  \Bigg [
+    \sum_{j=1}^{n} \left \{ k \binom{j-t+\frac{k}{2}-1}{k}
+      - \left [-t-\frac{k}{2} \right ]
+    \binom{j-t+\frac{k}{2}-1}{k-1} \right \} \\
+    &- t \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k-1}
+  \Bigg ] \\
+  &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+  \Bigg [
+    \left \{ k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+      - \left [-t-\frac{k}{2} \right ]
+    \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right \} \\
+    &- t \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k-1}
+  \Bigg ] \\
+  % &= t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+  % \Bigg [
+  %   k
+  %   \left( \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k} \right)
+  %   - \left [-t-\frac{k}{2} \right ]
+  %   \left( \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right)
+  %   - t \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k-1}
+  % \Bigg ]
 \end{align*}
 % To maintain parity of the arguments $m,k$ of central differences
 % $\delta^{k} t^m$, we set $m \rightarrow 2m$ and let degree $k$ to runs
