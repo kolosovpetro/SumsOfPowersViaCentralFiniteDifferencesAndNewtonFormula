@@ -46,6 +46,10 @@ ValidateCenteredDecompositionOfPowerSums::usage=""
 
 ValidateCenteredHockeyStickIdentity::usage=""
 
+ClosedFormOfCenteredSumsOfPowers::usage=""
+
+ValidateClosedFormOfCenteredSumsOfPowers::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -149,6 +153,17 @@ CenteredDecompositionOfPowerSums[n_, m_, t_] :=
 ValidateCenteredDecompositionOfPowerSums[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - CenteredDecompositionOfPowerSums[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
 ValidateCenteredHockeyStickIdentity[max_] := Table[Sum[Binomial[j-t+k/2-1,k],{j,1,n}]-(Binomial[n-t+k/2,k+1]-Binomial[-t+k/2,k+1]),{n,0,max},{t,0,max},{k,0,max}]//Flatten
 
+ClosedFormOfCenteredSumsOfPowers[n_, m_, t_] := 
+  Sum[t^m, {j, 1, n}] +
+  Sum[
+    CentralDifference[t, m, k]/k *
+      ( k*(Binomial[n - t + k/2, k + 1] - Binomial[-t + k/2, k + 1]) +
+        (k/2)*(Binomial[n - t + k/2, k] - Binomial[-t + k/2, k])
+      ),
+    {k, 1, m}
+  ];
+  
+ValidateClosedFormOfCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - ClosedFormOfCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
 (*END: Definitions *)
 
 End[ ]

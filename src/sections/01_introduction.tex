@@ -414,3 +414,21 @@ Therefore, by setting $a=-t+\frac{k}{2}$ and $b=n-t-\frac{k}{2}-1$ yields
     = \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1}
   \end{align*}
 \end{proposition}
+Thus, closed form of centered sums of powers yields
+\begin{theorem}[Closed form of centered sums of powers]
+  \label{theorem:closed-form-of-centered-sums-of-powers}
+  \begin{mdframed}
+    For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+    \begin{align*}
+      \KnuthRFoldSum{1}{n}{m} = \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+      \left [
+        k \left( \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1} \right)
+        + \frac{k}{2}
+        \left( \binom{n-t+\frac{k}{2}}{k} - \binom{-t+\frac{k}{2}}{k} \right)
+      \right ].
+    \end{align*}
+  \end{mdframed}
+\end{theorem}
+Continuing similarly, we can derive formula for multifold sums of powers
+by using centered hockey stick
+identity~\eqref{prop:centered-hockey-stick-identity} repeatedly.
