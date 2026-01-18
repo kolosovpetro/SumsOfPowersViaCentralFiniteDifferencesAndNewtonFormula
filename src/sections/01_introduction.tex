@@ -285,16 +285,16 @@ Thus, for powers we have identity
   \end{mdframed}
 \end{proposition}
 
-By binomial form of central
-factorials~\eqref{prop:binomial-form-of-central-factorials}, we have
-\begin{proposition}[Double binomial form of central factorials]
-  For integers $n$ and $k\geq 1$
-  \begin{align*}
-    \frac{\centralFactorial{n}{k}}{k!}
-    = \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1}
-    = \binom{n+\frac{k}{2}}{k} + \binom{n+\frac{k}{2}-1}{k}
-  \end{align*}
-\end{proposition}
+% By binomial form of central
+% factorials~\eqref{prop:binomial-form-of-central-factorials}, we have
+% \begin{proposition}[Double binomial form of central factorials]
+%   For integers $n$ and $k\geq 1$
+%   \begin{align*}
+%     \frac{\centralFactorial{n}{k}}{k!}
+%     = \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1}
+%     = \binom{n+\frac{k}{2}}{k} + \binom{n+\frac{k}{2}-1}{k}
+%   \end{align*}
+% \end{proposition}
 Thus,
 \begin{proposition}[Powers in central binomial form]
   \label{prop:powers-in-central-binomial-form}
@@ -313,7 +313,8 @@ Now we expand the brackets in central binomial form above
 \end{align*}
 Hence, we get ordinary sum of powers
 \begin{corollary}[Centered ordinary sums of powers]
-  For integers $t, \; m\geq 0, \; n \geq 1$
+  \label{cor:centered-ordinary-sums-of-powers}
+  For integers $t, \; m\geq 0, \; n \geq 0$
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
     = \sum_{j=1}^n t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
