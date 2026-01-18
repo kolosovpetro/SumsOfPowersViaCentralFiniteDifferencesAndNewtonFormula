@@ -1,14 +1,18 @@
 In this manuscript we derive formula for multifold sums of powers
 using Newton's formula and central differences.
 
-The idea to derive sums of powers using difference operator and Newton's series
-is quite generic.
-Thus, formulas for sums of powers using forward and backward differences
-can be found in the works~\cite{kolosov_2026_18135998, kolosov_2026_18136163}.
+In this manuscript, we derive formulas for multifold sums of
+powers using Newton's formula and central finite differences.
+
+The idea of deriving sums of powers using difference operators
+and Newton's series is quite generic. Formulas for sums
+of powers using forward and backward differences
+can be found in
+the works~\cite{kolosov_2026_18135998, kolosov_2026_18136163}.
 
 We define the recurrence for multifold sums of powers introduced
 by Donald Knuth in~\cite{knuth1993johann},
-which we utilize throughout the paper.
+which we use throughout the paper.
 
 \begin{proposition} [Multifold sums of powers recurrence]
   For non-negative integers $r,n,m$
@@ -105,7 +109,7 @@ Therefore,
   \end{proof}
 \end{proposition}
 
-Which yields Newton's formula for powers, in terms of central differences.
+Which yields Newton's formula for powers, in terms of central differences
 \begin{proposition} [Newton's formula for powers in zero]
   \label{prop:newtons-formula-for-powers-in-zero}
   \begin{mdframed}
@@ -139,7 +143,7 @@ such that finite differences $\delta^{k} 0^m$ are non-zero
   \delta^{k} 0^m = 0,
   \quad &\mathrm{whether} \quad m\pmod{2} \neq k\pmod{2}.
 \end{align*}
-
+Thus, for odd powers, only even differences contribute.
 By setting $m \rightarrow 2m$ we get
 \begin{align*}
   n^{2m-1}
@@ -218,7 +222,7 @@ because
   \end{align*}
 \end{lemma}
 
-Meaning that the Knuth's formula
+Meaning that the Knuth's formula for sums of odd powers
 
 \begin{proposition}[Multifold sums of odd powers in central factorial numbers]
   \label{prop:multifold-sums-of-odd-powers-in-central-factorial-numbers}
@@ -333,7 +337,7 @@ yields
     j \binom{j-t+\frac{k}{2} -1}{k-1}
     &= (k-1+1) \binom{j-t+\frac{k}{2} -1}{k-1+1}
     - \left [-t+\frac{k}{2} -1-(k-1)\right ]
-    \binom{j+-t+\frac{k}{2} -1}{k-1} \\
+    \binom{j-t+\frac{k}{2} -1}{k-1} \\
     &= k \binom{j-t+\frac{k}{2}-1}{k}
     - \left [-t-\frac{k}{2} \right ]
     \binom{j-t+\frac{k}{2}-1}{k-1} \\

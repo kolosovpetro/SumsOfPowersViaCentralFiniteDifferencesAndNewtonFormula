@@ -227,16 +227,18 @@ main results.</p>
 results</h1>
 <p>In this manuscript we derive formula for multifold sums of powers
 using Newton’s formula and central differences.</p>
-<p>The idea to derive sums of powers using difference operator and
-Newton’s series is quite generic. Thus, formulas for sums of powers
-using forward and backward differences can be found in the works <span
+<p>In this manuscript, we derive formulas for multifold sums of powers
+using Newton’s formula and central finite differences.</p>
+<p>The idea of deriving sums of powers using difference operators and
+Newton’s series is quite generic. Formulas for sums of powers using
+forward and backward differences can be found in the works <span
 class="citation"
 data-cites="kolosov_2026_18135998 kolosov_2026_18136163">(Kolosov 2026a,
 2026b)</span>.</p>
 <p>We define the recurrence for multifold sums of powers introduced by
 Donald Knuth in <span class="citation"
 data-cites="knuth1993johann">(Knuth, Donald E. 1993)</span>, which we
-utilize throughout the paper.</p>
+use throughout the paper.</p>
 <div class="proposition">
 <p><strong>Proposition 1</strong> (Multifold sums of powers recurrence).
 <em>For non-negative integers <span class="math inline">\(r,n,m\)</span>
@@ -338,7 +340,7 @@ data-reference="prop:central-factorials-in-terms-of-falling">[prop:central-facto
 </div>
 </div>
 <p>Which yields Newton’s formula for powers, in terms of central
-differences.</p>
+differences</p>
 <div id="prop:newtons-formula-for-powers-in-zero" class="proposition">
 <p><strong>Proposition 6</strong> (Newton’s formula for powers in zero).
 <em></em></p>
@@ -384,9 +386,9 @@ non-zero <span class="math display">\[\begin{align*}
   \quad &amp;\mathrm{whether} \quad m\pmod{2} = k\pmod{2}, \\
   \delta^{k} 0^m = 0,
   \quad &amp;\mathrm{whether} \quad m\pmod{2} \neq k\pmod{2}.
-\end{align*}\]</span></p>
-<p>By setting <span class="math inline">\(m \rightarrow 2m\)</span> we
-get <span class="math display">\[\begin{align*}
+\end{align*}\]</span> Thus, for odd powers, only even differences
+contribute. By setting <span class="math inline">\(m \rightarrow
+2m\)</span> we get <span class="math display">\[\begin{align*}
   n^{2m-1}
   = \sum_{k=1}^{2m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k}
 0^{2m}
@@ -470,7 +472,7 @@ kind). <em><span class="math display">\[\begin{align*}
     k! T(n, k) = \delta^k 0^n
 \end{align*}\]</span></em></p>
 </div>
-<p>Meaning that the Knuth’s formula</p>
+<p>Meaning that the Knuth’s formula for sums of odd powers</p>
 <div id="prop:multifold-sums-of-odd-powers-in-central-factorial-numbers"
 class="proposition">
 <p><strong>Proposition 10</strong> (Multifold sums of odd powers in
@@ -602,7 +604,7 @@ k\geq 0\)</span> <span class="math display">\[\begin{align*}
     j \binom{j-t+\frac{k}{2} -1}{k-1}
     &amp;= (k-1+1) \binom{j-t+\frac{k}{2} -1}{k-1+1}
     - \left [-t+\frac{k}{2} -1-(k-1)\right ]
-    \binom{j+-t+\frac{k}{2} -1}{k-1} \\
+    \binom{j-t+\frac{k}{2} -1}{k-1} \\
     &amp;= k \binom{j-t+\frac{k}{2}-1}{k}
     - \left [-t-\frac{k}{2} \right ]
     \binom{j-t+\frac{k}{2}-1}{k-1} \\
