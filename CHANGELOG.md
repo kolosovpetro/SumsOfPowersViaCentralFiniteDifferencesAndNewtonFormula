@@ -11,10 +11,11 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Add initial release date to metadata
 - Add initial release date to README
-- Add simplified formula for centered sums
+- Add simplified formula for centered sums of powers
 - Add formula for double centered sums
 - Add Mathematica programs
-- Add formula for multifold sums of powers
+- Add formula for multifold centered sums of powers
+- Add formula for binomial centered sums of powers
 
 ## [1.4.0] - 18-Jan-2026
 

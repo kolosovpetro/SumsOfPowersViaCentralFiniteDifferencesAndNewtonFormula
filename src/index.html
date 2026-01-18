@@ -219,7 +219,8 @@ famous Knuth’s formula for multifold sums of odd powers originates from
 Newton’s interpolation formula in central differences.</p>
 </div>
 </header>
-<h1 id="introduction">Introduction</h1>
+<h1 id="introduction-and-main-results">Introduction and main
+results</h1>
 <p>In this manuscript we derive formula for multifold sums of powers
 using Newton’s formula and central differences.</p>
 <p>The idea to derive sums of powers using difference operator and
@@ -555,8 +556,9 @@ class="math display">\[\begin{align*}
 class="math inline">\(m \geq 0\)</span> <span
 class="math display">\[\begin{align*}
     n^m
-    &amp;= \frac{(n-t)^{[0]}}{0!} \delta^{0} t^m + \sum_{k=1}^{m}
-\frac{n-t}{k} \binom{n+t+\frac{k}{2}-1}{k-1} \delta^{k} t^m \\
+    &amp;= \frac{(n-t)^{[0]}}{0!} \delta^{0} t^m
+    + \sum_{k=1}^{m} \frac{n-t}{k} \binom{n+t+\frac{k}{2}-1}{k-1}
+\delta^{k} t^m \\
     &amp;= t^m + \sum_{k=1}^{m} (n-t) \binom{n-t+\frac{k}{2}-1}{k-1}
 \frac{\delta^{k} t^m}{k}
 \end{align*}\]</span></em></p>
@@ -633,8 +635,8 @@ class="math display">\[\begin{align*}
 <p><strong>Proposition 17</strong> (Centered decomposition of power
 sums). <em>For integers <span class="math inline">\(t, \; m\geq 0, \; n
 \geq 0\)</span> <span class="math display">\[\begin{align*}
-    \Sigma^{1}\,{n}^{m} = \sum_{j=1}^{n} t^m + \sum_{k=1}^{m}
-\frac{\delta^{k} t^m}{k}
+    \Sigma^{1}\,{n}^{m} = \sum_{j=1}^{n} t^m
+    + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
     \left [
       k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
       + \frac{k}{2}
@@ -686,8 +688,8 @@ class="theorem">
 <p><em>For integers <span class="math inline">\(n\geq 0, \; m \geq
 0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
 <span class="math display">\[\begin{align*}
-      \Sigma^{1}\,{n}^{m} = \sum_{j=1}^{n} t^m + \sum_{k=1}^{m}
-\frac{\delta^{k} t^m}{k}
+      \Sigma^{1}\,{n}^{m} = \sum_{j=1}^{n} t^m
+      + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
       \left [
         k \left( \binom{n-t+\frac{k}{2}}{k+1} -
 \binom{-t+\frac{k}{2}}{k+1} \right)
@@ -776,11 +778,14 @@ powers, we have <span class="math display">\[\begin{align*}
   =  t^m \Sigma^{2}\,{n}^{0} \\
   &amp;+ \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
   \left[
-    \sum_{j=1}^{n} \left( \binom{j-t+\frac{k}{2}+1}{k+1} +
-\binom{j-t+\frac{k}{2}}{k+1} \right)
+    \sum_{j=1}^{n}
+    \left( \binom{j-t+\frac{k}{2}+1}{k+1} + \binom{j-t+\frac{k}{2}}{k+1}
+    \right)
     -
-    \left( \binom{-t+\frac{k}{2}}{k+1} \Sigma^{1}\,{n}^{0}
-    + \binom{-t+\frac{k}{2}+1}{k+1} \Sigma^{1}\,{n}^{0} \right)
+    \left(
+      \binom{-t+\frac{k}{2}}{k+1} \Sigma^{1}\,{n}^{0}
+      + \binom{-t+\frac{k}{2}+1}{k+1} \Sigma^{1}\,{n}^{0}
+    \right)
   \right]
 \end{align*}\]</span> Thus, by generalized hockey stick identity <a
 href="#prop:generalized-hockey-stick-identity"
@@ -863,6 +868,87 @@ follows</p>
           +
           \binom{-t+\frac{k}{2}+0}{k+1}
         \right] \Sigma^{1}\,{n}^{0}
+      \Bigg \}.
+\end{align*}\]</span></em></p>
+</div>
+</div>
+<p>Therefore, by continuing similarly, we can derive formula for <span
+class="math inline">\(r-\)</span>fold sums of powers by using centered
+hockey stick identity <a href="#prop:centered-hockey-stick-identity"
+data-reference-type="eqref"
+data-reference="prop:centered-hockey-stick-identity">[prop:centered-hockey-stick-identity]</a>
+repeatedly. We have</p>
+<div id="theorem:multifold-centered-sums-of-powers" class="theorem">
+<p><strong>Theorem 23</strong> (Multifold centered sums of powers).
+<em></em></p>
+<div class="mdframed">
+<p><em>For integers <span class="math inline">\(n\geq 0, \; m \geq
+0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
+<span class="math display">\[\begin{align*}
+      \Sigma^{r}\,{n}^{m}
+      &amp;= t^m \Sigma^{r}\,{n}^{0}
+      + \sum_{k=1}^{m} \frac{\delta^{k} t^{m}}{2}
+      \Bigg \{
+        \left[
+          \binom{n-t+\frac{k}{2}+r}{k+r}
+          +
+          \binom{n-t+\frac{k}{2}+r-1}{k+r}
+        \right] \\
+        &amp;-
+        \sum_{s=0}^{r-1}
+        \left[
+          \binom{-t+\frac{k}{2} + r -s}{k+r-s} +
+          \binom{-t+\frac{k}{2} + r -s-1}{k+r-s}
+        \right] \Sigma^{s}\,{n}^{0}
+      \Bigg \}.
+\end{align*}\]</span></em></p>
+</div>
+</div>
+<p>Now we notice that</p>
+<div id="prop:multifold-sum-of-zero-powers" class="proposition">
+<p><strong>Proposition 24</strong> (Multifold sum of zero powers).
+<em></em></p>
+<div class="mdframed">
+<p><em>For integers <span class="math inline">\(r\)</span> and <span
+class="math inline">\(n\)</span> <span
+class="math display">\[\begin{align*}
+      \Sigma^{r}\,{n}^{0} = \binom{r+n-1}{r}
+\end{align*}\]</span></em></p>
+</div>
+<div class="proof">
+<p><em><em>Proof.</em> By hockey stick identity <span
+class="math inline">\(\sum_{k=0}^{t} \binom{j+k}{j} =
+\binom{j+t+1}{j+1}\)</span>. ◻</em></p>
+</div>
+</div>
+<p>Thus, binomial form of multifold centered sums of powers <a
+href="#theorem:multifold-centered-sums-of-powers"
+data-reference-type="eqref"
+data-reference="theorem:multifold-centered-sums-of-powers">[theorem:multifold-centered-sums-of-powers]</a>
+follows</p>
+<div id="prop:binomial-form-of-multifold-centered-sums-of-powers"
+class="proposition">
+<p><strong>Proposition 25</strong> (Binomial form of multifold centered
+sums of powers). <em></em></p>
+<div class="mdframed">
+<p><em>For integers <span class="math inline">\(n\geq 0, \; m \geq
+0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
+<span class="math display">\[\begin{align*}
+      \Sigma^{r}\,{n}^{m}
+      &amp;= \binom{r+n-1}{r} t^m
+      + \sum_{k=1}^{m} \frac{\delta^{k} t^{m}}{2}
+      \Bigg \{
+        \left[
+          \binom{n-t+\frac{k}{2}+r}{k+r}
+          +
+          \binom{n-t+\frac{k}{2}+r-1}{k+r}
+        \right] \\
+        &amp;-
+        \sum_{s=0}^{r-1}
+        \left[
+          \binom{-t+\frac{k}{2} + r -s}{k+r-s} +
+          \binom{-t+\frac{k}{2} + r -s-1}{k+r-s}
+        \right] \binom{s+n-1}{s}
       \Bigg \}.
 \end{align*}\]</span></em></p>
 </div>
@@ -1017,6 +1103,41 @@ style="text-align: left;"><code>ValidateDoubleCenteredSumsOfPowers[10]</code></t
 <td style="text-align: left;">Validates Prop. <a
 href="#prop:double-centered-sums-of-powers" data-reference-type="eqref"
 data-reference="prop:double-centered-sums-of-powers">[prop:double-centered-sums-of-powers]</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="center">
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Mathematica Function</strong></th>
+<th style="text-align: left;"><strong>Validates / Prints</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td
+style="text-align: left;"><code>ValidateMultifoldCenteredSumsOfPowers[5]</code></td>
+<td style="text-align: left;">Validates Theorem <a
+href="#theorem:multifold-centered-sums-of-powers"
+data-reference-type="eqref"
+data-reference="theorem:multifold-centered-sums-of-powers">[theorem:multifold-centered-sums-of-powers]</a></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateMultifoldSumOfZeroPowers[10]</code></td>
+<td style="text-align: left;">Validates Proposition <a
+href="#prop:multifold-sum-of-zero-powers" data-reference-type="eqref"
+data-reference="prop:multifold-sum-of-zero-powers">[prop:multifold-sum-of-zero-powers]</a></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateBinomialMultifoldCenteredSumsOfPowers[5]</code></td>
+<td style="text-align: left;">Validates Proposition <a
+href="#prop:binomial-form-of-multifold-centered-sums-of-powers"
+data-reference-type="eqref"
+data-reference="prop:binomial-form-of-multifold-centered-sums-of-powers">[prop:binomial-form-of-multifold-centered-sums-of-powers]</a></td>
 </tr>
 </tbody>
 </table>
