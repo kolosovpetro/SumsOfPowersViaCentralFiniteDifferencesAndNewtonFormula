@@ -40,6 +40,7 @@ in central differences.
 - Steffensen, J. F. (1927). Interpolation. Williams & Wilkins. https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8
 - Carlitz, L., & Riordan, J. (1963). The divided central differences of zero. Canadian Journal of Mathematics, 15, 94–100. https://doi.org/10.4153/CJM-1963-010-8
 - Riordan, J. (1968). Combinatorial identities (Vol. 217). Wiley New York. https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758
+- Butzer, P. L., Schmidt, K., Stark, E. L., & Vogt, L. (1989). Central factorial numbers; their main properties and some applications. Numerical Functional Analysis and Optimization, 10(5–6), 419–488. https://doi.org/10.1080/01630568908816313
 - Kolosov, P. (2025). Newton's interpolation formula and sums of powers. Zenodo. https://doi.org/10.5281/zenodo.18040979
 - Kolosov, P. (2025). Sums of powers via central finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18096789
 - Kolosov, P. (2026). Sums of powers via backward finite differences and Newton's formula. Zenodo. https://doi.org/10.5281/zenodo.18118011
