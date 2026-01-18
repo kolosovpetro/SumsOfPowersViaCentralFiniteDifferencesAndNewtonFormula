@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
-## [1.5.0] - In progress
+## [1.5.0] - 18-Jan-2026
 
 ### Changed
 
@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Mathematica programs
 - Add formula for multifold centered sums of powers
 - Add formula for binomial centered sums of powers
+- Update abstract
 
 ## [1.4.0] - 18-Jan-2026
 
