@@ -30,6 +30,8 @@ ValidateNewtonsFormulaForPowers::usage=""
 PowersInCentralBinomialForm::usage=""
 ValidatePowersInCentralBinomialForm::usage=""
 
+EvenPowersInCentralBinomialForm::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -82,6 +84,8 @@ ValidateNewtonsFormulaForPowers[max_] := Table[n^m - NewtonsFormulaForPowers[n, 
 
 PowersInCentralBinomialForm[n_, m_, t_] := t^m + Sum[(n-t)/k * Binomial[n-t+k/2-1, k-1] * CentralDifference[t, m, k], {k, 1, m}];
 ValidatePowersInCentralBinomialForm[max_] := Table[n^m - PowersInCentralBinomialForm[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+EvenPowersInCentralBinomialForm[n_, m_, t_] := t^(2m) + Sum[(n-t)/ (2k) * Binomial[n-t+k-1, 2k-1] * CentralDifference[t, 2m, 2k], {k, 1, m}];
 
 (*END: Definitions *)
 

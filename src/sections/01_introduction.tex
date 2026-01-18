@@ -299,6 +299,33 @@ Thus,
   \begin{align*}
     n^m
     &= \frac{\centralFactorial{(n-t)}{0}}{0!} \delta^{0} t^m + \sum_{k=1}^{m} \frac{n-t}{k} \binom{n+t+\frac{k}{2}-1}{k-1} \delta^{k} t^m \\
-    &= t^m + \sum_{k=1}^{m} \frac{n-t}{k} \binom{n-t+\frac{k}{2}-1}{k-1} \delta^{k} t^m
+    &= t^m + \sum_{k=1}^{m} (n-t) \binom{n-t+\frac{k}{2}-1}{k-1} \frac{\delta^{k} t^m}{k}
   \end{align*}
 \end{proposition}
+Now we expand the brackets in central binomial form above
+\begin{align*}
+  n^m
+  = t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+  \left[ n \binom{n-t+\frac{k}{2}-1}{k-1} - t \binom{n-t+\frac{k}{2}-1}{k-1} \right]
+\end{align*}
+Thus, ordinary sum of powers is
+\begin{align*}
+  \KnuthRFoldSum{1}{n}{m}
+  = t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+  \left[ \sum_{j=1}^n j \binom{j-t+\frac{k}{2}-1}{k-1}
+  - t \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right]
+\end{align*}
+% To maintain parity of the arguments $m,k$ of central differences
+% $\delta^{k} t^m$, we set $m \rightarrow 2m$ and let degree $k$ to runs
+% over even values, so that $\delta^{k} t^m \neq 0$.
+% Therefore,
+
+% \begin{proposition}[Even powers in central binomial form]
+%   \label{prop:even-powers-in-central-binomial-form}
+%   For integers $n,t$ and $m \geq 0$
+%   \begin{align*}
+%     n^{2m}
+%     = t^{2m} + \sum_{k=1}^{m} \frac{n-t}{2k}
+%     \binom{n-t+k-1}{2k-1} \delta^{2k} t^{2m}
+%   \end{align*}
+% \end{proposition}
