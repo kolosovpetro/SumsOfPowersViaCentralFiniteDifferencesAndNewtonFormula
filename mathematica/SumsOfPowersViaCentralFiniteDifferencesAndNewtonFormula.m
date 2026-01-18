@@ -24,6 +24,32 @@ ValidateOrdinarySumsOfOddPowersInCentralDifferences::usage=""
 MultifoldSumsOfOddPowersInCentralDifferences::usage=""
 ValidateMultifoldSumsOfOddPowersInCentralDifferences::usage=""
 
+NewtonsFormulaForPowers::usage=""
+ValidateNewtonsFormulaForPowers::usage=""
+
+PowersInCentralBinomialForm::usage=""
+ValidatePowersInCentralBinomialForm::usage=""
+
+EvenPowersInCentralBinomialForm::usage=""
+
+ValidateBinomialRefactorization::usage=""
+
+ValidateCentralBinomialRefactorization::usage=""
+
+CenteredOrdinarySumsOfPowers::usage=""
+
+ValidateCenteredOrdinarySumsOfPowers::usage=""
+
+CenteredDecompositionOfPowerSums::usage=""
+
+ValidateCenteredDecompositionOfPowerSums::usage=""
+
+ValidateCenteredHockeyStickIdentity::usage=""
+
+ClosedFormOfCenteredSumsOfPowers::usage=""
+
+ValidateClosedFormOfCenteredSumsOfPowers::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -66,11 +92,78 @@ ValidateNewtonsFormulaForPowersInZero[max_] := Table[n^m - NewtonsFormulaForPowe
 
 OrdinarySumsOfOddPowersInCentralDifferences[n_, m_] := Sum[1/(2k) * Binomial[n+k, 2k] * CentralDifference[0, 2m, 2k], {k, 1, m}];
 
-ValidateOrdinarySumsOfOddPowersInCentralDifferences[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, 2m-1] - OrdinarySumsOfPowersInCentralDifferences[n, m], {n,1, max}, {m, 1, max}] //Flatten
+ValidateOrdinarySumsOfOddPowersInCentralDifferences[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, 2m-1] - OrdinarySumsOfOddPowersInCentralDifferences[n, m], {n,1, max}, {m, 1, max}] //Flatten
 
 MultifoldSumsOfOddPowersInCentralDifferences[r_, n_, m_] := Sum[1/(2k) * Binomial[n+k-1+r, 2k-1+r] * CentralDifference[0, 2m, 2k], {k, 1, m}];
 ValidateMultifoldSumsOfOddPowersInCentralDifferences[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, 2m-1] - MultifoldSumsOfOddPowersInCentralDifferences[r, n, m], {n,1, max}, {m, 1, max}, {r, 0, max}] //Flatten
 
+NewtonsFormulaForPowers[n_, m_, t_] := Sum[CentralFactorial[n-t, k] / k! * CentralDifference[t, m, k], {k, 0, m}];
+ValidateNewtonsFormulaForPowers[max_] := Table[n^m - NewtonsFormulaForPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+PowersInCentralBinomialForm[n_, m_, t_] := t^m + Sum[(n-t)/k * Binomial[n-t+k/2-1, k-1] * CentralDifference[t, m, k], {k, 1, m}];
+ValidatePowersInCentralBinomialForm[max_] := Table[n^m - PowersInCentralBinomialForm[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+EvenPowersInCentralBinomialForm[n_, m_, t_] := t^(2m) + Sum[(n-t)/ (2k) * Binomial[n-t+k-1, 2k-1] * CentralDifference[t, 2m, 2k], {k, 1, m}];
+
+ValidateBinomialRefactorization[max_] := Table[n*Binomial[n+r, m]-((m+1)*Binomial[n+r, m+1] - (r-m)* Binomial[n+r,m]), {n, 0, max}, {r, 0, max}, {m, 0, max}] //Flatten
+
+ValidateCentralBinomialRefactorization[max_] := Table[j*Binomial[j-t+k/2-1,k-1]-(k*Binomial[j-t+k/2-1,k]+(t+k/2)*Binomial[j-t+k/2-1,k-1]),{j,0,max},{t,0,max},{k,0,max}]//Flatten
+
+ClearAll[CenteredOrdinarySumsOfPowers]
+
+CenteredOrdinarySumsOfPowers[n_, m_, t_] :=
+  Sum[t^m, {j, 1, n}] +
+  Sum[
+    CentralDifference[t, m, k]/k *
+      (
+        Sum[
+          j*Binomial[j - t + k/2 - 1, k - 1],
+          {j, 1, n}
+        ]
+        - t*
+        Sum[
+          Binomial[j - t + k/2 - 1, k - 1],
+          {j, 1, n}
+        ]
+      ),
+    {k, 1, m}
+  ];
+  
+ValidateCenteredOrdinarySumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - CenteredOrdinarySumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+CenteredDecompositionOfPowerSums[n_, m_, t_] :=
+  Sum[t^m, {j, 1, n}] +
+  Sum[
+    CentralDifference[t, m, k]/k *
+      (
+        k*
+        Sum[
+          Binomial[j - t + k/2 - 1, k],
+          {j, 1, n}
+        ]
+        + (k/2)*
+        Sum[
+          Binomial[j - t + k/2 - 1, k - 1],
+          {j, 1, n}
+        ]
+      ),
+    {k, 1, m}
+  ];
+  
+ValidateCenteredDecompositionOfPowerSums[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - CenteredDecompositionOfPowerSums[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+ValidateCenteredHockeyStickIdentity[max_] := Table[Sum[Binomial[j-t+k/2-1,k],{j,1,n}]-(Binomial[n-t+k/2,k+1]-Binomial[-t+k/2,k+1]),{n,0,max},{t,0,max},{k,0,max}]//Flatten
+
+ClosedFormOfCenteredSumsOfPowers[n_, m_, t_] := 
+  Sum[t^m, {j, 1, n}] +
+  Sum[
+    CentralDifference[t, m, k]/k *
+      ( k*(Binomial[n - t + k/2, k + 1] - Binomial[-t + k/2, k + 1]) +
+        (k/2)*(Binomial[n - t + k/2, k] - Binomial[-t + k/2, k])
+      ),
+    {k, 1, m}
+  ];
+  
+ValidateClosedFormOfCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - ClosedFormOfCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
 (*END: Definitions *)
 
 End[ ]
