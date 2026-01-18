@@ -579,3 +579,32 @@ Thus, formula for double centered sums of powers follows
     \end{align*}
   \end{mdframed}
 \end{proposition}
+Therefore, by continuing similarly,
+we can derive formula for $r-$fold sums of powers
+by using centered hockey stick
+identity~\eqref{prop:centered-hockey-stick-identity} repeatedly.
+We have
+\begin{theorem}[Multifold centered sums of powers]
+  \label{theorem:multifold-centered-sums-of-powers}
+  \begin{mdframed}
+    For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+    \begin{align*}
+      \KnuthRFoldSum{r}{n}{m}
+      &= t^m \KnuthRFoldSum{r}{n}{0}
+      + \sum_{k=1}^{m} \frac{\delta^{k} t^{m}}{2}
+      \Bigg \{
+        \left[
+          \binom{n-t+\frac{k}{2}+r}{k+r}
+          +
+          \binom{n-t+\frac{k}{2}+r-1}{k+r}
+        \right] \\
+        &-
+        \sum_{s=0}^{r-1}
+        \left[
+          \binom{-t+\frac{k}{2} + r -s}{k+r-s} +
+          \binom{-t+\frac{k}{2} + r -s-1}{k+r-s}
+        \right] \KnuthRFoldSum{s}{n}{0}
+      \Bigg \}.
+    \end{align*}
+  \end{mdframed}
+\end{theorem}
