@@ -266,14 +266,17 @@ evaluated in zero</p>
 <div id="prop:newtons-formula-in-central-differences"
 class="proposition">
 <p><strong>Proposition 3</strong> (Newton’s formula in central
-differences in zero). <em><span class="math display">\[\begin{align*}
-    f(x) &amp;= \sum_{k=0}^{\infty} \frac{x^{[k]}}{k!} \delta^{k} f(0)
+differences in zero). <em></em></p>
+<div class="mdframed">
+<p><em><span class="math display">\[\begin{align*}
+      f(x) &amp;= \sum_{k=0}^{\infty} \frac{x^{[k]}}{k!} \delta^{k} f(0)
 \end{align*}\]</span> where <span class="math inline">\(\delta^{k} f(0)
-  = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f\left(\frac{k}{2} -
+    = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f\left(\frac{k}{2} -
 j\right)\)</span> are central finite differences in zero, and <span
 class="math inline">\(x^{[k]}\)</span> are central factorials, with
 <span class="math inline">\(x^{[0]}=1\)</span> for every <span
 class="math inline">\(x\)</span>.</em></p>
+</div>
 </div>
 <p>We observe that central factorials are closely related to falling
 factorials <span class="math inline">\(\left(x\right)_{n}
@@ -621,9 +624,9 @@ class="math display">\[\begin{align*}
   \Bigg ] \\
   &amp;= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
   \Bigg [
-    \left \{ k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
-      + \frac{k}{2}
-    \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right \}
+    k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+    + \frac{k}{2}
+    \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1}
   \Bigg ]
 \end{align*}\]</span> Therefore,</p>
 <div id="prop:centered-decomposition-of-power-sums" class="proposition">
@@ -692,6 +695,73 @@ class="theorem">
         \left( \binom{n-t+\frac{k}{2}}{k} - \binom{-t+\frac{k}{2}}{k}
 \right)
       \right ].
+\end{align*}\]</span></em></p>
+</div>
+</div>
+<p>Let <span class="math inline">\(a=n-t+\frac{k}{2}\)</span>, then
+<span class="math display">\[\begin{align*}
+  &amp;k \left( \binom{n-t+\frac{k}{2}}{k+1} -
+\binom{-t+\frac{k}{2}}{k+1} \right)
+  + \frac{k}{2}
+  \left( \binom{n-t+\frac{k}{2}}{k} - \binom{-t+\frac{k}{2}}{k} \right)
+\\
+  &amp;=k \left( \binom{a}{k+1} - \binom{a-n}{k+1} \right)
+  + \frac{k}{2}
+  \left( \binom{a}{k} - \binom{a-n}{k} \right) \\
+  &amp;=k \left(
+    \binom{a}{k+1} - \binom{a-n}{k+1}
+    + \frac{1}{2}
+    \binom{a}{k} - \frac{1}{2} \binom{a-n}{k}
+  \right) \\
+  &amp;=\frac{k}{2} \left(
+    2 \binom{a}{k+1} -  2 \binom{a-n}{k+1}
+    + \binom{a}{k} - \binom{a-n}{k}
+  \right) \\
+  &amp;=\frac{k}{2} \left(
+    \binom{a}{k+1} + \binom{a}{k+1} - \binom{a-n}{k+1} -
+\binom{a-n}{k+1}
+    + \binom{a}{k} - \binom{a-n}{k}
+  \right)
+\end{align*}\]</span> By binomial recurrence <span
+class="math inline">\(\binom{a+1}{k+1} = \binom{a}{k} +
+\binom{a}{k+1}\)</span> <span class="math display">\[\begin{align*}
+  &amp;\frac{k}{2} \left(
+    \binom{a}{k+1} + \binom{a}{k+1} - \binom{a-n}{k+1} -
+\binom{a-n}{k+1}
+    + \binom{a}{k} - \binom{a-n}{k}
+  \right) \\
+  &amp;= \frac{k}{2} \left(
+    \left[ \binom{a}{k+1} + \binom{a}{k} \right]
+    + \binom{a}{k+1} - \binom{a-n}{k+1}
+    - \left[ \binom{a-n}{k+1} - \binom{a-n}{k} \right]
+  \right) \\
+  &amp;= \frac{k}{2} \left(
+    \binom{a+1}{k+1}
+    + \binom{a}{k+1}
+    - \binom{a-n}{k+1}
+    - \binom{a-n+1}{k+1}
+  \right) \\
+  &amp;= \frac{k}{2} \left(
+    \left[ \binom{a+1}{k+1} + \binom{a}{k+1} \right]
+    - \left[ \binom{a-n}{k+1} + \binom{a-n+1}{k+1} \right]
+  \right)
+\end{align*}\]</span> Therefore,</p>
+<div id="prop:simplified-centered-sums-of-powers" class="proposition">
+<p><strong>Proposition 21</strong> (Simplified centered sums of powers).
+<em></em></p>
+<div class="mdframed">
+<p><em>For integers <span class="math inline">\(n\geq 0, \; m \geq
+0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
+<span class="math display">\[\begin{align*}
+      \Sigma^{1}\,{n}^{m}
+      = \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+      \left[
+        \left( \binom{n-t+\frac{k}{2}+1}{k+1} +
+\binom{n-t+\frac{k}{2}}{k+1} \right)
+        -
+        \left( \binom{-t+\frac{k}{2}}{k+1} +
+\binom{-t+\frac{k}{2}+1}{k+1} \right)
+      \right]
 \end{align*}\]</span></em></p>
 </div>
 </div>
@@ -836,13 +906,23 @@ href="#theorem:closed-form-of-centered-sums-of-powers"
 data-reference-type="eqref"
 data-reference="theorem:closed-form-of-centered-sums-of-powers">[theorem:closed-form-of-centered-sums-of-powers]</a></td>
 </tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateSimplifiedCenteredSumsOfPowers[10]</code></td>
+<td style="text-align: left;">Validates Prop. <a
+href="#prop:simplified-centered-sums-of-powers"
+data-reference-type="eqref"
+data-reference="prop:simplified-centered-sums-of-powers">[prop:simplified-centered-sums-of-powers]</a></td>
+</tr>
 </tbody>
 </table>
 </div>
 <p><span><strong>Metadata</strong></span></p>
 <ul>
-<li><p><strong>Version:</strong> <code>Local-0.1.0</code></p></li>
-<li><p><strong>MSC2010:</strong> 05A19, 05A10, 11B73, 11B83</p></li>
+<li><p><strong>Initial release date:</strong> January 3, 2026.</p></li>
+<li><p><strong>Current release date:</strong> 2026-01-18.</p></li>
+<li><p><strong>Version:</strong> <code>Local-0.1.0</code> .</p></li>
+<li><p><strong>MSC2010:</strong> 05A19, 05A10, 11B73, 11B83.</p></li>
 <li><p><strong>Keywords:</strong> Sums of powers, Newton’s interpolation
 formula, Finite differences, Binomial coefficients, Faulhaber’s formula,
 Bernoulli numbers, Bernoulli polynomials, Interpolation, Discrete

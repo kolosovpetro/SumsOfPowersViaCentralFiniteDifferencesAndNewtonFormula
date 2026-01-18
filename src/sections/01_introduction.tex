@@ -41,16 +41,18 @@ in central differences evaluated in zero
 
 \begin{proposition}[Newton's formula in central differences in zero]
   \label{prop:newtons-formula-in-central-differences}
-  \begin{align*}
-    f(x) &= \sum_{k=0}^{\infty} \frac{\centralFactorial{x}{k}}{k!} \delta^{k} f(0)
-  \end{align*}
-  where
-  $\delta^{k} f(0)
-  = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f\left(\frac{k}{2} - j\right)$
-  are central finite differences in zero,
-  and $\centralFactorial{x}{k}$
-  are central factorials,
-  with $\centralFactorial{x}{0}=1$ for every $x$.
+  \begin{mdframed}
+    \begin{align*}
+      f(x) &= \sum_{k=0}^{\infty} \frac{\centralFactorial{x}{k}}{k!} \delta^{k} f(0)
+    \end{align*}
+    where
+    $\delta^{k} f(0)
+    = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f\left(\frac{k}{2} - j\right)$
+    are central finite differences in zero,
+    and $\centralFactorial{x}{k}$
+    are central factorials,
+    with $\centralFactorial{x}{0}=1$ for every $x$.
+  \end{mdframed}
 \end{proposition}
 
 We observe that central factorials are closely related to falling factorials
@@ -285,17 +287,8 @@ Thus, for powers we have identity
   \end{mdframed}
 \end{proposition}
 
-% By binomial form of central
-% factorials~\eqref{prop:binomial-form-of-central-factorials}, we have
-% \begin{proposition}[Double binomial form of central factorials]
-%   For integers $n$ and $k\geq 1$
-%   \begin{align*}
-%     \frac{\centralFactorial{n}{k}}{k!}
-%     = \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1}
-%     = \binom{n+\frac{k}{2}}{k} + \binom{n+\frac{k}{2}-1}{k}
-%   \end{align*}
-% \end{proposition}
 Thus,
+
 \begin{proposition}[Powers in central binomial form]
   \label{prop:powers-in-central-binomial-form}
   For integers $n,t$ and $m \geq 0$
@@ -367,9 +360,9 @@ Thus, formula for sums of powers yields
   \Bigg ] \\
   &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
   \Bigg [
-    \left \{ k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
-      + \frac{k}{2}
-    \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right \}
+    k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+    + \frac{k}{2}
+    \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1}
   \Bigg ]
 \end{align*}
 Therefore,
@@ -429,6 +422,68 @@ Thus, closed form of centered sums of powers yields
     \end{align*}
   \end{mdframed}
 \end{theorem}
+
+Let $a=n-t+\frac{k}{2}$, then
+\begin{align*}
+  &k \left( \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1} \right)
+  + \frac{k}{2}
+  \left( \binom{n-t+\frac{k}{2}}{k} - \binom{-t+\frac{k}{2}}{k} \right) \\
+  &=k \left( \binom{a}{k+1} - \binom{a-n}{k+1} \right)
+  + \frac{k}{2}
+  \left( \binom{a}{k} - \binom{a-n}{k} \right) \\
+  &=k \left(
+    \binom{a}{k+1} - \binom{a-n}{k+1}
+    + \frac{1}{2}
+    \binom{a}{k} - \frac{1}{2} \binom{a-n}{k}
+  \right) \\
+  &=\frac{k}{2} \left(
+    2 \binom{a}{k+1} -  2 \binom{a-n}{k+1}
+    + \binom{a}{k} - \binom{a-n}{k}
+  \right) \\
+  &=\frac{k}{2} \left(
+    \binom{a}{k+1} + \binom{a}{k+1} - \binom{a-n}{k+1} - \binom{a-n}{k+1}
+    + \binom{a}{k} - \binom{a-n}{k}
+  \right)
+\end{align*}
+By binomial recurrence $\binom{a+1}{k+1} = \binom{a}{k} + \binom{a}{k+1}$
+\begin{align*}
+  &\frac{k}{2} \left(
+    \binom{a}{k+1} + \binom{a}{k+1} - \binom{a-n}{k+1} - \binom{a-n}{k+1}
+    + \binom{a}{k} - \binom{a-n}{k}
+  \right) \\
+  &= \frac{k}{2} \left(
+    \left[ \binom{a}{k+1} + \binom{a}{k} \right]
+    + \binom{a}{k+1} - \binom{a-n}{k+1}
+    - \left[ \binom{a-n}{k+1} - \binom{a-n}{k} \right]
+  \right) \\
+  &= \frac{k}{2} \left(
+    \binom{a+1}{k+1}
+    + \binom{a}{k+1}
+    - \binom{a-n}{k+1}
+    - \binom{a-n+1}{k+1}
+  \right) \\
+  &= \frac{k}{2} \left(
+    \left[ \binom{a+1}{k+1} + \binom{a}{k+1} \right]
+    - \left[ \binom{a-n}{k+1} + \binom{a-n+1}{k+1} \right]
+  \right)
+\end{align*}
+Therefore,
+\begin{proposition}[Simplified centered sums of powers]
+  \label{prop:simplified-centered-sums-of-powers}
+  \begin{mdframed}
+    For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+    \begin{align*}
+      \KnuthRFoldSum{1}{n}{m}
+      = \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+      \left[
+        \left( \binom{n-t+\frac{k}{2}+1}{k+1} + \binom{n-t+\frac{k}{2}}{k+1} \right)
+        -
+        \left( \binom{-t+\frac{k}{2}}{k+1} + \binom{-t+\frac{k}{2}+1}{k+1} \right)
+      \right]
+    \end{align*}
+  \end{mdframed}
+\end{proposition}
+
 Continuing similarly, we can derive formula for multifold sums of powers
 by using centered hockey stick
 identity~\eqref{prop:centered-hockey-stick-identity} repeatedly.

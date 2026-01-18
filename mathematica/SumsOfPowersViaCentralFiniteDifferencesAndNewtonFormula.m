@@ -50,6 +50,10 @@ ClosedFormOfCenteredSumsOfPowers::usage=""
 
 ValidateClosedFormOfCenteredSumsOfPowers::usage=""
 
+SimplifiedCenteredSumsOfPowers::usage=""
+
+ValidateSimplifiedCenteredSumsOfPowers::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -164,6 +168,19 @@ ClosedFormOfCenteredSumsOfPowers[n_, m_, t_] :=
   ];
   
 ValidateClosedFormOfCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - ClosedFormOfCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+SimplifiedCenteredSumsOfPowers[n_, m_, t_] :=
+  Sum[t^m, {j, 1, n}] +
+  Sum[
+    CentralDifference[t, m, k]/2 *
+      (
+        (Binomial[n - t + k/2 + 1, k + 1] + Binomial[n - t + k/2, k + 1]) -
+        (Binomial[-t + k/2, k + 1] + Binomial[-t + k/2 + 1, k + 1])
+      ),
+    {k, 1, m}
+  ];
+
+ValidateSimplifiedCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - SimplifiedCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
 (*END: Definitions *)
 
 End[ ]
