@@ -54,6 +54,10 @@ SimplifiedCenteredSumsOfPowers::usage=""
 
 ValidateSimplifiedCenteredSumsOfPowers::usage=""
 
+DoubleCenteredSumsOfPowers::usage=""
+
+ValidateDoubleCenteredSumsOfPowers::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -180,6 +184,27 @@ SimplifiedCenteredSumsOfPowers[n_, m_, t_] :=
   ];
 
 ValidateSimplifiedCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - SimplifiedCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+DoubleCenteredSumsOfPowers[n_, m_, t_] :=
+  t^m*MultifoldSumOfPowersRecurrence[2, n, 0] +
+  Sum[
+    CentralDifference[t, m, k]/2 *
+      (
+        (Binomial[n - t + k/2 + 2, k + 2] +
+         Binomial[n - t + k/2 + 1, k + 2])
+        -
+        (Binomial[-t + k/2 + 2, k + 2] +
+         Binomial[-t + k/2 + 1, k + 2])*
+          MultifoldSumOfPowersRecurrence[0, n, 0]
+        -
+        (Binomial[-t + k/2 + 1, k + 1] +
+         Binomial[-t + k/2, k + 1])*
+          MultifoldSumOfPowersRecurrence[1, n, 0]
+      ),
+    {k, 1, m}
+  ];
+
+ValidateDoubleCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[2, n, m] - DoubleCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
 
 (*END: Definitions *)
 

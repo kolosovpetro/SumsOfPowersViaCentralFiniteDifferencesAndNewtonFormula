@@ -9,8 +9,11 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 ### Changed
 
-- Update metadata
+- Add initial release date to metadata
+- Add initial release date to README
 - Add simplified formula for centered sums
+- Add formula for double centered sums
+- Add Mathematica programs
 
 ## [1.4.0] - 18-Jan-2026
 

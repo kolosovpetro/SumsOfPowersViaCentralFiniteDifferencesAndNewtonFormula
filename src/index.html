@@ -770,6 +770,103 @@ powers by using centered hockey stick identity <a
 href="#prop:centered-hockey-stick-identity" data-reference-type="eqref"
 data-reference="prop:centered-hockey-stick-identity">[prop:centered-hockey-stick-identity]</a>
 repeatedly.</p>
+<p>For instance, for <span class="math inline">\(r=2\)</span> sums of
+powers, we have <span class="math display">\[\begin{align*}
+  &amp;\Sigma^{2}\,{n}^{m}
+  =  t^m \Sigma^{2}\,{n}^{0} \\
+  &amp;+ \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+  \left[
+    \sum_{j=1}^{n} \left( \binom{j-t+\frac{k}{2}+1}{k+1} +
+\binom{j-t+\frac{k}{2}}{k+1} \right)
+    -
+    \left( \binom{-t+\frac{k}{2}}{k+1} \Sigma^{1}\,{n}^{0}
+    + \binom{-t+\frac{k}{2}+1}{k+1} \Sigma^{1}\,{n}^{0} \right)
+  \right]
+\end{align*}\]</span> Thus, by generalized hockey stick identity <a
+href="#prop:generalized-hockey-stick-identity"
+data-reference-type="eqref"
+data-reference="prop:generalized-hockey-stick-identity">[prop:generalized-hockey-stick-identity]</a>
+<span class="math display">\[\begin{align*}
+  \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}+1}{k+1}
+  &amp;= \binom{n-t+\frac{k}{2} + 2}{k+2} -
+\binom{-t+\frac{k}{2}+2}{k+2} \\
+  \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}}{k+1}
+  &amp;= \binom{n-t+\frac{k}{2} + 1}{k+2} -
+\binom{-t+\frac{k}{2}+1}{k+2}
+\end{align*}\]</span> By rearranging the terms yields <span
+class="math display">\[\begin{align*}
+  \Sigma^{2}\,{n}^{m}
+  &amp;=  t^m \Sigma^{2}\,{n}^{0} \\
+  &amp;+ \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+  \Bigg \{
+    \left[
+      \binom{n-t+\frac{k}{2} + 2}{k+2} - \binom{-t+\frac{k}{2}+2}{k+2}
+    \right]
+    +
+    \left[ \binom{n-t+\frac{k}{2} + 1}{k+2} -
+\binom{-t+\frac{k}{2}+1}{k+2}
+    \right] \\
+    &amp;-
+    \left[
+      \binom{-t+\frac{k}{2}}{k+1} \Sigma^{1}\,{n}^{0}
+      + \binom{-t+\frac{k}{2}+1}{k+1} \Sigma^{1}\,{n}^{0}
+    \right]
+  \Bigg \} \\
+  &amp;=  t^m \Sigma^{2}\,{n}^{0}
+  + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+  \Bigg \{
+    \left[
+      \binom{n-t+\frac{k}{2} + 2}{k+2}
+      +
+      \binom{n-t+\frac{k}{2} + 1}{k+2}
+    \right] \\
+    &amp;-
+    \left[
+      \binom{-t+\frac{k}{2}+2}{k+2} \Sigma^{0}\,{n}^{0}
+      +
+      \binom{-t+\frac{k}{2} + 1}{k+2} \Sigma^{0}\,{n}^{0}
+    \right] \\
+    &amp;-
+    \left[
+      \binom{-t+\frac{k}{2}+1}{k+1} \Sigma^{1}\,{n}^{0}
+      +
+      \binom{-t+\frac{k}{2}+0}{k+1} \Sigma^{1}\,{n}^{0}
+    \right]
+  \Bigg \} \\
+\end{align*}\]</span> Thus, formula for double centered sums of powers
+follows</p>
+<div id="prop:double-centered-sums-of-powers" class="proposition">
+<p><strong>Proposition 22</strong> (Double centered sums of powers).
+<em></em></p>
+<div class="mdframed">
+<p><em>For integers <span class="math inline">\(n\geq 0, \; m \geq
+0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
+<span class="math display">\[\begin{align*}
+      \Sigma^{2}\,{n}^{m}
+      &amp;=  t^m \Sigma^{2}\,{n}^{0}
+      + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+      \Bigg \{
+        \left[
+          \binom{n-t+\frac{k}{2} + 2}{k+2}
+          +
+          \binom{n-t+\frac{k}{2} + 1}{k+2}
+        \right] \\
+        &amp;-
+        \left[
+          \binom{-t+\frac{k}{2}+2}{k+2}
+          +
+          \binom{-t+\frac{k}{2} + 1}{k+2}
+        \right] \Sigma^{0}\,{n}^{0} \\
+        &amp;-
+        \left[
+          \binom{-t+\frac{k}{2}+1}{k+1}
+          +
+          \binom{-t+\frac{k}{2}+0}{k+1}
+        \right] \Sigma^{1}\,{n}^{0}
+      \Bigg \}.
+\end{align*}\]</span></em></p>
+</div>
+</div>
 <h1 class="unnumbered" id="conclusions">Conclusions</h1>
 <p>In this manuscript, we derived formula for multifold sums of powers
 using Newton’s formula in central differences, combined with
@@ -914,6 +1011,13 @@ href="#prop:simplified-centered-sums-of-powers"
 data-reference-type="eqref"
 data-reference="prop:simplified-centered-sums-of-powers">[prop:simplified-centered-sums-of-powers]</a></td>
 </tr>
+<tr>
+<td
+style="text-align: left;"><code>ValidateDoubleCenteredSumsOfPowers[10]</code></td>
+<td style="text-align: left;">Validates Prop. <a
+href="#prop:double-centered-sums-of-powers" data-reference-type="eqref"
+data-reference="prop:double-centered-sums-of-powers">[prop:double-centered-sums-of-powers]</a></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -921,14 +1025,14 @@ data-reference="prop:simplified-centered-sums-of-powers">[prop:simplified-center
 <ul>
 <li><p><strong>Initial release date:</strong> January 3, 2026.</p></li>
 <li><p><strong>Current release date:</strong> 2026-01-18.</p></li>
-<li><p><strong>Version:</strong> <code>Local-0.1.0</code> .</p></li>
+<li><p><strong>Version:</strong> <code>Local-0.1.0</code></p></li>
 <li><p><strong>MSC2010:</strong> 05A19, 05A10, 11B73, 11B83.</p></li>
 <li><p><strong>Keywords:</strong> Sums of powers, Newton’s interpolation
 formula, Finite differences, Binomial coefficients, Faulhaber’s formula,
 Bernoulli numbers, Bernoulli polynomials, Interpolation, Discrete
 convolution, Combinatorics, Polynomial identities, Central factorial
 numbers, Stirling numbers, Eulerian numbers, Worpitzky identity,
-Pascal’s triangle, OEIS</p></li>
+Pascal’s triangle, OEIS.</p></li>
 <li><p><strong>License:</strong> This work is licensed under a <a
 href="https://creativecommons.org/licenses/by/4.0/"><code>CC BY 4.0 License</code></a>.</p></li>
 <li><p><strong>DOI:</strong> <a

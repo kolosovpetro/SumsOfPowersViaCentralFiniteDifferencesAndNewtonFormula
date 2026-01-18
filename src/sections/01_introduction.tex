@@ -487,3 +487,95 @@ Therefore,
 Continuing similarly, we can derive formula for multifold sums of powers
 by using centered hockey stick
 identity~\eqref{prop:centered-hockey-stick-identity} repeatedly.
+
+For instance, for $r=2$ sums of powers, we have
+\begin{align*}
+  &\KnuthRFoldSum{2}{n}{m}
+  =  t^m \KnuthRFoldSum{2}{n}{0} \\
+  &+ \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+  \left[
+    \sum_{j=1}^{n} \left( \binom{j-t+\frac{k}{2}+1}{k+1} + \binom{j-t+\frac{k}{2}}{k+1} \right)
+    -
+    \left( \binom{-t+\frac{k}{2}}{k+1} \KnuthRFoldSum{1}{n}{0}
+    + \binom{-t+\frac{k}{2}+1}{k+1} \KnuthRFoldSum{1}{n}{0} \right)
+  \right]
+\end{align*}
+Thus, by generalized hockey stick
+identity~\eqref{prop:generalized-hockey-stick-identity}
+\begin{align*}
+  \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}+1}{k+1}
+  &= \binom{n-t+\frac{k}{2} + 2}{k+2} - \binom{-t+\frac{k}{2}+2}{k+2} \\
+  \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}}{k+1}
+  &= \binom{n-t+\frac{k}{2} + 1}{k+2} - \binom{-t+\frac{k}{2}+1}{k+2}
+\end{align*}
+By rearranging the terms yields
+\begin{align*}
+  \KnuthRFoldSum{2}{n}{m}
+  &=  t^m \KnuthRFoldSum{2}{n}{0} \\
+  &+ \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+  \Bigg \{
+    \left[
+      \binom{n-t+\frac{k}{2} + 2}{k+2} - \binom{-t+\frac{k}{2}+2}{k+2}
+    \right]
+    +
+    \left[ \binom{n-t+\frac{k}{2} + 1}{k+2} - \binom{-t+\frac{k}{2}+1}{k+2}
+    \right] \\
+    &-
+    \left[
+      \binom{-t+\frac{k}{2}}{k+1} \KnuthRFoldSum{1}{n}{0}
+      + \binom{-t+\frac{k}{2}+1}{k+1} \KnuthRFoldSum{1}{n}{0}
+    \right]
+  \Bigg \} \\
+  &=  t^m \KnuthRFoldSum{2}{n}{0}
+  + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+  \Bigg \{
+    \left[
+      \binom{n-t+\frac{k}{2} + 2}{k+2}
+      +
+      \binom{n-t+\frac{k}{2} + 1}{k+2}
+    \right] \\
+    &-
+    \left[
+      \binom{-t+\frac{k}{2}+2}{k+2} \KnuthRFoldSum{0}{n}{0}
+      +
+      \binom{-t+\frac{k}{2} + 1}{k+2} \KnuthRFoldSum{0}{n}{0}
+    \right] \\
+    &-
+    \left[
+      \binom{-t+\frac{k}{2}+1}{k+1} \KnuthRFoldSum{1}{n}{0}
+      +
+      \binom{-t+\frac{k}{2}+0}{k+1} \KnuthRFoldSum{1}{n}{0}
+    \right]
+  \Bigg \} \\
+\end{align*}
+Thus, formula for double centered sums of powers follows
+\begin{proposition}[Double centered sums of powers]
+  \label{prop:double-centered-sums-of-powers}
+  \begin{mdframed}
+    For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+    \begin{align*}
+      \KnuthRFoldSum{2}{n}{m}
+      &=  t^m \KnuthRFoldSum{2}{n}{0}
+      + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
+      \Bigg \{
+        \left[
+          \binom{n-t+\frac{k}{2} + 2}{k+2}
+          +
+          \binom{n-t+\frac{k}{2} + 1}{k+2}
+        \right] \\
+        &-
+        \left[
+          \binom{-t+\frac{k}{2}+2}{k+2}
+          +
+          \binom{-t+\frac{k}{2} + 1}{k+2}
+        \right] \KnuthRFoldSum{0}{n}{0} \\
+        &-
+        \left[
+          \binom{-t+\frac{k}{2}+1}{k+1}
+          +
+          \binom{-t+\frac{k}{2}+0}{k+1}
+        \right] \KnuthRFoldSum{1}{n}{0}
+      \Bigg \}.
+    \end{align*}
+  \end{mdframed}
+\end{proposition}
