@@ -50,6 +50,24 @@ ClosedFormOfCenteredSumsOfPowers::usage=""
 
 ValidateClosedFormOfCenteredSumsOfPowers::usage=""
 
+SimplifiedCenteredSumsOfPowers::usage=""
+
+ValidateSimplifiedCenteredSumsOfPowers::usage=""
+
+DoubleCenteredSumsOfPowers::usage=""
+
+ValidateDoubleCenteredSumsOfPowers::usage=""
+
+MultifoldCenteredSumsOfPowers::usage=""
+
+ValidateMultifoldCenteredSumsOfPowers::usage=""
+
+ValidateMultifoldSumOfZeroPowers::usage=""
+
+BinomialMultifoldCenteredSumsOfPowers::usage=""
+
+ValidateBinomialMultifoldCenteredSumsOfPowers::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -164,6 +182,81 @@ ClosedFormOfCenteredSumsOfPowers[n_, m_, t_] :=
   ];
   
 ValidateClosedFormOfCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - ClosedFormOfCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+SimplifiedCenteredSumsOfPowers[n_, m_, t_] :=
+  Sum[t^m, {j, 1, n}] +
+  Sum[
+    CentralDifference[t, m, k]/2 *
+      (
+        (Binomial[n - t + k/2 + 1, k + 1] + Binomial[n - t + k/2, k + 1]) -
+        (Binomial[-t + k/2, k + 1] + Binomial[-t + k/2 + 1, k + 1])
+      ),
+    {k, 1, m}
+  ];
+
+ValidateSimplifiedCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - SimplifiedCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+DoubleCenteredSumsOfPowers[n_, m_, t_] :=
+  t^m*MultifoldSumOfPowersRecurrence[2, n, 0] +
+  Sum[
+    CentralDifference[t, m, k]/2 *
+      (
+        (Binomial[n - t + k/2 + 2, k + 2] +
+         Binomial[n - t + k/2 + 1, k + 2])
+        -
+        (Binomial[-t + k/2 + 2, k + 2] +
+         Binomial[-t + k/2 + 1, k + 2])*
+          MultifoldSumOfPowersRecurrence[0, n, 0]
+        -
+        (Binomial[-t + k/2 + 1, k + 1] +
+         Binomial[-t + k/2, k + 1])*
+          MultifoldSumOfPowersRecurrence[1, n, 0]
+      ),
+    {k, 1, m}
+  ];
+
+ValidateDoubleCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[2, n, m] - DoubleCenteredSumsOfPowers[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
+
+MultifoldCenteredSumsOfPowers[r_, n_, m_, t_] :=
+  t^m*MultifoldSumOfPowersRecurrence[r, n, 0] +
+  Sum[
+    CentralDifference[t, m, k]/2 *
+      (
+        (Binomial[n - t + k/2 + r, k + r] +
+         Binomial[n - t + k/2 + r - 1, k + r])
+        -
+        Sum[
+          (Binomial[-t + k/2 + r - s, k + r - s] +
+           Binomial[-t + k/2 + r - s - 1, k + r - s])*
+            MultifoldSumOfPowersRecurrence[s, n, 0],
+          {s, 0, r - 1}
+        ]
+      ),
+    {k, 1, m}
+  ];
+
+ValidateMultifoldCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, m] - MultifoldCenteredSumsOfPowers[r, n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}, {r, 0, max}] //Flatten
+ValidateMultifoldSumOfZeroPowers[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, 0] - Binomial[r+n-1, r], {r, 0, max}, {n, 0, max}] //Flatten
+BinomialMultifoldCenteredSumsOfPowers[r_, n_, m_, t_] :=
+  Binomial[r + n - 1, r]*t^m +
+  Sum[
+    CentralDifference[t, m, k]/2 *
+      (
+        (Binomial[n - t + k/2 + r, k + r] +
+         Binomial[n - t + k/2 + r - 1, k + r])
+        -
+        Sum[
+          (Binomial[-t + k/2 + r - s, k + r - s] +
+           Binomial[-t + k/2 + r - s - 1, k + r - s])*
+            Binomial[s+ n - 1, s],
+          {s, 0, r - 1}
+        ]
+      ),
+    {k, 1, m}
+  ];
+  
+ValidateBinomialMultifoldCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, m] - BinomialMultifoldCenteredSumsOfPowers[r, n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}, {r, 0, max}] //Flatten
+
+
 (*END: Definitions *)
 
 End[ ]
