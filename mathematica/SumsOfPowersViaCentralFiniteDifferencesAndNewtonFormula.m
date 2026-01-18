@@ -44,6 +44,8 @@ CenteredDecompositionOfPowerSums::usage=""
 
 ValidateCenteredDecompositionOfPowerSums::usage=""
 
+ValidateCenteredHockeyStickIdentity::usage=""
+
 (*END: Definitions *)
 
 (* =========================================================================DOCS END=================================================================== *)
@@ -145,7 +147,7 @@ CenteredDecompositionOfPowerSums[n_, m_, t_] :=
   ];
   
 ValidateCenteredDecompositionOfPowerSums[max_] := Table[MultifoldSumOfPowersRecurrence[1, n, m] - CenteredDecompositionOfPowerSums[n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}] //Flatten
-
+ValidateCenteredHockeyStickIdentity[max_] := Table[Sum[Binomial[j-t+k/2-1,k],{j,1,n}]-(Binomial[n-t+k/2,k+1]-Binomial[-t+k/2,k+1]),{n,0,max},{t,0,max},{k,0,max}]//Flatten
 
 (*END: Definitions *)
 
