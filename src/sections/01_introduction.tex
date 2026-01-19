@@ -393,12 +393,12 @@ Therefore,
   For integers $t, \; m\geq 0, \; n \geq 0$
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m} = \sum_{j=1}^{n} t^m
-    + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+    + \sum_{k=1}^{m} \delta^{k} t^m
     \left [
-      k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
-      + \frac{k}{2}
+      \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+      + \frac{1}{2}
       \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1}
-    \right ]
+    \right ].
   \end{align*}
 \end{proposition}
 Let be generalized hockey stick identity

@@ -256,7 +256,6 @@ BinomialMultifoldCenteredSumsOfPowers[r_, n_, m_, t_] :=
   
 ValidateBinomialMultifoldCenteredSumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurrence[r, n, m] - BinomialMultifoldCenteredSumsOfPowers[r, n, m, t], {n, 0, max}, {m, 0, max}, {t, 0, max}, {r, 0, max}] //Flatten
 
-
 (*END: Definitions *)
 
 End[ ]
