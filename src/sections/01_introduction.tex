@@ -329,8 +329,8 @@ Hence, we get ordinary sum of powers
   \end{align*}
 \end{corollary}
 Now we notice that
-\begin{proposition}[Binomial re-factorization]
-  \label{prop:binomial-refactorization}
+\begin{proposition}[Binomial decomposition]
+  \label{prop:binomial-decomposition}
   For integers $n\geq 0, \; r \geq 0, \; m\geq 0$
   \begin{align*}
     n \binom{n+r}{m} = (m+1) \binom{n+r}{m+1} - (r-m) \binom{n+r}{m}
@@ -338,8 +338,8 @@ Now we notice that
 \end{proposition}
 Thus, by setting $n=j$ and $r=-t+\frac{k}{2} -1$ and $m=k-1$
 yields
-\begin{corollary}[Central binomial re-factorization]
-  \label{cor:central-binomial-refactorization}
+\begin{corollary}[Central binomial decomposition]
+  \label{cor:central-binomial-decomposition}
   For integers $j\geq 0, \; t \geq 0, \; k\geq 0$
   \begin{align*}
     j \binom{j-t+\frac{k}{2} -1}{k-1}
@@ -348,23 +348,23 @@ yields
     \binom{j-t+\frac{k}{2}-1}{k-1}
   \end{align*}
   \begin{proof}
-    By binomial decomposition~\eqref{prop:binomial-refactorization} yields
+    By binomial decomposition~\eqref{prop:binomial-decomposition} yields
     \begin{align*}
       j \tbinom{j-t+\frac{k}{2} -1}{k-1}
       &=
       (k-1+1) \tbinom{j-t+\frac{k}{2} -1}{k-1+1}
-      - \left [-t+\frac{k}{2} -1-(k-1)\right ]
+      - \left [-t+\tfrac{k}{2} -1-(k-1)\right ]
       \tbinom{j-t+\frac{k}{2} -1}{k-1} \\
       &= k \tbinom{j-t+\frac{k}{2}-1}{k}
-      - \left [-t-\frac{k}{2} \right ]
-      \tbinom{j-t+\frac{k}{2}-1}{k-1} \\
-      &= k \tbinom{j-t+\frac{k}{2}-1}{k}
-      + \left [t+\frac{k}{2} \right ]
-      \tbinom{j-t+\frac{k}{2}-1}{k-1}.
+      - \left [-t-\tfrac{k}{2} \right ]
+      \tbinom{j-t+\tfrac{k}{2}-1}{k-1} \\
+      &= k \tbinom{j-t+\tfrac{k}{2}-1}{k}
+      + \left [t+\tfrac{k}{2} \right ]
+      \tbinom{j-t+\tfrac{k}{2}-1}{k-1}.
     \end{align*}
   \end{proof}
 \end{corollary}
-Thus, formula for sums of powers yields
+Thus, formula for sums of powers follows
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
   &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}

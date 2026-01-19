@@ -15,6 +15,7 @@ Riordan power identity for definition of T(n,k).
 - Rename: Proposition 116 -> Corollary 116.
 - Proposition 117 simplify k
 - Proposition 124: Write induction proof
+- Rename: binomial refactorization -> decomposition
 
 ## [1.5.0] - 18-Jan-2026
 

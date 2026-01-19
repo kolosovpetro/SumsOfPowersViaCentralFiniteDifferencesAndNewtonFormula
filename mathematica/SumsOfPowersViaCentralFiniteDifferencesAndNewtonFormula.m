@@ -32,9 +32,9 @@ ValidatePowersInCentralBinomialForm::usage=""
 
 EvenPowersInCentralBinomialForm::usage=""
 
-ValidateBinomialRefactorization::usage=""
+ValidateBinomialDecomposition::usage=""
 
-ValidateCentralBinomialRefactorization::usage=""
+ValidateCentralBinomialDecomposition::usage=""
 
 CenteredOrdinarySumsOfPowers::usage=""
 
@@ -123,11 +123,9 @@ ValidatePowersInCentralBinomialForm[max_] := Table[n^m - PowersInCentralBinomial
 
 EvenPowersInCentralBinomialForm[n_, m_, t_] := t^(2m) + Sum[(n-t)/ (2k) * Binomial[n-t+k-1, 2k-1] * CentralDifference[t, 2m, 2k], {k, 1, m}];
 
-ValidateBinomialRefactorization[max_] := Table[n*Binomial[n+r, m]-((m+1)*Binomial[n+r, m+1] - (r-m)* Binomial[n+r,m]), {n, 0, max}, {r, 0, max}, {m, 0, max}] //Flatten
+ValidateBinomialDecomposition[max_] := Table[n*Binomial[n+r, m]-((m+1)*Binomial[n+r, m+1] - (r-m)* Binomial[n+r,m]), {n, 0, max}, {r, 0, max}, {m, 0, max}] //Flatten
 
-ValidateCentralBinomialRefactorization[max_] := Table[j*Binomial[j-t+k/2-1,k-1]-(k*Binomial[j-t+k/2-1,k]+(t+k/2)*Binomial[j-t+k/2-1,k-1]),{j,0,max},{t,0,max},{k,0,max}]//Flatten
-
-ClearAll[CenteredOrdinarySumsOfPowers]
+ValidateCentralBinomialDecomposition[max_] := Table[j*Binomial[j-t+k/2-1,k-1]-(k*Binomial[j-t+k/2-1,k]+(t+k/2)*Binomial[j-t+k/2-1,k-1]),{j,0,max},{t,0,max},{k,0,max}]//Flatten
 
 CenteredOrdinarySumsOfPowers[n_, m_, t_] :=
   Sum[t^m, {j, 1, n}] +
@@ -152,14 +150,13 @@ ValidateCenteredOrdinarySumsOfPowers[max_] := Table[MultifoldSumOfPowersRecurren
 CenteredDecompositionOfPowerSums[n_, m_, t_] :=
   Sum[t^m, {j, 1, n}] +
   Sum[
-    CentralDifference[t, m, k]/k *
+    CentralDifference[t, m, k] *
       (
-        k*
         Sum[
           Binomial[j - t + k/2 - 1, k],
           {j, 1, n}
         ]
-        + (k/2)*
+        + (1/2)*
         Sum[
           Binomial[j - t + k/2 - 1, k - 1],
           {j, 1, n}
