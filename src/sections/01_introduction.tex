@@ -15,6 +15,7 @@ by Donald Knuth in~\cite{knuth1993johann},
 which we use throughout the paper.
 
 \begin{proposition} [Multifold sums of powers recurrence]
+  \label{prop:multifold-sums-of-powers-recurrence}
   For non-negative integers $r,n,m$
   \begin{align*}
     \KnuthRFoldSum{0}{n}{m}   &= n^m \\
@@ -640,13 +641,26 @@ Now we notice that
 \begin{proposition}[Multifold sum of zero powers]
   \label{prop:multifold-sum-of-zero-powers}
   \begin{mdframed}
-    For integers $r$ and $n$
+    For integers $r \geq 0$ and $n\geq 1$
     \begin{align*}
       \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}
     \end{align*}
   \end{mdframed}
   \begin{proof}
-    By hockey stick identity $\sum_{k=0}^{t} \binom{j+k}{j} = \binom{j+t+1}{j+1}$.
+    \begin{enumerate}
+      \item Let be $r=0$, then $\KnuthRFoldSum{0}{n}{0}=n^0=\binom{n-1}{0} = 1$,
+        by definition~\eqref{prop:multifold-sums-of-powers-recurrence}.
+      \item Let be $r=1$, then
+        $\KnuthRFoldSum{1}{n}{0} = \sum_{k=1}^{n} \binom{k-1}{0} = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
+      \item Let be $r=2$, then
+        $\KnuthRFoldSum{2}{n}{0}= \sum_{k=1}^{n} \binom{k}{1} = \sum_{k=1}^{n} k = \binom{n+1}{2}$.
+      \item Let be $r=3$, then $\KnuthRFoldSum{3}{n}{0}= \sum_{k=1}^{n} \binom{k+1}{2}
+        = \binom{n+2}{3}$.
+      \item By induction over $r$ and hockey stick identity
+        $\sum_{k=r}^{n} \binom{k}{r} = \binom{n+1}{r+1}$,
+        the claim follows
+        $\KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}$.
+    \end{enumerate}
   \end{proof}
 \end{proposition}
 Thus, binomial form of multifold centered
