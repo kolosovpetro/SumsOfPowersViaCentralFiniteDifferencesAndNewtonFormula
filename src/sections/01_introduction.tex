@@ -242,10 +242,6 @@ Meaning that the Knuth's formula for sums of odd powers
 originates from Newton's interpolation formula in central
 differences~\eqref{prop:newtons-formula-in-central-differences}.
 
-% The lemma~\eqref{lem:central-factorial-numbers-of-the-second-kind}
-% is well discussed
-% in~\cite{steffensen1927interpolation, carlitz1963divided, riordan1968combinatorial}.
-
 The non-zero central factorial numbers $T(2m,2k)$
 is the sequence \href{https://oeis.org/A008957}{\texttt{A008957}}
 in the OEIS~\cite{sloane2003line}.
@@ -313,7 +309,7 @@ Now we expand the brackets in central binomial form above
   = t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
   \left[ n \binom{n-t+\frac{k}{2}-1}{k-1} - t \binom{n-t+\frac{k}{2}-1}{k-1} \right]
 \end{align*}
-Hence, we get ordinary sum of powers
+Hence, we get the formula for ordinary sums of powers
 \begin{corollary}[Centered ordinary sums of powers]
   \label{cor:centered-ordinary-sums-of-powers}
   For integers $t, \; m\geq 0, \; n \geq 0$
@@ -360,7 +356,7 @@ yields
     \end{align*}
   \end{proof}
 \end{corollary}
-Thus, the formula for sums of powers follows
+Thus, the decomposition for sums of powers follows
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
   &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
@@ -369,7 +365,10 @@ Thus, the formula for sums of powers follows
       + \left [t+\frac{k}{2} \right ]
     \binom{j-t+\frac{k}{2}-1}{k-1} \right \} \\
     &- t \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k-1}
-  \Bigg ] \\
+  \Bigg ]
+\end{align*}
+\begin{align*}
+  \KnuthRFoldSum{1}{n}{m}
   &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
   \Bigg [
     \left \{ k \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
@@ -446,9 +445,6 @@ Thus, closed form of centered sums of powers yields
 
 Let $a=n-t+\frac{k}{2}$, then
 \begin{align*}
-  % &k \left( \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1} \right)
-  % + \frac{k}{2}
-  % \left( \binom{n-t+\frac{k}{2}}{k} - \binom{-t+\frac{k}{2}}{k} \right) \\
   &\left( \binom{a}{k+1} - \binom{a-n}{k+1} \right)
   + \frac{1}{2}
   \left( \binom{a}{k} - \binom{a-n}{k} \right) \\
