@@ -17,6 +17,7 @@ Riordan power identity for definition of T(n,k).
 - Proposition 124: Write induction proof
 - Rename: binomial refactorization -> decomposition
 - Simplify k in theorem 120
+- Refactor large equations
 
 ## [1.5.0] - 18-Jan-2026
 
