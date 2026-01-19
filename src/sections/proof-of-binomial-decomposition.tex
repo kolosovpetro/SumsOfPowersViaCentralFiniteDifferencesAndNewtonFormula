@@ -1,0 +1,39 @@
+Consider the proposition~\eqref{prop:binomial-decomposition}.
+For integers $n\geq 0, \; r \geq 0, \; m\geq 0$, we have
+\begin{align*}
+  n \binom{n+r}{m} = (m+1) \binom{n+r}{m+1} - (r-m) \binom{n+r}{m}
+\end{align*}
+For that case,
+the extraction property of binomial coefficients fits perfectly.
+\begin{lemma} [Extraction]
+  \begin{align*}
+    \binom{n}{k+1} = \frac{n-k}{k+1} \binom{n}{k}
+  \end{align*}
+\end{lemma}
+Thus,
+\begin{align*}
+  &n \binom{n+r}{m}
+  = (m+1) \binom{n+r}{m+1} - (r-m) \binom{n+r}{m} \\
+  &= m \binom{n+r}{m+1} + \binom{n+r}{m+1} - r \binom{n+r}{m} + m \binom{n+r}{m}
+\end{align*}
+Now we can notice that
+\begin{align*}
+  \binom{n+r}{m+1} = \frac{n+r-m}{m+1} \binom{n+r}{m},
+\end{align*}
+by extraction.
+Thus,
+\begin{align*}
+  n \binom{n+r}{m}
+  &= m \frac{n+r-m}{m+1} \binom{n+r}{m} + \frac{n+r-m}{m+1} \binom{n+r}{m} - r \binom{n+r}{m} + m \binom{n+r}{m}
+\end{align*}
+By moving binomial coefficient $\binom{n+r}{m}$ out of the brackets, we get
+\begin{align*}
+  n \binom{n+r}{m}
+  &= \binom{n+r}{m} \left[ m \frac{n+r-m}{m+1} + \frac{n+r-m}{m+1} - r + m \right] \\
+  &= \binom{n+r}{m} \left[ (m+1) \frac{n+r-m}{m+1} - r + m \right]
+\end{align*}
+Therefore, it is indeed true that for integers $n\geq 0, \; r \geq 0, \; m\geq 0$
+\begin{align*}
+  n \binom{n+r}{m} = (m+1) \binom{n+r}{m+1} - (r-m) \binom{n+r}{m}
+\end{align*}
+This completes the proof. \qed
