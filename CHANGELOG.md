@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Lemma 19 central factorial numbers: add definition space, 
 Riordan power identity for definition of T(n,k).
+- Refactor proposition 116, move intermediate steps to proof.
 
 ## [1.5.0] - 18-Jan-2026
 

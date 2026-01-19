@@ -342,16 +342,26 @@ yields
   For integers $j\geq 0, \; t \geq 0, \; k\geq 0$
   \begin{align*}
     j \binom{j-t+\frac{k}{2} -1}{k-1}
-    &= (k-1+1) \binom{j-t+\frac{k}{2} -1}{k-1+1}
-    - \left [-t+\frac{k}{2} -1-(k-1)\right ]
-    \binom{j-t+\frac{k}{2} -1}{k-1} \\
-    &= k \binom{j-t+\frac{k}{2}-1}{k}
-    - \left [-t-\frac{k}{2} \right ]
-    \binom{j-t+\frac{k}{2}-1}{k-1} \\
-    &= k \binom{j-t+\frac{k}{2}-1}{k}
+    = k \binom{j-t+\frac{k}{2}-1}{k}
     + \left [t+\frac{k}{2} \right ]
-    \binom{j-t+\frac{k}{2}-1}{k-1} \\
+    \binom{j-t+\frac{k}{2}-1}{k-1}
   \end{align*}
+  \begin{proof}
+    By binomial decomposition~\eqref{prop:binomial-refactorization} yields
+    \begin{align*}
+      j \tbinom{j-t+\frac{k}{2} -1}{k-1}
+      &=
+      (k-1+1) \tbinom{j-t+\frac{k}{2} -1}{k-1+1}
+      - \left [-t+\frac{k}{2} -1-(k-1)\right ]
+      \tbinom{j-t+\frac{k}{2} -1}{k-1} \\
+      &= k \tbinom{j-t+\frac{k}{2}-1}{k}
+      - \left [-t-\frac{k}{2} \right ]
+      \tbinom{j-t+\frac{k}{2}-1}{k-1} \\
+      &= k \tbinom{j-t+\frac{k}{2}-1}{k}
+      + \left [t+\frac{k}{2} \right ]
+      \tbinom{j-t+\frac{k}{2}-1}{k-1}.
+    \end{align*}
+  \end{proof}
 \end{proposition}
 Thus, formula for sums of powers yields
 \begin{align*}
