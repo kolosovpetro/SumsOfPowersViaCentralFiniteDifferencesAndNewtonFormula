@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{kolosov_2026_18135998}
 Petro Kolosov.
@@ -33,25 +33,18 @@ Paul~Leo Butzer, K.~Schmidt, E.L. Stark, and L.~Vogt.
   10(5-6):419--488, 1989.
 \newblock \url{https://doi.org/10.1080/01630568908816313}.
 
-\bibitem{steffensen1927interpolation}
-{Steffensen, Johan Frederik}.
-\newblock {\em Interpolation}.
-\newblock {Williams \& Wilkins}, 1927.
-\newblock
-  \url{https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8}.
-
-\bibitem{carlitz1963divided}
-L.~Carlitz and John Riordan.
-\newblock The divided central differences of zero.
-\newblock {\em {Canadian Journal of Mathematics}}, 15:94--100, 1963.
-\newblock \url{https://doi.org/10.4153/CJM-1963-010-8}.
-
 \bibitem{riordan1968combinatorial}
 John Riordan.
 \newblock {\em Combinatorial identities}, volume 217.
 \newblock {Wiley New York}, 1968.
 \newblock
   \url{https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758}.
+
+\bibitem{carlitz1963divided}
+L.~Carlitz and John Riordan.
+\newblock The divided central differences of zero.
+\newblock {\em {Canadian Journal of Mathematics}}, 15:94--100, 1963.
+\newblock \url{https://doi.org/10.4153/CJM-1963-010-8}.
 
 \bibitem{sloane2003line}
 {Sloane, Neil J.A. and others}.

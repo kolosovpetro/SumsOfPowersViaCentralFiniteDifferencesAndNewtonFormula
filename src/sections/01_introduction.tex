@@ -217,9 +217,16 @@ because
 
 \begin{lemma} [Central factorial numbers of the second kind]
   \label{lem:central-factorial-numbers-of-the-second-kind}
-  \begin{align*}
-    k! T(n, k) = \delta^k 0^n
-  \end{align*}
+  \begin{mdframed}
+    For integers $n \geq 0, \; k\geq 0$
+    \begin{align*}
+      k! T(n, k) = \delta^k 0^n,
+    \end{align*}
+    where $T(n,k)$ are central factorial numbers, defined by polynomial identity
+    $x^m = \sum_{k=1}^{m} T(m,k) \centralFactorial{x}{k}$.
+    See~\cite[p. 213]{riordan1968combinatorial},
+    and~\cite{carlitz1963divided}.
+  \end{mdframed}
 \end{lemma}
 
 Meaning that the Knuth's formula for sums of odd powers
@@ -238,9 +245,9 @@ Meaning that the Knuth's formula for sums of odd powers
 originates from Newton's interpolation formula in central
 differences~\eqref{prop:newtons-formula-in-central-differences}.
 
-The lemma~\eqref{lem:central-factorial-numbers-of-the-second-kind}
-is well discussed
-in~\cite{steffensen1927interpolation, carlitz1963divided, riordan1968combinatorial}.
+% The lemma~\eqref{lem:central-factorial-numbers-of-the-second-kind}
+% is well discussed
+% in~\cite{steffensen1927interpolation, carlitz1963divided, riordan1968combinatorial}.
 
 The non-zero central factorial numbers $T(2m,2k)$
 is the sequence \href{https://oeis.org/A008957}{\texttt{A008957}}
