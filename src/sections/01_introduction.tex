@@ -513,7 +513,7 @@ Continuing similarly, we can derive formula for multifold sums of powers
 by using centered hockey stick
 identity~\eqref{prop:centered-hockey-stick-identity} repeatedly.
 
-For instance, for $r=2$ sums of powers, we have
+For instance, for double sums of powers, we have
 \begin{align*}
   &\KnuthRFoldSum{2}{n}{m}
   =  t^m \KnuthRFoldSum{2}{n}{0} \\
@@ -537,7 +537,7 @@ identity~\eqref{prop:generalized-hockey-stick-identity}
   \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}}{k+1}
   &= \binom{n-t+\frac{k}{2} + 1}{k+2} - \binom{-t+\frac{k}{2}+1}{k+2}
 \end{align*}
-By rearranging the terms yields
+By substituting closed forms above, we get
 \begin{align*}
   \KnuthRFoldSum{2}{n}{m}
   &=  t^m \KnuthRFoldSum{2}{n}{0} \\
@@ -554,7 +554,11 @@ By rearranging the terms yields
       \binom{-t+\frac{k}{2}}{k+1} \KnuthRFoldSum{1}{n}{0}
       + \binom{-t+\frac{k}{2}+1}{k+1} \KnuthRFoldSum{1}{n}{0}
     \right]
-  \Bigg \} \\
+  \Bigg \}
+\end{align*}
+By combining the common terms yields
+\begin{align*}
+  \KnuthRFoldSum{2}{n}{m}
   &=  t^m \KnuthRFoldSum{2}{n}{0}
   + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
   \Bigg \{
@@ -575,7 +579,7 @@ By rearranging the terms yields
       +
       \binom{-t+\frac{k}{2}+0}{k+1} \KnuthRFoldSum{1}{n}{0}
     \right]
-  \Bigg \} \\
+  \Bigg \}
 \end{align*}
 Thus, formula for double centered sums of powers follows
 \begin{proposition}[Double centered sums of powers]
@@ -651,10 +655,15 @@ Now we notice that
       \item Let be $r=0$, then $\KnuthRFoldSum{0}{n}{0}=n^0=\binom{n-1}{0} = 1$,
         by definition~\eqref{prop:multifold-sums-of-powers-recurrence}.
       \item Let be $r=1$, then
-        $\KnuthRFoldSum{1}{n}{0} = \sum_{k=1}^{n} \binom{k-1}{0} = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
+        $\KnuthRFoldSum{1}{n}{0}
+        = \sum_{k=1}^{n} \binom{k-1}{0}
+        = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
       \item Let be $r=2$, then
-        $\KnuthRFoldSum{2}{n}{0}= \sum_{k=1}^{n} \binom{k}{1} = \sum_{k=1}^{n} k = \binom{n+1}{2}$.
-      \item Let be $r=3$, then $\KnuthRFoldSum{3}{n}{0}= \sum_{k=1}^{n} \binom{k+1}{2}
+        $\KnuthRFoldSum{2}{n}{0}= \sum_{k=1}^{n} \binom{k}{1}
+        = \sum_{k=1}^{n} k = \binom{n+1}{2}$.
+      \item Let be $r=3$, then
+        $\KnuthRFoldSum{3}{n}{0}
+        = \sum_{k=1}^{n} \binom{k+1}{2}
         = \binom{n+2}{3}$.
       \item By induction over $r$ and hockey stick identity
         $\sum_{k=r}^{n} \binom{k}{r} = \binom{n+1}{r+1}$,
@@ -663,8 +672,9 @@ Now we notice that
     \end{enumerate}
   \end{proof}
 \end{proposition}
-Thus, binomial form of multifold centered
-sums of powers~\eqref{theorem:multifold-centered-sums-of-powers}
+Hence, by~\eqref{theorem:multifold-centered-sums-of-powers}
+and~\eqref{prop:multifold-sum-of-zero-powers},
+binomial form of multifold sums of powers
 follows
 \begin{proposition}[Binomial form of multifold centered sums of powers]
   \label{prop:binomial-form-of-multifold-centered-sums-of-powers}
