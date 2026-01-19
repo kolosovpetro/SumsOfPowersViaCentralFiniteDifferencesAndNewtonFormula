@@ -21,6 +21,7 @@ Riordan power identity for definition of T(n,k).
 - Add new proposition: proposition 125 with setting t -> -t
 - Update conclusions
 - Add proof of proposition 115
+- Grammar improvements
 
 ## [1.5.0] - 18-Jan-2026
 
