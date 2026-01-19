@@ -700,3 +700,35 @@ follows
     \end{align*}
   \end{mdframed}
 \end{proposition}
+We may observe another remarkable result, by setting $t \rightarrow -t$
+into formula above
+\begin{proposition}[Negated binomial centered sums of powers]
+  \label{prop:negated-binomial-centered-sums-of-powers}
+  \begin{mdframed}
+    For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+    \begin{align*}
+      \KnuthRFoldSum{r}{n}{m}
+      &= (-1)^{m} \binom{r+n-1}{r} t^m
+      + (-1)^{m}\sum_{k=1}^{m} \frac{(-1)^{k} \delta^{k} t^{m}}{2}
+      \Bigg \{
+        \left[
+          \binom{n+t+\frac{k}{2}+r}{k+r}
+          +
+          \binom{n+t+\frac{k}{2}+r-1}{k+r}
+        \right] \\
+        &-
+        \sum_{s=0}^{r-1}
+        \left[
+          \binom{t+\frac{k}{2} + r -s}{k+r-s} +
+          \binom{t+\frac{k}{2} + r -s-1}{k+r-s}
+        \right] \binom{s+n-1}{s}
+      \Bigg \}.
+    \end{align*}
+  \end{mdframed}
+  \begin{proof}
+    We have $\delta^{k} (-t)^{m} = (-1)^{m+k} \delta^{k} t^{m}$,
+    and $(-t)^{m} = (-1)^{m} t^{m}$.
+    Hence claim follows
+    from~\eqref{prop:binomial-form-of-multifold-centered-sums-of-powers}.
+  \end{proof}
+\end{proposition}
