@@ -171,9 +171,9 @@ ValidateCenteredHockeyStickIdentity[max_] := Table[Sum[Binomial[j-t+k/2-1,k],{j,
 ClosedFormOfCenteredSumsOfPowers[n_, m_, t_] := 
   Sum[t^m, {j, 1, n}] +
   Sum[
-    CentralDifference[t, m, k]/k *
-      ( k*(Binomial[n - t + k/2, k + 1] - Binomial[-t + k/2, k + 1]) +
-        (k/2)*(Binomial[n - t + k/2, k] - Binomial[-t + k/2, k])
+    CentralDifference[t, m, k] *
+      ( (Binomial[n - t + k/2, k + 1] - Binomial[-t + k/2, k + 1]) +
+        (1/2)*(Binomial[n - t + k/2, k] - Binomial[-t + k/2, k])
       ),
     {k, 1, m}
   ];

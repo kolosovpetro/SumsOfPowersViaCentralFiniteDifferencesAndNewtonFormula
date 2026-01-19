@@ -438,10 +438,10 @@ Thus, closed form of centered sums of powers yields
     For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
     \begin{align*}
       \KnuthRFoldSum{1}{n}{m} = \sum_{j=1}^{n} t^m
-      + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+      + \sum_{k=1}^{m} \delta^{k} t^m
       \left [
-        k \left( \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1} \right)
-        + \frac{k}{2}
+        \left( \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1} \right)
+        + \frac{1}{2}
         \left( \binom{n-t+\frac{k}{2}}{k} - \binom{-t+\frac{k}{2}}{k} \right)
       \right ].
     \end{align*}
@@ -450,44 +450,44 @@ Thus, closed form of centered sums of powers yields
 
 Let $a=n-t+\frac{k}{2}$, then
 \begin{align*}
-  &k \left( \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1} \right)
-  + \frac{k}{2}
-  \left( \binom{n-t+\frac{k}{2}}{k} - \binom{-t+\frac{k}{2}}{k} \right) \\
-  &=k \left( \binom{a}{k+1} - \binom{a-n}{k+1} \right)
-  + \frac{k}{2}
+  % &k \left( \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1} \right)
+  % + \frac{k}{2}
+  % \left( \binom{n-t+\frac{k}{2}}{k} - \binom{-t+\frac{k}{2}}{k} \right) \\
+  &\left( \binom{a}{k+1} - \binom{a-n}{k+1} \right)
+  + \frac{1}{2}
   \left( \binom{a}{k} - \binom{a-n}{k} \right) \\
-  &=k \left(
+  &=\left(
     \binom{a}{k+1} - \binom{a-n}{k+1}
     + \frac{1}{2}
     \binom{a}{k} - \frac{1}{2} \binom{a-n}{k}
   \right) \\
-  &=\frac{k}{2} \left(
+  &=\frac{1}{2} \left(
     2 \binom{a}{k+1} -  2 \binom{a-n}{k+1}
     + \binom{a}{k} - \binom{a-n}{k}
   \right) \\
-  &=\frac{k}{2} \left(
+  &=\frac{1}{2} \left(
     \binom{a}{k+1} + \binom{a}{k+1} - \binom{a-n}{k+1} - \binom{a-n}{k+1}
     + \binom{a}{k} - \binom{a-n}{k}
   \right)
 \end{align*}
 By binomial recurrence $\binom{a+1}{k+1} = \binom{a}{k} + \binom{a}{k+1}$
 \begin{align*}
-  &\frac{k}{2} \left(
+  &\frac{1}{2} \left(
     \binom{a}{k+1} + \binom{a}{k+1} - \binom{a-n}{k+1} - \binom{a-n}{k+1}
     + \binom{a}{k} - \binom{a-n}{k}
   \right) \\
-  &= \frac{k}{2} \left(
+  &= \frac{1}{2} \left(
     \left[ \binom{a}{k+1} + \binom{a}{k} \right]
     + \binom{a}{k+1} - \binom{a-n}{k+1}
     - \left[ \binom{a-n}{k+1} - \binom{a-n}{k} \right]
   \right) \\
-  &= \frac{k}{2} \left(
+  &= \frac{1}{2} \left(
     \binom{a+1}{k+1}
     + \binom{a}{k+1}
     - \binom{a-n}{k+1}
     - \binom{a-n+1}{k+1}
   \right) \\
-  &= \frac{k}{2} \left(
+  &= \frac{1}{2} \left(
     \left[ \binom{a+1}{k+1} + \binom{a}{k+1} \right]
     - \left[ \binom{a-n}{k+1} + \binom{a-n+1}{k+1} \right]
   \right)
