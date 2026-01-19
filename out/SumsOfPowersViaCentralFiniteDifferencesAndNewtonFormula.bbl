@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{kolosov_2026_18135998}
 Petro Kolosov.
@@ -32,6 +32,13 @@ Paul~Leo Butzer, K.~Schmidt, E.L. Stark, and L.~Vogt.
 \newblock {\em Numerical Functional Analysis and Optimization},
   10(5-6):419--488, 1989.
 \newblock \url{https://doi.org/10.1080/01630568908816313}.
+
+\bibitem{steffensen1927interpolation}
+{Steffensen, Johan Frederik}.
+\newblock {\em Interpolation}.
+\newblock {Williams \& Wilkins}, 1927.
+\newblock
+  \url{https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8}.
 
 \bibitem{riordan1968combinatorial}
 John Riordan.
