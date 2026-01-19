@@ -1,18 +1,17 @@
-In this manuscript we derive formula for multifold sums of powers
-using Newton's formula and central differences.
-
 In this manuscript, we derive formulas for multifold sums of
 powers using Newton's formula and central finite differences.
 
 The idea of deriving sums of powers using difference operators
-and Newton's series is quite generic. Formulas for sums
-of powers using forward and backward differences
+and Newton series is classical and quite general.
+Formulas for sums of powers using forward
+and backward differences
 can be found in
 the works~\cite{kolosov_2026_18135998, kolosov_2026_18136163}.
 
-We define the recurrence for multifold sums of powers introduced
-by Donald Knuth in~\cite{knuth1993johann},
-which we use throughout the paper.
+We define the recurrence for multifold
+sums of powers introduced by
+Donald Knuth~\cite{knuth1993johann},
+which is used throughout the paper.
 
 \begin{proposition} [Multifold sums of powers recurrence]
   \label{prop:multifold-sums-of-powers-recurrence}
@@ -81,7 +80,7 @@ Therefore,
   where $\fallingFactorial{n+\frac{k}{2}-1}{k-1}$ are falling factorials.
 \end{proposition}
 
-To derive formula for multifold sums of powers,
+To derive a formula for multifold sums of powers,
 we follow the strategy to express the Newton's
 formula~\eqref{prop:newtons-formula-in-central-differences}
 in terms of binomial coefficients,
@@ -112,7 +111,8 @@ Therefore,
   \end{proof}
 \end{proposition}
 
-Which yields Newton's formula for powers, in terms of central differences
+This yields Newton's formula for powers,
+in terms of central differences
 \begin{proposition} [Newton's formula for powers in zero]
   \label{prop:newtons-formula-for-powers-in-zero}
   \begin{mdframed}
@@ -136,17 +136,13 @@ By factoring out and simplifying the term $n$, we get
   n^{m-1}
   = \sum_{k=1}^{m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^m
 \end{align*}
-We may observe that the operator of central finite difference $\delta^{k} 0^m$
-requires the parity of its arguments $m$ and $k$
-meaning that both $m$ and $k$ required to be: $m\pmod{2} = k\pmod{2}$,
-such that finite differences $\delta^{k} 0^m$ are non-zero
+We observe that the central finite difference operator $\delta^{k} 0^m$
+depends on the parity of $m$ and $k$. In particular,
 \begin{align*}
-  \delta^{k} 0^m \neq 0,
-  \quad &\mathrm{whether} \quad m\pmod{2} = k\pmod{2}, \\
-  \delta^{k} 0^m = 0,
-  \quad &\mathrm{whether} \quad m\pmod{2} \neq k\pmod{2}.
+  \delta^{k} 0^m \neq 0 \quad &\text{when} \quad m \equiv k \pmod{2}, \\
+  \delta^{k} 0^m = 0 \quad &\text{when} \quad m \not\equiv k \pmod{2}.
 \end{align*}
-Thus, for odd powers, only even differences contribute.
+Thus, for odd powers, only even-order central differences contribute.
 By setting $m \rightarrow 2m$ we get
 \begin{align*}
   n^{2m-1}
@@ -154,13 +150,13 @@ By setting $m \rightarrow 2m$ we get
 \end{align*}
 Thus, the central differences $\delta^{k} 0^{2m}$ are zero for all odd $k$.
 
-Since that $k$ runs over all integers in the range $0\leq k \leq 2m$,
+Since $k$ runs over all integers in the range $0\leq k \leq 2m$,
 we can omit odd values of $k$
 \begin{align*}
   n^{2m-1}
   = \sum_{k=1}^{m} \frac{1}{2k} \binom{n+k-1}{2k-1} \delta^{2k} 0^{2m}
 \end{align*}
-Hence, formula for ordinary sums of odd powers yields
+Hence, we obtain the formula for ordinary sums of odd powers
 
 \begin{proposition}[Ordinary sums of odd powers in central differences]
   \label{prop:ordinary-sums-of-odd-powers-in-central-differences}
@@ -654,16 +650,16 @@ Now we notice that
   \end{mdframed}
   \begin{proof}
     \begin{enumerate}
-      \item Let be $r=0$, then $\KnuthRFoldSum{0}{n}{0}=n^0=\binom{n-1}{0} = 1$,
+      \item Let $r=0$, then $\KnuthRFoldSum{0}{n}{0}=n^0=\binom{n-1}{0} = 1$,
         by definition~\eqref{prop:multifold-sums-of-powers-recurrence}.
-      \item Let be $r=1$, then
+      \item Let $r=1$, then
         $\KnuthRFoldSum{1}{n}{0}
         = \sum_{k=1}^{n} \binom{k-1}{0}
         = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
-      \item Let be $r=2$, then
+      \item Let $r=2$, then
         $\KnuthRFoldSum{2}{n}{0}= \sum_{k=1}^{n} \binom{k}{1}
         = \sum_{k=1}^{n} k = \binom{n+1}{2}$.
-      \item Let be $r=3$, then
+      \item Let $r=3$, then
         $\KnuthRFoldSum{3}{n}{0}
         = \sum_{k=1}^{n} \binom{k+1}{2}
         = \binom{n+2}{3}$.
