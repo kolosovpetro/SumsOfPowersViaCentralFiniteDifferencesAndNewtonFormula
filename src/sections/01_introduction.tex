@@ -123,11 +123,11 @@ in terms of central differences
     \end{align*}
   \end{mdframed}
 \end{proposition}
-Although based on Newton's interpolation
+Although it is based on Newton's interpolation
 formula~\eqref{prop:newtons-formula-in-central-differences},
-the proposition~\eqref{prop:newtons-formula-for-powers-in-zero}
-iterates starting fom $k=1$
-to avoid division by zero in $\frac{n}{k}$.
+Proposition~\eqref{prop:newtons-formula-for-powers-in-zero}
+starts the summation at $k=1$,
+which avoids division by zero in $\frac{n}{k}$.
 This is a valid trick, because the central difference $\delta^{k} 0^n$
 is zero for all $n \geq 1$ and $k=0$.
 
@@ -143,13 +143,11 @@ depends on the parity of $m$ and $k$. In particular,
   \delta^{k} 0^m = 0 \quad &\text{when} \quad m \not\equiv k \pmod{2}.
 \end{align*}
 Thus, for odd powers, only even-order central differences contribute.
-By setting $m \rightarrow 2m$ we get
+By setting $m \rightarrow 2m$, we get
 \begin{align*}
   n^{2m-1}
   = \sum_{k=1}^{2m} \frac{1}{k} \binom{n+\frac{k}{2}-1}{k-1} \delta^{k} 0^{2m}
 \end{align*}
-Thus, the central differences $\delta^{k} 0^{2m}$ are zero for all odd $k$.
-
 Since $k$ runs over all integers in the range $0\leq k \leq 2m$,
 we can omit odd values of $k$
 \begin{align*}
@@ -208,7 +206,7 @@ given by Donald Knuth in
 recovers naturally from the
 theorem~\eqref{theorem:multifold-sums-of-odd-powers-in-central-differences}.
 
-The reason is straightforward, instead of using Central factorial numbers
+The reason is straightforward, instead of using central factorial numbers
 of the second kind $T(n,k)$,
 the theorem~\eqref{theorem:multifold-sums-of-odd-powers-in-central-differences}
 utilizes central differences explicitly,
@@ -274,7 +272,7 @@ in the OEIS~\cite{sloane2003line}.
 
 This approach can be generalized even further.
 Consider Newton's interpolation formula around arbitrary integer $t$
-\begin{proposition}[Newton's interpolation formula in central differenes]
+\begin{proposition}[Newton's interpolation formula in central differences]
   \label{prop:newtons-interpolation-formula-in-central-differences}
   \begin{mdframed}
     \begin{align*}
@@ -362,7 +360,7 @@ yields
     \end{align*}
   \end{proof}
 \end{corollary}
-Thus, formula for sums of powers follows
+Thus, the formula for sums of powers follows
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
   &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
@@ -400,7 +398,7 @@ Therefore,
     \right ].
   \end{align*}
 \end{proposition}
-Let be generalized hockey stick identity
+Let us recall the generalized hockey-stick identity.
 \begin{proposition}[Generalized hockey-stick identity]
   \label{prop:generalized-hockey-stick-identity}
   For integers $a,b$ and $j$
@@ -507,7 +505,8 @@ Therefore, by setting $a=n-t+\frac{k}{2}$ gives
   \end{mdframed}
 \end{proposition}
 
-Continuing similarly, we can derive formula for multifold sums of powers
+Continuing similarly, we can derive formulas
+for multifold sums of powers
 by using centered hockey stick
 identity~\eqref{prop:centered-hockey-stick-identity} repeatedly.
 
