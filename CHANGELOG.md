@@ -19,6 +19,7 @@ Riordan power identity for definition of T(n,k).
 - Simplify k in theorem 120
 - Refactor large equations
 - Add new proposition: proposition 125 with setting t -> -t
+- Update conclusions
 
 ## [1.5.0] - 18-Jan-2026
 
