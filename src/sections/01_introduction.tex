@@ -38,8 +38,8 @@ Consider Newton's interpolation
 formula~\cite{newton1850newton,
   butzer1989central,
 steffensen1927interpolation}
-in central differences evaluated in zero
-\begin{proposition}[Newton's formula in central differences in zero]
+in central differences evaluated at zero.
+\begin{proposition}[Newton's formula in central differences at zero]
   \label{prop:newtons-formula-in-central-differences}
   \begin{align*}
     f(x)
@@ -48,7 +48,7 @@ in central differences evaluated in zero
   where
   $\delta^{k} f(0)
   = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f\left(\frac{k}{2} - j\right)$
-  are central finite differences in zero,
+  are central finite differences at zero,
   and $\centralFactorial{x}{k}$
   are central factorials,
   with $\centralFactorial{x}{0}=1$ for every $x$.
@@ -100,7 +100,7 @@ Therefore,
 \end{proposition}
 This yields Newton's formula for powers,
 in terms of central differences.
-\begin{proposition} [Newton's formula for powers in zero]
+\begin{proposition} [Newton's formula for powers at zero]
   \label{prop:newtons-formula-for-powers-in-zero}
   For positive integers $n \geq 1$ and $m \geq 1$
   \begin{align*}
@@ -236,7 +236,7 @@ The coefficients $1, 6, 1, 120, 30, 1,\ldots$
 is the sequence \href{https://oeis.org/A303675}{\texttt{A303675}}
 in the OEIS~\cite{sloane2003line}.
 This approach can be generalized even further.
-Consider Newton's interpolation formula around arbitrary integer $t$
+Consider Newton's interpolation formula around an arbitrary integer $t$.
 \begin{proposition}[Newton's interpolation formula in central differences]
   \label{prop:newtons-interpolation-formula-in-central-differences}
   \begin{align*}
@@ -431,7 +431,7 @@ Therefore, by setting $a=-t+\frac{k}{2}$ and $b=n-t-\frac{k}{2}-1$ yields
 Thus, closed form of centered sums of powers yields
 \begin{theorem}[Closed form of centered sums of powers]
   \label{theorem:closed-form-of-centered-sums-of-powers}
-  For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$,
+  For integers $n\geq 0, \; m \geq 0$, and arbitrary integer $t$,
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
     &= \sum_{j=1}^{n} t^m \\
@@ -488,7 +488,7 @@ Therefore, by setting $a=n-t+\frac{k}{2}$,
 we get simplified formula for centered sum of powers.
 \begin{proposition}[Simplified centered sums of powers]
   \label{prop:simplified-centered-sums-of-powers}
-  For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+  For integers $n\geq 0, \; m \geq 0$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
     &= \sum_{j=1}^{n} t^m \\
@@ -575,7 +575,7 @@ By combining the common terms yields
 Thus, formula for double centered sums of powers follows
 \begin{proposition}[Double centered sums of powers]
   \label{prop:double-centered-sums-of-powers}
-  For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+  For integers $n\geq 0, \; m \geq 0$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{2}{n}{m}
     &=  t^m \KnuthRFoldSum{2}{n}{0}
@@ -608,7 +608,7 @@ identity~\eqref{prop:centered-hockey-stick-identity} repeatedly.
 We have
 \begin{theorem}[Multifold centered sums of powers]
   \label{theorem:multifold-centered-sums-of-powers}
-  For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+  For integers $n\geq 0, \; m \geq 0$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     &= t^m \KnuthRFoldSum{r}{n}{0}
@@ -663,7 +663,7 @@ binomial form of multifold sums of powers
 follows
 \begin{proposition}[Binomial form of multifold centered sums of powers]
   \label{prop:binomial-form-of-multifold-centered-sums-of-powers}
-  For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+  For integers $n\geq 0, \; m \geq 0$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     &= \binom{r+n-1}{r} t^m
@@ -687,7 +687,7 @@ We may observe another remarkable result, by setting $t \rightarrow -t$
 into formula above
 \begin{proposition}[Negated binomial centered sums of powers]
   \label{prop:negated-binomial-centered-sums-of-powers}
-  For integers $n\geq 0, \; m \geq 0$ and arbitrary integer $t$
+  For integers $n\geq 0, \; m \geq 0$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     &= (-1)^{m} \binom{r+n-1}{r} t^m \\
