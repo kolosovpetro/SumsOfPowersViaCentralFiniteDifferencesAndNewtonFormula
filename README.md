@@ -20,7 +20,7 @@ In this manuscript, we derive closed-form expressions for multifold sums of powe
 
 - **Initial release date:** January 3, 2026.
 - **MSC2010:** 05A19, 05A10, 41A15, 11B83.
-- **Keywords:** Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials Interpolation, Approximation, Discrete convolution, Combinatorics, Polynomial identities, Central factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky identity, Pascal's triangle, OEIS.
+- **Keywords:** Sums of powers, Newton's interpolation formula, Finite differences, Binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials, Interpolation, Approximation, Discrete convolution, Combinatorics, Polynomial identities, Central factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky identity, Pascal's triangle, OEIS.
 - **License:** This work is licensed under a [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/).
 - **DOI:** https://doi.org/10.5281/zenodo.18096789d
 - **Web Version:** https://kolosovpetro.github.io/sums-of-powers-central-differences/

@@ -3,9 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
+  <link rel="canonical" href="https://kolosovpetro.github.io/sums-of-powers-central-differences/" />
+  <meta name="keywords" content="sums of powers, Newton interpolation formula, finite differences, binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials, interpolation, approximation, discrete convolution, combinatorics, polynomial identities, central factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky identity, Pascal's triangle, OEIS" />
+  <meta name="description" content="We derive closed-form expressions for multifold sums of powers using Newton’s central differences formula, evaluated at an arbitrary integer point. Knuth’s formula for odd-power sums emerges naturally at zero, and Mathematica code is provided to verify the results." />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Petro Kolosov" />
-  <meta name="dcterms.date" content="2026-01-21" />
+  <meta name="dcterms.date" content="2026-01-24" />
   <title>Sums of powers via central finite differences and Newton’s formula</title>
   <style>
     /* Default styles provided by pandoc.
@@ -210,7 +214,7 @@
 <h1 class="title">Sums of powers via central finite differences and
 Newton’s formula</h1>
 <p class="author">Petro Kolosov</p>
-<p class="date">2026-01-21</p>
+<p class="date">2026-01-24</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
 <p>In this manuscript, we derive closed-form expressions for multifold
@@ -268,16 +272,16 @@ k&gt;0.
 <p>Consider Newton’s interpolation formula <span class="citation"
 data-cites="newton1850newton butzer1989central steffensen1927interpolation">(Newton,
 Isaac and Chittenden, N.W. 1850; Butzer et al. 1989; Steffensen, Johan
-Frederik 1927)</span> in central differences evaluated in zero</p>
+Frederik 1927)</span> in central differences evaluated at zero.</p>
 <div id="prop:newtons-formula-in-central-differences"
 class="proposition">
 <p><strong>Proposition 3</strong> (Newton’s formula in central
-differences in zero). <em><span class="math display">\[\begin{align*}
+differences at zero). <em><span class="math display">\[\begin{align*}
     f(x)
     = \sum_{k=0}^{\infty} \frac{x^{[k]}}{k!} \delta^{k} f(0),
 \end{align*}\]</span> where <span class="math inline">\(\delta^{k} f(0)
   = \sum_{j=0}^{k} (-1)^{j} \binom{k}{j} f\left(\frac{k}{2} -
-j\right)\)</span> are central finite differences in zero, and <span
+j\right)\)</span> are central finite differences at zero, and <span
 class="math inline">\(x^{[k]}\)</span> are central factorials, with
 <span class="math inline">\(x^{[0]}=1\)</span> for every <span
 class="math inline">\(x\)</span>.</em></p>
@@ -336,7 +340,7 @@ data-reference="prop:central-factorials-in-terms-of-falling">[prop:central-facto
 <p>This yields Newton’s formula for powers, in terms of central
 differences.</p>
 <div id="prop:newtons-formula-for-powers-in-zero" class="proposition">
-<p><strong>Proposition 6</strong> (Newton’s formula for powers in zero).
+<p><strong>Proposition 6</strong> (Newton’s formula for powers at zero).
 <em>For positive integers <span class="math inline">\(n \geq 1\)</span>
 and <span class="math inline">\(m \geq 1\)</span> <span
 class="math display">\[\begin{align*}
@@ -502,8 +506,8 @@ class="math display">\[\begin{align*}
 href="https://oeis.org/A303675"><code>A303675</code></a> in the
 OEIS <span class="citation" data-cites="sloane2003line">(Sloane, Neil
 J.A. and others 2003)</span>. This approach can be generalized even
-further. Consider Newton’s interpolation formula around arbitrary
-integer <span class="math inline">\(t\)</span></p>
+further. Consider Newton’s interpolation formula around an arbitrary
+integer <span class="math inline">\(t\)</span>.</p>
 <div id="prop:newtons-interpolation-formula-in-central-differences"
 class="proposition">
 <p><strong>Proposition 11</strong> (Newton’s interpolation formula in
@@ -714,8 +718,9 @@ class="math display">\[\begin{align*}
 class="theorem">
 <p><strong>Theorem 20</strong> (Closed form of centered sums of powers).
 <em>For integers <span class="math inline">\(n\geq 0, \; m \geq
-0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>,
-<span class="math display">\[\begin{align*}
+0\)</span>, and arbitrary integer <span
+class="math inline">\(t\)</span>, <span
+class="math display">\[\begin{align*}
     \Sigma^{1}\,{n}^{m}
     &amp;= \sum_{j=1}^{n} t^m \\
     &amp;+ \sum_{k=1}^{m} \delta^{k} t^m
@@ -776,8 +781,9 @@ formula for centered sum of powers.</p>
 <div id="prop:simplified-centered-sums-of-powers" class="proposition">
 <p><strong>Proposition 21</strong> (Simplified centered sums of powers).
 <em>For integers <span class="math inline">\(n\geq 0, \; m \geq
-0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
-<span class="math display">\[\begin{align*}
+0\)</span>, and an arbitrary integer <span
+class="math inline">\(t\)</span> <span
+class="math display">\[\begin{align*}
     \Sigma^{1}\,{n}^{m}
     &amp;= \sum_{j=1}^{n} t^m \\
     &amp;+ \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
@@ -868,8 +874,9 @@ follows</p>
 <div id="prop:double-centered-sums-of-powers" class="proposition">
 <p><strong>Proposition 22</strong> (Double centered sums of powers).
 <em>For integers <span class="math inline">\(n\geq 0, \; m \geq
-0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
-<span class="math display">\[\begin{align*}
+0\)</span>, and an arbitrary integer <span
+class="math inline">\(t\)</span> <span
+class="math display">\[\begin{align*}
     \Sigma^{2}\,{n}^{m}
     &amp;=  t^m \Sigma^{2}\,{n}^{0}
     + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{2}
@@ -903,8 +910,9 @@ repeatedly. We have</p>
 <div id="theorem:multifold-centered-sums-of-powers" class="theorem">
 <p><strong>Theorem 23</strong> (Multifold centered sums of powers).
 <em>For integers <span class="math inline">\(n\geq 0, \; m \geq
-0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
-<span class="math display">\[\begin{align*}
+0\)</span>, and an arbitrary integer <span
+class="math inline">\(t\)</span> <span
+class="math display">\[\begin{align*}
     \Sigma^{r}\,{n}^{m}
     &amp;= t^m \Sigma^{r}\,{n}^{0}
     + \sum_{k=1}^{m} \frac{\delta^{k} t^{m}}{2}
@@ -971,7 +979,7 @@ binomial form of multifold sums of powers follows</p>
 class="proposition">
 <p><strong>Proposition 25</strong> (Binomial form of multifold centered
 sums of powers). <em>For integers <span class="math inline">\(n\geq 0,
-\; m \geq 0\)</span> and arbitrary integer <span
+\; m \geq 0\)</span>, and an arbitrary integer <span
 class="math inline">\(t\)</span> <span
 class="math display">\[\begin{align*}
     \Sigma^{r}\,{n}^{m}
@@ -998,8 +1006,9 @@ class="math inline">\(t \rightarrow -t\)</span> into formula above</p>
 class="proposition">
 <p><strong>Proposition 26</strong> (Negated binomial centered sums of
 powers). <em>For integers <span class="math inline">\(n\geq 0, \; m \geq
-0\)</span> and arbitrary integer <span class="math inline">\(t\)</span>
-<span class="math display">\[\begin{align*}
+0\)</span>, and an arbitrary integer <span
+class="math inline">\(t\)</span> <span
+class="math display">\[\begin{align*}
     \Sigma^{r}\,{n}^{m}
     &amp;= (-1)^{m} \binom{r+n-1}{r} t^m \\
     &amp;+ (-1)^{m}\sum_{k=1}^{m} \frac{(-1)^{k} \delta^{k} t^{m}}{2}
@@ -1246,7 +1255,7 @@ data-reference="prop:negated-binomial-centered-sums-of-powers">[prop:negated-bin
 <p><span><strong>Metadata</strong></span></p>
 <ul>
 <li><p><strong>Initial release date:</strong> January 3, 2026.</p></li>
-<li><p><strong>Current release date:</strong> 2026-01-21.</p></li>
+<li><p><strong>Current release date:</strong> 2026-01-24.</p></li>
 <li><p><strong>Version:</strong> <code>Local-0.1.0</code></p></li>
 <li><p><strong>MSC2010:</strong> 05A19, 05A10, 11B73, 11B83.</p></li>
 <li><p><strong>Keywords:</strong> Sums of powers, Newton’s interpolation
@@ -1344,3 +1353,4 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </section>
 </body>
 </html>
+
