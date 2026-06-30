@@ -2,7 +2,8 @@
 
 ## Abstract
 
-In this manuscript, we derive closed-form expressions for multifold sums of powers using Newton's interpolation formula in central differences, evaluated at an arbitrary integer point $t$. We further show that Knuth's formula for multifold sums of odd powers arises naturally from Newton's interpolation formula in central differences evaluated at zero. Additionally, we provide Wolfram Mathematica programs to validate the main results.
+In this manuscript, we derive closed formulas for multifold sums of powers of integers by combining the central Newton interpolation formula with hockey-stick identities for binomial coefficients. We further obtain representations of multifold sums of powers in terms of Stirling numbers of the second kind and Eulerian numbers. Finally, we provide Wolfram Mathematica programs for the efficient verification of the derived identities.
+
 
 ## Related projects
 
