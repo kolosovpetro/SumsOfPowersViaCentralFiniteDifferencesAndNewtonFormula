@@ -14,138 +14,164 @@ because it is simple and beautiful
   \end{align*}
 \end{definition}
 
-% We utilize the following notation for rising factorials
-% \begin{definition}[Rising factorials]
-%   \label{def:rising-factorials}
-%   For integers $n,k$
-%   \begin{align*}
-%     \risingFactorial{n}{k} =
-%     \begin{cases}
-%       0, \quad & \mathrm{if \; } k < 0, \\
-%       1, \quad & \mathrm{if \; } k = 0, \\
-%       \prod_{j=0}^{k-1} (n+j), \quad & \mathrm{if \; } k>0.
-%     \end{cases}
-%   \end{align*}
-% \end{definition}
-% We encourage the audience to read
-% J. F. Steffensen's work on the definition of
-% generalized factorials~\cite{steffensen1933definition}.
-
-% \begin{lemma}[Backward Newton's formula]
-%   \label{lem:backward-newtons-formula}
-%   Let $f\colon \mathbb{Z} \to \mathbb{C}$ be a function,
-%   and let $t \in \mathbb{Z}$.
-%   Then, for all $n \in \mathbb{Z}$,
-%   \begin{align*}
-%     f(n)
-%     = \sum_{k=0}^{\infty} \frac{\risingFactorial{(n-t)}{k}}{k!} \nabla^{k} f(t)
-%     = \sum_{k=0}^{\infty} \binom{n-t+k-1}{k} \nabla^{k} f(t),
-%   \end{align*}
-%   where $\nabla^{k} f(t)$ is the $k$-th backward difference of $f$
-%   evaluated at $t$
-%   \begin{align*}
-%     \nabla^{k} t^{m} = \tsum_{j=0}^{k} (-1)^j \tbinom{k}{j} (t-j)^m.
-%   \end{align*}
-%   \begin{proof}
-%     Originally revealed by Sir Isaac Newton in~\cite{newton1850newton}.
-%     Expressed in modern mathematical notation by J. F. Steffensen
-%     in~\cite[section 2, eq. (19)]{steffensen1927interpolation}.
-%     By using identity
-%     $\frac{\risingFactorial{(n-t)}{k}}{k!} = \binom{n-t+k-1}{k}$,
-%     we get binomial form.
-%   \end{proof}
-% \end{lemma}
-
-% \begin{lemma}[Backward Newton's formula for powers]
-%   \label{lem:backward-newtons-formula-for-powers}
-%   For non-negative integers $n,m$, and an arbitrary integer $t$
-%   \begin{align*}
-%     n^m = \sum_{k=0}^{m} \binom{n-t+k-1}{k} \nabla^{k} t^m.
-%   \end{align*}
-%   \begin{proof}
-%     Special case of Lemma~\eqref{lem:backward-newtons-formula} for powers.
-%   \end{proof}
-% \end{lemma}
-
-% \begin{lemma}[Generalized hockey-stick identity]
-%   \label{lem:generalized-hockey-stick-identity}
-%   For arbitrary integers $a,b$ and $j$,
-%   \begin{align*}
-%     \sum_{k=a}^{b} \binom{k}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}.
-%   \end{align*}
-%   \begin{proof}
-%     We have,
-%     $\sum_{k=a}^{b} \binom{k}{j}
-%     = \binom{a}{j} + \binom{a+1}{j} + \cdots + \binom{b}{j}
-%     = \left( \sum_{k=0}^{b} \binom{k}{j} \right) - \left( \sum_{k=0}^{a-1} \binom{k}{j} \right)$.
-%     By hockey-stick identity $\sum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$ yields,
-%     \begin{align*}
-%       \tsum_{k=a}^{b} \tbinom{k}{j}
-%       = \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right) - \left( \tsum_{k=0}^{a-1} \tbinom{k}{j} \right)
-%       = \tbinom{b+1}{j+1} - \tbinom{a}{j+1}.
-%     \end{align*}
-%     This completes the proof.
-%   \end{proof}
-% \end{lemma}
-
-% \begin{lemma}[Backward hockey-stick identity]
-%   \label{lem:backward-hockey-stick-identity}
-%   For integer $n\geq1$, and arbitrary integers $t,k,r$
-%   \begin{align*}
-%     \sum_{j=1}^{n} \binom{j-t+k-1+r}{k+r}
-%     = \binom{n-t+k+r}{k+r+1} - \binom{k-t+r}{k+r+1}.
-%   \end{align*}
-%   \begin{proof}
-%     By setting $a=k-t+r$, and $b=n-t+k-1+r$
-%     into Lemma~\eqref{lem:generalized-hockey-stick-identity}.
-%   \end{proof}
-% \end{lemma}
-
-% \begin{lemma}[Multifold sums of zero powers]
-%   \label{lem:multifold-sum-of-zero-powers}
-%   For non-negative integers $r,n$
-%   \begin{align*}
-%     \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}.
-%   \end{align*}
-%   \begin{proof}
-%     \leavevmode\par
-%     \begin{enumerate}
-%       \item Let $r=0$, then we have $\KnuthRFoldSum{0}{n}{0} = 1$,
-%         by definition~\eqref{def:multifold-sums-of-powers-recurrence}.
-%       \item Let $r=1$, then we have
-%         $\KnuthRFoldSum{1}{n}{0}
-%         = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
-%       \item Let $r=2$, then we have
-%         $\KnuthRFoldSum{2}{n}{0}
-%         = \sum_{k=1}^{n} \binom{k}{1}
-%         = \binom{n+1}{2}$.
-%       \item Let $r=3$, then we have
-%         $\KnuthRFoldSum{3}{n}{0}
-%         = \sum_{k=1}^{n} \binom{k+1}{2}
-%         = \binom{n+2}{3}$.
-%       \item Similarly, for arbitrary integer $r$, by hockey-stick identity
-%         $\sum_{k=1}^{n} \binom{k}{r} = \binom{n+1}{r+1}$,
-%         yields
-%         $\KnuthRFoldSum{r}{n}{0}
-%         =  \sum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0}
-%         =  \sum_{k=1}^{n} \binom{k+r-2}{r-1}
-%         = \binom{r+n-1}{r}$.
-%     \end{enumerate}
-%     This completes the proof.
-%   \end{proof}
-% \end{lemma}
-
-\begin{lemma}[Upper Binomial negation]
-  \label{lem:upper-binomial-negation}
+We utilize the following notation for falling factorials
+\begin{definition} [Falling factorials] For integers $x,n$
+  \begin{align*}
+    \fallingFactorial{n}{k} =
+    \begin{cases}
+      1, & \mathrm{if \; } k = 0, \\
+      n(n-1)(n-2)\cdots(n-k+1) = \prod_{j=0}^{k-1} (n-j), & \mathrm{if \; } k > 0, \\
+      0, & \mathrm{else}.
+    \end{cases}
+  \end{align*}
+\end{definition}
+We utilize the following notation for central factorials
+\begin{definition}[Central factorials]
+  \label{def:central-factorials}
   For integers $n,k$
   \begin{align*}
-    \binom{-n}{k} = (-1)^{k} \binom{k+n-1}{k}
+    \centralFactorial{n}{k} =
+    \begin{cases}
+      0, \quad & \mathrm{if \; } k < 0, \\
+      1, \quad & \mathrm{if \; } k = 0, \\
+      n \left( n + \frac{k}{2} -1 \right)\left( n + \frac{k}{2} -2 \right)
+      \cdots \left( n - \frac{k}{2} +1 \right)
+      = n \fallingFactorial{n+\frac{k}{2}-1}{k-1}, \quad & \mathrm{if \; } k>0,
+    \end{cases}
   \end{align*}
+  where
+  $\fallingFactorial{n+\frac{k}{2}-1}{k-1}
+  = \prod_{j=0}^{k-2} \left( n+\frac{k}{2}-1 -j \right)$
+  are falling factorials.
+\end{definition}
+We encourage the audience to read
+J. F. Steffensen's work on the definition of
+generalized factorials~\cite{steffensen1933definition}.
+
+\begin{lemma}[Central Newton's formula]
+  For a function $f$ defined on integers and arbitrary integers $x,t$
+  \label{lem:central-newtons-formula}
+  \begin{align*}
+    f(x)
+    = \sum_{k=0}^{\infty} \frac{\centralFactorial{(x-t)}{k}}{k!} \delta^{k} f(t),
+  \end{align*}
+  where $\delta^{k} f(t)$ denotes the $k$-th central finite difference
+  \begin{align*}
+    \delta^{k} f(t) = \tsum_{j=0}^{k} (-1)^j \tbinom{k}{j} f\!\left(t+\tfrac{k}{2} - j\right),
+  \end{align*}
+  and $\centralFactorial{(x-t)}{k}$ are central factorials
+  defined by~\eqref{def:central-factorials}.
   \begin{proof}
-    See~\cite[p. 164, eq. (5.14)]{graham1994concrete}.
+    See~\cite[p.~462]{butzer1989central}, and~\cite[section 2, eq. (19)]{steffensen1927interpolation},
+    and~\cite[section 6, eq. (21)]{riordan1968combinatorial}.
   \end{proof}
 \end{lemma}
-
+We have
+\begin{lemma}[Newton's formula for powers]
+  \label{lem:central-newtons-formula-for-powers}
+  For integers $n,m \geq 0$, and an arbitrary integer $t$,
+  \begin{align*}
+    n^m = \sum_{k=0}^{m} \frac{\centralFactorial{(n-t)}{k}}{k!} \delta^{k} t^m.
+  \end{align*}
+  \begin{proof}
+    Special case of Lemma~\eqref{lem:central-newtons-formula} for $f(n) = n^m$.
+  \end{proof}
+\end{lemma}
+We have
+\begin{lemma}[Central factorials binomial form]
+  \label{lem:central-factorials-binomial-form}
+  For integers $n$ and $k\neq0$,
+  \begin{align*}
+    \frac{\centralFactorial{n}{k}}{k!}
+    = \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1}.
+  \end{align*}
+  \begin{proof}
+    We have
+    \begin{align*}
+      \frac{\centralFactorial{n}{k}}{k!}
+      &= \frac{n}{k!}\fallingFactorial{n+\frac{k}{2}-1}{k-1}
+      = \frac{n}{k (k-1)!} \fallingFactorial{n+\frac{k}{2}-1}{k-1}
+      = \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1},
+    \end{align*}
+    because of the identity in falling factorials
+    $\frac{\fallingFactorial{x}{n}}{n!} = \binom{x}{n}$.
+  \end{proof}
+\end{lemma}
+We have
+\begin{lemma}[Generalized hockey-stick identity]
+  \label{lem:generalized-hockey-stick-identity}
+  For arbitrary integers $a,b$ and $j$,
+  \begin{align*}
+    \sum_{k=a}^{b} \binom{k}{j} = \binom{b+1}{j+1} - \binom{a}{j+1}.
+  \end{align*}
+  \begin{proof}
+    We have,
+    $\sum_{k=a}^{b} \binom{k}{j}
+    = \binom{a}{j} + \binom{a+1}{j} + \cdots + \binom{b}{j}
+    = \left( \sum_{k=0}^{b} \binom{k}{j} \right) - \left( \sum_{k=0}^{a-1} \binom{k}{j} \right)$.
+    By hockey-stick identity $\sum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$ yields,
+    \begin{align*}
+      \tsum_{k=a}^{b} \tbinom{k}{j}
+      = \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right) - \left( \tsum_{k=0}^{a-1} \tbinom{k}{j} \right)
+      = \tbinom{b+1}{j+1} - \tbinom{a}{j+1}.
+    \end{align*}
+    This completes the proof.
+  \end{proof}
+\end{lemma}
+We have
+\begin{lemma}[Centered hockey-stick identity]
+  \label{lem:centered-hockey-stick-identity}
+  For integer $n\geq1$, and arbitrary integers $t,k,r$
+  \begin{align*}
+    \sum_{j=1}^{n} \binom{j -t + \frac{k}{2} +r}{k}
+    = \binom{n -t + \frac{k}{2} + r +1}{k+1} - \binom{1 -t + \tfrac{k}{2} +r}{k+1}.
+  \end{align*}
+  \begin{proof}
+    By setting $a=1 -t + \tfrac{k}{2} +r$, and $b=n-t+ \tfrac{k}{2} +r$
+    into Lemma~\eqref{lem:generalized-hockey-stick-identity} yields
+    \begin{align*}
+      \tsum_{j=1}^{n} \tbinom{j -t + \tfrac{k}{2} +r}{k} =
+      \tsum_{j=1 -t + \tfrac{k}{2} +r}^{n -t + \tfrac{k}{2} +r} \tbinom{j}{k}
+      = \tbinom{n -t + \tfrac{k}{2} + r +1}{k+1} - \tbinom{1 -t + \tfrac{k}{2} +r}{k+1}.
+    \end{align*}
+    This completes the proof.
+  \end{proof}
+\end{lemma}
+We have
+\begin{lemma}[Multifold sums of zero powers]
+  \label{lem:multifold-sum-of-zero-powers}
+  For non-negative integers $r,n$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{0} = \binom{r+n-1}{r}.
+  \end{align*}
+  \begin{proof}
+    \leavevmode\par
+    \begin{enumerate}
+      \item Let $r=0$, then we have $\KnuthRFoldSum{0}{n}{0} = 1$,
+        by definition~\eqref{def:multifold-sums-of-powers-recurrence}.
+      \item Let $r=1$, then we have
+        $\KnuthRFoldSum{1}{n}{0}
+        = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
+      \item Let $r=2$, then we have
+        $\KnuthRFoldSum{2}{n}{0}
+        = \sum_{k=1}^{n} \binom{k}{1}
+        = \binom{n+1}{2}$.
+      \item Let $r=3$, then we have
+        $\KnuthRFoldSum{3}{n}{0}
+        = \sum_{k=1}^{n} \binom{k+1}{2}
+        = \binom{n+2}{3}$.
+      \item Similarly, for arbitrary integer $r$, by hockey-stick identity
+        $\sum_{k=1}^{n} \binom{k}{r} = \binom{n+1}{r+1}$,
+        yields
+        $\KnuthRFoldSum{r}{n}{0}
+        =  \sum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0}
+        =  \sum_{k=1}^{n} \binom{k+r-2}{r-1}
+        = \binom{r+n-1}{r}$.
+    \end{enumerate}
+    This completes the proof.
+  \end{proof}
+\end{lemma}
+We follow the convention
 \begin{convention} For all $x$
   \begin{align*}
     x^0 = 1.
