@@ -1,37 +1,39 @@
-We start our discussion from Lemma~\eqref{lem:backward-newtons-formula-for-powers},
+We start our discussion from Lemma~\eqref{lem:central-newtons-formula-for-powers},
 which yields backward Newton's interpolation formula for powers.
 For example,
 \input{examples/01_newtons_formula_for_cubes.tex}
-Thus, for powers we have identity,
-Thus,
-\begin{proposition}[Powers in central binomial form]
-  \label{prop:powers-in-central-binomial-form}
-  For integers $n,t$ and $m \geq 0$
-  \begin{align*}
-    n^m
-    &= \frac{\centralFactorial{(n-t)}{0}}{0!} \delta^{0} t^m
-    + \sum_{k=1}^{m} \frac{n-t}{k} \binom{n+t+\frac{k}{2}-1}{k-1} \delta^{k} t^m \\
-    &= t^m + \sum_{k=1}^{m} (n-t) \binom{n-t+\frac{k}{2}-1}{k-1} \frac{\delta^{k} t^m}{k}
-  \end{align*}
-\end{proposition}
-Now we expand the brackets in central binomial form above,
+Therefore, by applying
+Lemma~\eqref{lem:central-factorials-binomial-form}
+to Newton's interpolation formula~\eqref{lem:central-newtons-formula-for-powers},
+for non-negative integers $n,m$ and an arbitrary integer $t$ yields
+\begin{align*}
+  n^m
+  &= \frac{\centralFactorial{(n-t)}{0}}{0!} \delta^{0} t^m
+  + \sum_{k=1}^{m} \frac{n-t}{k} \binom{n+t+\frac{k}{2}-1}{k-1} \delta^{k} t^m \\
+  &= t^m + \sum_{k=1}^{m} (n-t) \binom{n-t+\frac{k}{2}-1}{k-1} \frac{\delta^{k} t^m}{k}.
+\end{align*}
+Note that we isolate the term $\frac{\centralFactorial{(n-t)}{0}}{0!} \delta^{0} t^m$
+to avoid division by zero.
+By expanding the brackets, we have
 \begin{align*}
   n^m
   = t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
   \left[ n \binom{n-t+\frac{k}{2}-1}{k-1} - t \binom{n-t+\frac{k}{2}-1}{k-1} \right].
 \end{align*}
-Hence, we get the formula for ordinary sums of powers.
-\begin{corollary}[Centered ordinary sums of powers]
-  \label{cor:centered-ordinary-sums-of-powers}
-  For integers $t, \; m\geq 0, \; n \geq 0$,
-  \begin{align*}
-    \KnuthRFoldSum{1}{n}{m}
-    = \sum_{j=1}^n t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
-    \left[ \sum_{j=1}^n j \binom{j-t+\frac{k}{2}-1}{k-1}
-    - t \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1} \right]
-  \end{align*}
-\end{corollary}
-Now we notice that,
+Hence, ordinary sums of powers is straightforward
+\begin{align*}
+  \KnuthRFoldSum{1}{n}{m}
+  = \sum_{j=1}^n t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
+  \left[
+    \sum_{j=1}^n j \binom{j-t+\frac{k}{2}-1}{k-1}
+    - t \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1}
+  \right].
+\end{align*}
+Now we notice that sum $\sum_{j=1}^n j \binom{j-t+\frac{k}{2}-1}{k-1}$
+has an additional factor $j$ in its basis, preventing us from using centered
+hockey-stick identity~\eqref{lem:centered-hockey-stick-identity}
+for closed form.
+Thus, consider the following Lemma
 \begin{lemma}[Binomial decomposition]
   \label{lem:binomial-decomposition}
   For non-negative integers $r,n,m$
@@ -41,67 +43,55 @@ Now we notice that,
   \begin{proof}
     By expanding the brackets yields,
     \begin{align*}
-      &n \tbinom{n+r}{m}
-      = (m+1) \tbinom{n+r}{m+1} - (r-m) \tbinom{n+r}{m} \\
-      &= m \tbinom{n+r}{m+1} + \tbinom{n+r}{m+1} - r \tbinom{n+r}{m}
-      + m \tbinom{n+r}{m}.
+      n \binom{n+r}{m}
+      = m \binom{n+r}{m+1} + \binom{n+r}{m+1} - r \binom{n+r}{m}
+      + m \binom{n+r}{m}.
     \end{align*}
-    Recall the extraction property of binomial coefficients, that is,
+    Recall the extraction property of binomial coefficients
+    $\binom{n}{k+1} = \frac{n-k}{k+1} \binom{n}{k}$.
+    Therefore, by extraction property
     \begin{align*}
-      \tbinom{n}{k+1} = \tfrac{n-k}{k+1} \tbinom{n}{k}.
+      \binom{n+r}{m+1} = \frac{n+r-m}{m+1} \binom{n+r}{m}.
     \end{align*}
-    Now we can notice that,
-    \begin{align*}
-      \tbinom{n+r}{m+1} = \tfrac{n+r-m}{m+1} \tbinom{n+r}{m},
-    \end{align*}
-    by extraction.
     Thus,
     \begin{align*}
-      n \tbinom{n+r}{m}
-      &= m \tfrac{n+r-m}{m+1} \tbinom{n+r}{m}
-      + \tfrac{n+r-m}{m+1} \tbinom{n+r}{m}
-      - r \tbinom{n+r}{m} + m \tbinom{n+r}{m}.
+      n \binom{n+r}{m}
+      &= m \frac{n+r-m}{m+1} \binom{n+r}{m}
+      + \frac{n+r-m}{m+1} \binom{n+r}{m}
+      - r \binom{n+r}{m} + m \binom{n+r}{m}.
     \end{align*}
-    By moving binomial coefficient $\binom{n+r}{m}$ out of the brackets, we get,
+    By factoring out binomial coefficient $\binom{n+r}{m}$ yields
     \begin{align*}
-      n \tbinom{n+r}{m}
-      &= \tbinom{n+r}{m} \left[ m \tfrac{n+r-m}{m+1} + \tfrac{n+r-m}{m+1} - r + m \right] \\
-      &= \tbinom{n+r}{m} \left[ (m+1) \tfrac{n+r-m}{m+1} - r + m \right] \\
-      &= n \tbinom{n+r}{m}.
+      n \binom{n+r}{m}
+      &= \binom{n+r}{m} \left[ m \frac{n+r-m}{m+1} + \frac{n+r-m}{m+1} - r + m \right] \\
+      &= \binom{n+r}{m} \left[ (m+1) \frac{n+r-m}{m+1} - r + m \right] \\
+      &= n \binom{n+r}{m}.
     \end{align*}
     This completes the proof.
   \end{proof}
 \end{lemma}
-Thus, by setting $n=j$, and $r=-t+\frac{k}{2} -1$, and $m=k-1$
-into Proposition~\eqref{prop:binomial-decomposition}
-yields central decomposition identity.
-\begin{corollary}[Central binomial decomposition]
-  \label{cor:central-binomial-decomposition}
-  For integers $j,t,k \geq 0$,
-  \begin{align*}
-    j \binom{j-t+\frac{k}{2} -1}{k-1}
-    = k \binom{j-t+\frac{k}{2}-1}{k}
-    + \left [t+\frac{k}{2} \right ]
-    \binom{j-t+\frac{k}{2}-1}{k-1}.
-  \end{align*}
-  \begin{proof}
-    By binomial decomposition~\eqref{prop:binomial-decomposition}, we have,
-    \begin{align*}
-      j \tbinom{j-t+\frac{k}{2} -1}{k-1}
-      &=
-      (k-1+1) \tbinom{j-t+\frac{k}{2} -1}{k-1+1}
-      - \left [-t+\tfrac{k}{2} -1-(k-1)\right ]
-      \tbinom{j-t+\frac{k}{2} -1}{k-1} \\
-      &= k \tbinom{j-t+\frac{k}{2}-1}{k}
-      - \left [-t-\tfrac{k}{2} \right ]
-      \tbinom{j-t+\tfrac{k}{2}-1}{k-1} \\
-      &= k \tbinom{j-t+\tfrac{k}{2}-1}{k}
-      + \left [t+\tfrac{k}{2} \right ]
-      \tbinom{j-t+\tfrac{k}{2}-1}{k-1}.
-    \end{align*}
-    This completes the proof.
-  \end{proof}
-\end{corollary}
+Hence, by setting $n \rightarrow j$, and $r \rightarrow -t+\frac{k}{2} -1$, and $m \rightarrow k-1$
+into Lemma~\eqref{lem:binomial-decomposition} gives
+\begin{align*}
+  j \binom{j-t+\frac{k}{2} -1}{k-1}
+  = k \binom{j-t+\frac{k}{2}-1}{k}
+  + \left [t+\frac{k}{2} \right ]
+  \binom{j-t+\frac{k}{2}-1}{k-1}.
+\end{align*}
+Because, by binomial decomposition~\eqref{lem:binomial-decomposition}, we have
+\begin{align*}
+  j \tbinom{j-t+\frac{k}{2} -1}{k-1}
+  &=
+  k \tbinom{j-t+\frac{k}{2} -1}{k-1+1}
+  - \left [-t+\tfrac{k}{2} -1-(k-1)\right ]
+  \tbinom{j-t+\frac{k}{2} -1}{k-1} \\
+  &= k \tbinom{j-t+\frac{k}{2}-1}{k}
+  - \left [-t-\tfrac{k}{2} \right ]
+  \tbinom{j-t+\tfrac{k}{2}-1}{k-1} \\
+  &= k \tbinom{j-t+\tfrac{k}{2}-1}{k}
+  + \left [t+\tfrac{k}{2} \right ]
+  \tbinom{j-t+\tfrac{k}{2}-1}{k-1}.
+\end{align*}
 Thus, we have the relation for centered sums of powers,
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
@@ -113,7 +103,7 @@ Thus, we have the relation for centered sums of powers,
     &- t \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k-1}
   \Bigg ].
 \end{align*}
-By rearranging it, we get,
+By rearranging, we get
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
   &= \sum_{j=1}^{n} t^m + \sum_{k=1}^{m} \frac{\delta^{k} t^m}{k}
@@ -130,21 +120,17 @@ By rearranging it, we get,
     \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1}
   \Bigg ].
 \end{align*}
-Therefore, formula for centered sums of powers follows.
-\begin{proposition}[Centered decomposition of power sums]
-  \label{prop:centered-decomposition-of-power-sums}
-  For integers $m,n \geq 0$, and an arbitrary integer $t$,
-  \begin{align*}
-    \KnuthRFoldSum{1}{n}{m} = \sum_{j=1}^{n} t^m
-    + \sum_{k=1}^{m} \delta^{k} t^m
-    \left [
-      \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
-      + \frac{1}{2}
-      \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1}
-    \right ].
-  \end{align*}
-\end{proposition}
-Let us recall generalized hockey stick identity. That is,
+By simplifying $k$ yields
+\begin{align*}
+  \KnuthRFoldSum{1}{n}{m} = \sum_{j=1}^{n} t^m
+  + \sum_{k=1}^{m} \delta^{k} t^m
+  \left [
+    \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+    + \frac{1}{2}
+    \sum_{j=1}^n \binom{j-t+\frac{k}{2}-1}{k-1}
+  \right ].
+\end{align*}
+% Let us recall generalized hockey stick identity. That is,
 % \begin{proposition}[Generalized hockey-stick identity]
 %   \label{prop:generalized-hockey-stick-identity}
 %   For integers $a,b$ and $j$,
@@ -166,17 +152,17 @@ Let us recall generalized hockey stick identity. That is,
 %     This completes the proof.
 %   \end{proof}
 % \end{proposition}
-Therefore, by setting $a=-t+\frac{k}{2}$ and $b=n-t-\frac{k}{2}-1$ yields
-\begin{proposition}[Centered hockey stick identity]
-  \label{prop:centered-hockey-stick-identity}
-  For integers $n, j, t, k$,
-  \begin{align*}
-    \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
-    = \sum_{a=-t+\frac{k}{2}}^{n-t-\frac{k}{2}-1} \binom{a}{k}
-    = \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1}
-  \end{align*}
-\end{proposition}
-Thus, closed form of centered sums of powers yields
+% Therefore, by setting $a=-t+\frac{k}{2}$ and $b=n-t-\frac{k}{2}-1$ yields
+% \begin{proposition}[Centered hockey stick identity]
+%   \label{prop:centered-hockey-stick-identity}
+%   For integers $n, j, t, k$,
+%   \begin{align*}
+%     \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+%     = \sum_{a=-t+\frac{k}{2}}^{n-t-\frac{k}{2}-1} \binom{a}{k}
+%     = \binom{n-t+\frac{k}{2}}{k+1} - \binom{-t+\frac{k}{2}}{k+1}
+%   \end{align*}
+% \end{proposition}
+% Thus, closed form of centered sums of powers yields
 \begin{theorem}[Closed form of centered sums of powers]
   \label{theorem:closed-form-of-centered-sums-of-powers}
   For integers $n\geq 0, \; m \geq 0$, and arbitrary integer $t$,
