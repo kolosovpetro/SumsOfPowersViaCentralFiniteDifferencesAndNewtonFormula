@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 ### Changed
 
 - Remove unused files
+- Change file structure
 
 ## [1.6.3] - 24-Jan-2026
 

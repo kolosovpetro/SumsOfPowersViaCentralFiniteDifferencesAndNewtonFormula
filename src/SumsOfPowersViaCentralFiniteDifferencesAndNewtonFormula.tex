@@ -117,7 +117,7 @@
 \begin{document}
 
 \begin{abstract}
-  \input{sections/abstract}
+  \input{sections/01_abstract}
 \end{abstract}
 
 \maketitle
@@ -126,27 +126,27 @@
 
 \freefootnote{DOI: \url{https://doi.org/10.5281/zenodo.18096789}}
 
-\section{Introduction and main results}
-\input{sections/01_introduction}
+\section{Auxiliary lemmas}
+\input{sections/02_auxiliary_lemmas.tex}
 
+\section{Introduction}
+\input{sections/03_introduction.tex}
 
-\section*{Conclusions}
-\input{sections/conclusions}
+\section{Main results}
+\input{sections/04_main_results.tex}
+
+\section{Conclusions}
+\input{sections/05_conclusions.tex}
 
 \bibliographystyle{unsrt}
-\bibliography{SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula}
+\bibliography{SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula}
 
 \clearpage
 
-\section{Mathematica programs} \label{sec:mathematica}
-\input{sections/mathematica_programs.tex}
+\section*{Mathematica programs}
+\input{sections/06_mathematica.tex}
 
 \clearpage
-
-% \section*{Proof of Binomial decomposition}
-% \input{sections/proof-of-binomial-decomposition.tex}
-
-% \clearpage
 
 \input{metadata/footer}
 
