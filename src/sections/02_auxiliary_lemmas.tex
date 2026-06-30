@@ -98,6 +98,41 @@ We have
   \end{proof}
 \end{lemma}
 We have
+\begin{lemma}[Central factorials binomial form decomposition]
+  \label{lem:central-factorials-binomial-form-decomposition}
+  For  non-negative integers $n,k$,
+  \begin{align*}
+    \frac{\centralFactorial{n}{k}}{k!}
+    = \frac{1}{2}
+    \left[ \binom{n+\frac{k}{2}}{k} + \binom{n+\frac{k}{2}-1}{k} \right].
+  \end{align*}
+  \begin{proof}
+    We have $\binom{a}{k} = \frac{a}{k} \binom{a-1}{k-1}$.
+    Let $a=n + \frac{k}{2}$, then
+    \begin{align*}
+      \tbinom{n + \frac{k}{2}}{k} = \tfrac{n + \tfrac{k}{2}}{k} \tbinom{n+\frac{k}{2}-1}{k-1}
+      = \tfrac{n}{k} \tbinom{n+\frac{k}{2}-1}{k-1} + \tfrac{1}{2} \tbinom{n+\frac{k}{2}-1}{k-1}.
+    \end{align*}
+    Thus,
+    \begin{align*}
+      \tfrac{n}{k} \tbinom{n+\frac{k}{2}-1}{k-1} = \tbinom{n + \frac{k}{2}}{k} - \tfrac{1}{2} \tbinom{n+\frac{k}{2}-1}{k-1}.
+    \end{align*}
+    By moving under common denominator, and applying binomial recurrence yields
+    \begin{align*}
+      \tfrac{n}{k} \tbinom{n+\frac{k}{2}-1}{k-1}
+      = \tfrac{1}{2}
+      \left[
+        2 \tbinom{n + \frac{k}{2}}{k} - \tbinom{n+\frac{k}{2}-1}{k-1}
+      \right]
+      = \tfrac{1}{2}
+      \left[
+        \tbinom{n + \frac{k}{2}}{k} + \tbinom{n + \frac{k}{2}-1}{k} + \tbinom{n + \frac{k}{2}-1}{k-1} - \tbinom{n+\frac{k}{2}-1}{k-1}
+      \right].
+    \end{align*}
+    Thus, the statement follows.
+  \end{proof}
+\end{lemma}
+We have
 \begin{lemma}[Generalized hockey-stick identity]
   \label{lem:generalized-hockey-stick-identity}
   For arbitrary integers $a,b$ and $j$,
