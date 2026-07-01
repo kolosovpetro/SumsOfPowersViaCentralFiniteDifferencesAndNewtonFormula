@@ -153,6 +153,17 @@ Therefore,
     \binom{n-t+\frac{k}{2}}{k-1}
   \right] \delta^{k} t^m.
 \end{align*}
+Note that we do not bother ourselves about fractions in upper index of binomial
+coefficients $\binom{n-t+\frac{k}{2}-1}{k}$, and $\binom{n-t+\frac{k}{2}}{k-1}$, 
+because binomial coefficient
+$\binom{n}{k}$ is
+a polynomial in $n$.
+The well-known identity in unsigned Stirling numbers of the first kind $\stirlingi{n}{k}$
+shows it explicitly
+\begin{align*}
+  \binom{n}{k}
+  = \sum_{j=0}^{k} \frac{(-1)^{k-j}}{k!} \stirlingi{k}{j} n^j.
+\end{align*}
 For example,
 \input{examples/01_newtons_formula_for_cubes.tex}
 Hence, we can utilize centered hockey-stick
@@ -206,12 +217,12 @@ Hence,
   For non-negative integers $n,m$, and an arbitrary integer $t$
   \begin{align*}
     \KnuthRFoldSum{2}{n}{m}
-    = \frac{1}{2}
+    &= \frac{1}{2}
     \sum_{k=0}^{m}
     \Bigg[
       \binom{n -t + \frac{k}{2} +1}{k+2}
-      &+\binom{n -t + \frac{k}{2} + 2}{k+2}
-      -
+      +\binom{n -t + \frac{k}{2} + 2}{k+2} \\
+      &-
       \Bigg(
         \binom{0 -t + \tfrac{k}{2}}{k+1}
         +\binom{1 -t + \tfrac{k}{2}}{k+1}
@@ -224,7 +235,8 @@ Hence,
     \Bigg] \delta^{k} t^m.
   \end{align*}
 \end{proposition}
-For example: TODO add example.
+For example,
+\input{examples/03_double_sums_of_cubes.tex}
 Thus, in general
 \begin{theorem}[Multifold sums of powers]
   \label{thm:multifold-sums-of-powers}
