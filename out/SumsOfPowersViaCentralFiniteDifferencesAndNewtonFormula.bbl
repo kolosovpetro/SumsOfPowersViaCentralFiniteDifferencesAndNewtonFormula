@@ -45,4 +45,15 @@ Petro Kolosov.
   June 2026.
 \newblock \url{https://doi.org/10.5281/zenodo.20548019}.
 
+\bibitem{kolosov2026interpolation}
+Petro Kolosov.
+\newblock {Newton's interpolation formula and sums of powers}, December 2025.
+\newblock \url{https://doi.org/10.5281/zenodo.18040979}.
+
+\bibitem{kolosov2026backward}
+Petro Kolosov.
+\newblock {Sums of powers via backward finite differences and Newton's
+  formula}, January 2026.
+\newblock \url{https://doi.org/10.5281/zenodo.18118011}.
+
 \end{thebibliography}

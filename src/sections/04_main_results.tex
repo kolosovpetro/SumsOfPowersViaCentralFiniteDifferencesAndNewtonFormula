@@ -154,7 +154,7 @@ Therefore,
   \right] \delta^{k} t^m.
 \end{align*}
 Note that we do not bother ourselves about fractions in upper index of binomial
-coefficients $\binom{n-t+\frac{k}{2}-1}{k}$, and $\binom{n-t+\frac{k}{2}}{k-1}$, 
+coefficients $\binom{n-t+\frac{k}{2}-1}{k}$, and $\binom{n-t+\frac{k}{2}}{k-1}$,
 because binomial coefficient
 $\binom{n}{k}$ is
 a polynomial in $n$.
@@ -282,3 +282,11 @@ follows
     \Bigg] \delta^{k} t^{m}.
   \end{align*}
 \end{proposition}
+Therefore, we have successfully derived
+multifold formulas for sums of powers, in closed form.
+The work~\cite{kolosov2026interpolation} provides
+implementation of algorithm proposed in~\cite[Alg. (11.2)]{kolosov2026framework},
+in terms of forward finite differences $\Delta$, and Newton's formula.
+Similarly, the work~\cite{kolosov2026backward} discusses multifold formulas
+for sums of powers in terms of backward differences $\nabla$, and
+Newton's formula.

@@ -6,45 +6,45 @@ The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 56 items.
 Database file #1: SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.bib
 Warning--I didn't find a database entry for "butzer1989central"
-You've used 7 entries,
+You've used 9 entries,
             1791 wiz_defined-function locations,
-            494 strings with 5153 characters,
-and the built_in function-call counts, 1214 in all, are:
-= -- 113
-> -- 28
+            501 strings with 5410 characters,
+and the built_in function-call counts, 1472 in all, are:
+= -- 133
+> -- 36
 < -- 1
-+ -- 14
-- -- 7
-* -- 52
-:= -- 195
-add.period$ -- 26
-call.type$ -- 7
-change.case$ -- 4
++ -- 18
+- -- 9
+* -- 58
+:= -- 233
+add.period$ -- 32
+call.type$ -- 9
+change.case$ -- 6
 chr.to.int$ -- 0
-cite$ -- 7
-duplicate$ -- 58
-empty$ -- 142
-format.name$ -- 7
-if$ -- 274
+cite$ -- 9
+duplicate$ -- 68
+empty$ -- 178
+format.name$ -- 9
+if$ -- 334
 int.to.chr$ -- 0
-int.to.str$ -- 7
+int.to.str$ -- 9
 missing$ -- 8
-newline$ -- 43
-num.names$ -- 7
-pop$ -- 31
+newline$ -- 53
+num.names$ -- 9
+pop$ -- 45
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 19
+skip$ -- 25
 stack$ -- 0
 substring$ -- 50
-swap$ -- 8
+swap$ -- 10
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 11
-width$ -- 8
-write$ -- 85
+while$ -- 13
+width$ -- 10
+write$ -- 105
 (There was 1 warning)
