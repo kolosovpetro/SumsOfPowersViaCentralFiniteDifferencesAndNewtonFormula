@@ -1,0 +1,25 @@
+\begin{example}
+  For integer $0 \le t \le 2$, we have
+  \begin{align*}
+    t=0:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    \tfrac{1}{2}(n+n^2)\cdot0
+    +\tfrac{1}{48}(-3-2n+12n^2+8n^3)\cdot\tfrac{1}{4} \\
+    &+\tfrac{1}{24}(-2n-n^2+2n^3+n^4)\cdot0 \\
+    &+\tfrac{1}{3840}(45+18n-200n^2-80n^3+80n^4+32n^5)\cdot6,
+    \\
+    t=1:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    \tfrac{1}{2}(-n+n^2)\cdot1
+    +\tfrac{1}{48}(3-2n-12n^2+8n^3)\cdot\tfrac{13}{4} \\
+    &+\tfrac{1}{24}(2n-n^2-2n^3+n^4)\cdot6 \\
+    &+\tfrac{1}{3840}(-45+18n+200n^2-80n^3-80n^4+32n^5)\cdot6,
+    \\
+    t=2:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    \tfrac{1}{2}(2-3n+n^2)\cdot8
+    +\tfrac{1}{48}(-15+46n-36n^2+8n^3)\cdot\tfrac{49}{4} \\
+    &+\tfrac{1}{24}(-6n+11n^2-6n^3+n^4)\cdot12 \\
+    &+\tfrac{1}{3840}(105-142n-360n^2+560n^3-240n^4+32n^5)\cdot6.
+  \end{align*}
+\end{example}

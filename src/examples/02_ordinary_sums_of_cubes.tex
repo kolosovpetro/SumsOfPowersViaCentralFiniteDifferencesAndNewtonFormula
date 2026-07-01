@@ -1,0 +1,39 @@
+\begin{example}
+  For integer $0 \leq t \leq 4$, we have
+  \begin{align*}
+    t=0:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    2n\cdot0
+    +(n+n^2)\cdot\tfrac{1}{4}
+    +\tfrac{1}{6}(n+3n^2+2n^3)\cdot0 \\
+    &+\tfrac{1}{24}(-n+n^2+4n^3+2n^4)\cdot6,
+    \\
+    t=1:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    2n\cdot1
+    +(-n+n^2)\cdot\tfrac{13}{4}
+    +\tfrac{1}{6}(n-3n^2+2n^3)\cdot6 \\
+    &+\tfrac{1}{24}(n+n^2-4n^3+2n^4)\cdot6,
+    \\
+    t=2:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    2n\cdot8
+    +(-3n+n^2)\cdot\tfrac{49}{4}
+    +\tfrac{1}{6}(13n-9n^2+2n^3)\cdot12 \\
+    &+\tfrac{1}{24}(-21n+25n^2-12n^3+2n^4)\cdot6,
+    \\
+    t=3:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    2n\cdot27
+    +(-5n+n^2)\cdot\tfrac{109}{4}
+    +\tfrac{1}{6}(37n-15n^2+2n^3)\cdot18 \\
+    &+\tfrac{1}{24}(-115n+73n^2-20n^3+2n^4)\cdot6,
+    \\
+    t=4:\quad \KnuthRFoldSum{1}{n}{3}
+    &=
+    2n\cdot64
+    +(-7n+n^2)\cdot\tfrac{193}{4}
+    +\tfrac{1}{6}(73n-21n^2+2n^3)\cdot24 \\
+    &+\tfrac{1}{24}(-329n+145n^2-28n^3+2n^4)\cdot6.
+  \end{align*}
+\end{example}
