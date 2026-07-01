@@ -5,46 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 56 items.
 Database file #1: SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.bib
-Warning--I didn't find a database entry for "butzer1989central"
-You've used 9 entries,
+You've used 10 entries,
             1791 wiz_defined-function locations,
-            501 strings with 5410 characters,
-and the built_in function-call counts, 1472 in all, are:
-= -- 133
-> -- 36
+            510 strings with 5669 characters,
+and the built_in function-call counts, 1749 in all, are:
+= -- 159
+> -- 50
 < -- 1
-+ -- 18
-- -- 9
-* -- 58
-:= -- 233
-add.period$ -- 32
-call.type$ -- 9
-change.case$ -- 6
++ -- 23
+- -- 13
+* -- 82
+:= -- 280
+add.period$ -- 36
+call.type$ -- 10
+change.case$ -- 7
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 68
-empty$ -- 178
-format.name$ -- 9
-if$ -- 334
+cite$ -- 10
+duplicate$ -- 77
+empty$ -- 202
+format.name$ -- 13
+if$ -- 392
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 8
-newline$ -- 53
-num.names$ -- 9
+int.to.str$ -- 10
+missing$ -- 9
+newline$ -- 59
+num.names$ -- 10
 pop$ -- 45
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 25
+skip$ -- 27
 stack$ -- 0
-substring$ -- 50
-swap$ -- 10
+substring$ -- 75
+swap$ -- 11
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 13
-width$ -- 10
-write$ -- 105
-(There was 1 warning)
+while$ -- 16
+width$ -- 12
+write$ -- 118

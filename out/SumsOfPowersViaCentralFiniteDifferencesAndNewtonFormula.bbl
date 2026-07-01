@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{knuth1993johann}
 {Knuth, Donald E.}
@@ -12,6 +12,14 @@ J.~F. Steffensen.
 \newblock {\em Journal of the Institute of Actuaries (1886-1994)},
   64(2):165--168, 1933.
 \newblock \url{https://www.jstor.org/stable/41137516}.
+
+\bibitem{butzer1989central}
+Paul~Leo Butzer, K.~Schmidt, E.L. Stark, and L.~Vogt.
+\newblock Central factorial numbers; their main properties and some
+  applications.
+\newblock {\em Numerical Functional Analysis and Optimization},
+  10(5-6):419--488, 1989.
+\newblock \url{https://doi.org/10.1080/01630568908816313}.
 
 \bibitem{steffensen1927interpolation}
 {Steffensen, Johan Frederik}.
