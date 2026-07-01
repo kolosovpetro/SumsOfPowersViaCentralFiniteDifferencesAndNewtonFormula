@@ -6,3 +6,7 @@
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowers.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowers.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldBinomialSumsOfPowers.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateOrdinarySumsOfPowersAtZero.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowersAtZero.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZero.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZeroBinomialForm.txt"
