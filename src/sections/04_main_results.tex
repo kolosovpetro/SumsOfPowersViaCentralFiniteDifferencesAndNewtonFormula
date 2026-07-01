@@ -1,7 +1,5 @@
 We start our discussion from Lemma~\eqref{lem:central-newtons-formula-for-powers},
 which yields backward Newton's interpolation formula for powers.
-For example,
-\input{examples/01_newtons_formula_for_cubes.tex}
 Therefore, by applying
 Lemma~\eqref{lem:central-factorials-binomial-form}
 to Newton's interpolation formula~\eqref{lem:central-newtons-formula-for-powers},
@@ -156,3 +154,48 @@ Therefore,
   \right] \delta^{k} t^m.
 \end{align*}
 For example,
+\input{examples/01_newtons_formula_for_cubes.tex}
+Hence, we can utilize centered hockey-stick
+identity~\eqref{lem:centered-hockey-stick-identity}
+for closed formula for sums of powers, because
+\begin{align*}
+  \KnuthRFoldSum{1}{n}{m}
+  = \frac{1}{2}
+  \sum_{k=0}^{m}
+  \left[
+    \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k}
+    +
+    \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}}{k-1}
+  \right] \delta^{k} t^m.
+\end{align*}
+Therefore, by Lemma~\eqref{lem:centered-hockey-stick-identity}
+\begin{align*}
+  \begin{cases}
+    \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k} &= \binom{n -t + \frac{k}{2} +0}{k+1} - \binom{0 -t + \tfrac{k}{2}}{k+1}, \\
+    \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}}{k-1} &= \binom{n -t + \frac{k}{2} +1}{k+1} - \binom{1 -t + \tfrac{k}{2}}{k+1}.
+  \end{cases}
+\end{align*}
+Thus, closed formula for ordinary sums of powers follows
+\begin{proposition}[Ordinary sums of powers]
+  \label{prop:ordinary-sums-of-powers}
+  For non-negative integers $n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{1}{n}{m}
+    = \frac{1}{2}
+    \sum_{k=0}^{m}
+    \left[
+      \binom{n -t + \frac{k}{2} +0}{k+1} + \binom{n -t + \frac{k}{2} +1}{k+1} - \binom{0 -t + \tfrac{k}{2}}{k+1}
+      - \binom{1 -t + \tfrac{k}{2}}{k+1}
+    \right] \delta^{k} t^m.
+  \end{align*}
+\end{proposition}
+For example: TODO add example.
+Similarly,
+by setting $r=0$, and $r=1$ into Lemma~\eqref{lem:centered-hockey-stick-identity},
+we have
+\begin{align*}
+  \begin{cases}
+    \sum_{j=1}^{n} \binom{j -t + \frac{k}{2} +0}{k+1} &= \binom{n -t + \frac{k}{2} +1}{k+2} - \binom{1 -t + \tfrac{k}{2}}{k+2}, \\
+    \sum_{j=1}^{n} \binom{j -t + \frac{k}{2} +1}{k+1} &= \binom{n -t + \frac{k}{2} + 2}{k+2} - \binom{2 -t + \tfrac{k}{2}}{k+2}.
+  \end{cases}
+\end{align*}

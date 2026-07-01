@@ -1,19 +1,15 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition} [Multifold Stirling sums of powers]
-  \label{prop:multifold-stirling-sums-of-powers}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+\begin{proposition}[Ordinary sums of powers]
+  For non-negative integers $n,m$, and an arbitrary integer $t$
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m}
-    =
+    \KnuthRFoldSum{1}{n}{m}
+    = \frac{1}{2}
     \sum_{k=0}^{m}
-    \sum_{j=k}^{m}
     \left[
-      \binom{n-t+k+r-1}{k+r}
-      -
-      \sum_{s=0}^{r-1}
-      \tbinom{k-t+r-1-s}{k+r-s} \tbinom{s+n-1}{s}
-    \right] \binom{t-k}{j-k} \stirlingii{m}{j} j!
+      \binom{n -t + \frac{k}{2} +0}{k+1} + \binom{n -t + \frac{k}{2} +1}{k+1} - \binom{0 -t + \tfrac{k}{2}}{k+1}
+      - \binom{1 -t + \tfrac{k}{2}}{k+1}
+    \right] \delta^{k} t^m.
   \end{align*}
 \end{proposition}
 
@@ -49,9 +45,6 @@ Do not move - Sum[...] to the next line, Mathematica ignores it.
 EulerianNumber[0, 0] = 1;
 EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;
 EulerianNumber[n_, k_] := EulerianNumber[n, k] =(k + 1) EulerianNumber[n - 1, k] + (n - k) EulerianNumber[n - 1, k - 1];
-
-
-
 
 Use the example below, give your response in a separate code block so that I 
 copy paste it easily

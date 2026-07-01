@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add introduction
 - Update readme
 - Update abstract
+- Add formula: Ordinary sums of powers
+- Add Mathematica test: Ordinary sums of powers
 
 ## [1.6.3] - 24-Jan-2026
 
