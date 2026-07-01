@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Mathematica test: Multifold sums of powers
 - Add formula: Multifold Binomial sums of powers
 - Add Mathematica test: Multifold Binomial sums of powers
+- Add Mathematica program: `GenerateExamplesInPolynomialForm.txt`
+- Add example for ordinary sums of powers
 
 ## [1.6.3] - 24-Jan-2026
 

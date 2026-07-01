@@ -1,5 +1,6 @@
 # Run equation tests
 
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialForm.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialFormR0.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateOrdinarySumsOfPowers.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowers.txt"
