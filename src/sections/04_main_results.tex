@@ -246,3 +246,26 @@ Thus, in general
     \Bigg] \delta^{k} t^{m}.
   \end{align*}
 \end{theorem}
+By Lemma~\eqref{lem:multifold-sum-of-zero-powers} pure binomial form
+follows
+\begin{proposition}[Multifold Binomial sums of powers]
+  \label{prop:multifold-binomial-sums-of-powers}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    &= \frac{1}{2}
+    \sum_{k=0}^{m}
+    \Bigg[
+      \binom{n-t+\frac{k}{2}+r-1}{k+r}
+      +
+      \binom{n-t+\frac{k}{2}+r}{k+r} \\
+      &-
+      \sum_{s=0}^{r-1}
+      \Bigg(
+        \binom{s-t+\frac{k}{2}}{k+s+1}
+        +
+        \binom{s-t+\frac{k}{2}+1}{k+s+1}
+      \Bigg) \binom{r-s+n-2}{r-s-1}
+    \Bigg] \delta^{k} t^{m}.
+  \end{align*}
+\end{proposition}
