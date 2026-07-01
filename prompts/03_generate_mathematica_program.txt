@@ -1,17 +1,26 @@
 Generate Mathematica program to validate the identity:
 
-\begin{proposition}[Ordinary sums of powers]
-  For non-negative integers $n,m$, and an arbitrary integer $t$
+\begin{theorem}[Multifold sums of powers]
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
   \begin{align*}
-    \KnuthRFoldSum{1}{n}{m}
-    = \frac{1}{2}
+    \KnuthRFoldSum{r}{n}{m}
+    &= \frac{1}{2}
     \sum_{k=0}^{m}
-    \left[
-      \binom{n -t + \frac{k}{2} +0}{k+1} + \binom{n -t + \frac{k}{2} +1}{k+1} - \binom{0 -t + \tfrac{k}{2}}{k+1}
-      - \binom{1 -t + \tfrac{k}{2}}{k+1}
-    \right] \delta^{k} t^m.
+    \Bigg[
+      \binom{n-t+\frac{k}{2}+r-1}{k+r}
+      +
+      \binom{n-t+\frac{k}{2}+r}{k+r} \\
+      &-
+      \sum_{s=0}^{r-1}
+      \Bigg(
+        \binom{s-t+\frac{k}{2}}{k+s-1}
+        +
+        \binom{s-t+\frac{k}{2}+1}{k+s-1}
+      \Bigg) \KnuthRFoldSum{r-1-s}{n}{0}
+    \Bigg] \delta^{k} t^{m}.
   \end{align*}
-\end{proposition}
+\end{theorem}
+
 
 Use the definitions as follows, if they appear in identity under validation
 
@@ -41,6 +50,7 @@ Do not decompose main formula by different functions.
 Generate just code block, so that I easily copy paste it,
 no additional comments required.
 Do not move - Sum[...] to the next line, Mathematica ignores it.
+Add definitions only if they are used.
 
 EulerianNumber[0, 0] = 1;
 EulerianNumber[n_, k_] /; k < 0 || k >= n := 0;

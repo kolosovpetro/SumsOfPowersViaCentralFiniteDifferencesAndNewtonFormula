@@ -199,3 +199,50 @@ we have
     \sum_{j=1}^{n} \binom{j -t + \frac{k}{2} +1}{k+1} &= \binom{n -t + \frac{k}{2} + 2}{k+2} - \binom{2 -t + \tfrac{k}{2}}{k+2}.
   \end{cases}
 \end{align*}
+Hence,
+\begin{proposition}[Double sums of powers]
+  \label{prop:double-sums-of-powers}
+  For non-negative integers $n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{2}{n}{m}
+    = \frac{1}{2}
+    \sum_{k=0}^{m}
+    \Bigg[
+      \binom{n -t + \frac{k}{2} +1}{k+2}
+      &+\binom{n -t + \frac{k}{2} + 2}{k+2}
+      -
+      \Bigg(
+        \binom{0 -t + \tfrac{k}{2}}{k+1}
+        +\binom{1 -t + \tfrac{k}{2}}{k+1}
+      \Bigg) \KnuthRFoldSum{1}{n}{0} \\
+      &-
+      \Bigg(
+        \binom{1 -t + \tfrac{k}{2}}{k+2}
+        +\binom{2 -t + \tfrac{k}{2}}{k+2}
+      \Bigg) \KnuthRFoldSum{0}{n}{0}
+    \Bigg] \delta^{k} t^m.
+  \end{align*}
+\end{proposition}
+For example: TODO add example.
+Thus, in general
+\begin{theorem}[Multifold sums of powers]
+  \label{thm:multifold-sums-of-powers}
+  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  \begin{align*}
+    \KnuthRFoldSum{r}{n}{m}
+    &= \frac{1}{2}
+    \sum_{k=0}^{m}
+    \Bigg[
+      \binom{n-t+\frac{k}{2}+r-1}{k+r}
+      +
+      \binom{n-t+\frac{k}{2}+r}{k+r} \\
+      &-
+      \sum_{s=0}^{r-1}
+      \Bigg(
+        \binom{s-t+\frac{k}{2}}{k+s+1}
+        +
+        \binom{s-t+\frac{k}{2}+1}{k+s+1}
+      \Bigg) \KnuthRFoldSum{r-1-s}{n}{0}
+    \Bigg] \delta^{k} t^{m}.
+  \end{align*}
+\end{theorem}
