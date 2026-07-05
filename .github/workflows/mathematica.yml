@@ -39,4 +39,5 @@ jobs:
         shell: bash
         run: |
           cd "./mathematica"
+          chmod +x Run-Wolfram-Container.sh
           ./Run-Wolfram-Container.sh
