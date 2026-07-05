@@ -1,4 +1,4 @@
-name: Docker Build Push API
+name: Mathematica
 
 on:
   push:
