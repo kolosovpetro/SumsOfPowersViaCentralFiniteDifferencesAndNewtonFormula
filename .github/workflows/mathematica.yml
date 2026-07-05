@@ -26,6 +26,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Pull Wolfram image
+        run: docker pull wolframresearch/wolframengine:15.0
+
       - name: Copy License File
         shell: bash
         run: |
