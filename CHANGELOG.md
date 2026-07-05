@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Mathematica tests in Docker
 - Mathematica tests in Github actions
 - Mathematica documentation
+- Add tables for: central factorial numbers of the second kind
 
 ## [2.0.1] - 01-July-2026
 
