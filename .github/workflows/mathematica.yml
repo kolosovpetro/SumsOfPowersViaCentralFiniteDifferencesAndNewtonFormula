@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - MATH-141
 
   pull_request:
     branches:
