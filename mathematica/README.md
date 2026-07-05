@@ -1,18 +1,3 @@
-# Run equation tests (Windows: Powershell)
-
-It is assumed that Wolfram Engine (with Wolfram script is installed on the machine)
-
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialForm.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialFormR0.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateOrdinarySumsOfPowers.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowers.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowers.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldBinomialSumsOfPowers.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateOrdinarySumsOfPowersAtZero.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowersAtZero.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZero.txt"
-- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZeroBinomialForm.txt"
-
 # Run in Docker
 
 ## Image
@@ -28,6 +13,21 @@ It is assumed that Wolfram Engine (with Wolfram script is installed on the machi
 - Follow the steps: https://www.wolfram.com/engine/free-license/
 - Copy license file: `docker cp <container-id>:/home/wolframengine/.WolframEngine/Licensing/mathpass .\mathpass`
 - Mount license file and test wolframscript: `.\Test-Wolfram-Container.ps1`
+
+# Run equation tests (Windows: Powershell)
+
+It is assumed that Wolfram Engine (with Wolfram script is installed on the machine)
+
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialForm.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialFormR0.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateOrdinarySumsOfPowers.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowers.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowers.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldBinomialSumsOfPowers.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateOrdinarySumsOfPowersAtZero.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowersAtZero.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZero.txt"
+- .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZeroBinomialForm.txt"
 
 # Run equation tests (Docker: Powershell)
 
