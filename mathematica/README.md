@@ -1,4 +1,6 @@
-# Run equation tests
+# Run equation tests (Windows: Powershell)
+
+It is assumed that Wolfram Engine (with Wolfram script is installed on the machine)
 
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialForm.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "GenerateExamplesInPolynomialFormR0.txt"
@@ -10,3 +12,19 @@
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateDoubleSumsOfPowersAtZero.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZero.txt"
 - .\mathematica\Run-Mathematica.ps1 -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZeroBinomialForm.txt"
+
+# Run in Docker
+
+## Image
+
+- Image: `wolframresearch/wolframengine:15.0`
+- Url: https://hub.docker.com/r/wolframresearch/wolframengine
+
+## Get Free Developer License
+
+- Register user account in Wolfram (https://account.wolfram.com/login/oauth2/sign-in)
+- Run `docker run -it --rm wolframresearch/wolframengine:15.0 bash`
+- Inside interractive container: `wolframscript`
+- Follow the steps: https://www.wolfram.com/engine/free-license/
+- Copy license file: `docker cp <container-id>:/home/wolframengine/.WolframEngine/Licensing/mathpass .\mathpass`
+- Mount license file and test wolframscript: `.\Test-Wolfram-Container.ps1`

@@ -1,0 +1,42 @@
+name: Docker Build Push API
+
+on:
+  push:
+    branches:
+      - main
+      - MATH-141
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+#  schedule:
+#    - cron: '0 0 * * 0'
+
+jobs:
+  mathematica:
+    name: Docker Build Push API
+    runs-on: windows-latest
+    
+    steps:
+      - name: Fetch Sources
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Copy License File
+        shell: pwsh
+        run: |
+          mkdir -p ./mathematica/Licensing
+          cd ./mathematica/Licensing
+          cat ${{ env.WOLFRAM_LICENSE_FILE }} > mathpass
+        env:
+          WOLFRAM_LICENSE_FILE: ${{ secrets.WOLFRAM_LICENSE_FILE }}
+
+      - name: Run WolframScript in Docker
+        shell: pwsh
+        run: |
+          cd ./mathematica/Licensing
+          .\Run-Wolfram-Container.ps1
