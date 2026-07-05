@@ -38,5 +38,5 @@ jobs:
       - name: Run WolframScript in Docker
         shell: pwsh
         run: |
-          Set-Location "./mathematica/Licensing"
+          Set-Location "./mathematica"
           .\Run-Wolfram-Container.ps1
