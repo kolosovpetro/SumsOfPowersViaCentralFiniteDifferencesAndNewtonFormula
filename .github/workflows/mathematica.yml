@@ -29,9 +29,9 @@ jobs:
       - name: Copy License File
         shell: pwsh
         run: |
-          New-Item -ItemType Directory -Path "./mathematica/Licensing"
+          New-Item -ItemType Directory -Path "./mathematica/Licensing" -Force
           Set-Location "./mathematica/Licensing"
-          ${{ env.WOLFRAM_LICENSE_FILE }} | Out-File -FilePath "mathpass"
+          $env:WOLFRAM_LICENSE_FILE | Out-File -FilePath "mathpass" -Encoding ascii
         env:
           WOLFRAM_LICENSE_FILE: ${{ secrets.WOLFRAM_LICENSE_FILE }}
 
