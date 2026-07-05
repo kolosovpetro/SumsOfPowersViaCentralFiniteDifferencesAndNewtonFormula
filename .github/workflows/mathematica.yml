@@ -31,12 +31,12 @@ jobs:
         run: |
           mkdir -p "./mathematica/Licensing"
           cd "./mathematica/Licensing"
-          cat $WOLFRAM_LICENSE_FILE > mathpass
+          cat "$WOLFRAM_LICENSE_FILE" > mathpass
         env:
           WOLFRAM_LICENSE_FILE: ${{ secrets.WOLFRAM_LICENSE_FILE }}
 
       - name: Run WolframScript in Docker
-        shell: pwsh
+        shell: bash
         run: |
-          Set-Location "./mathematica"
-          .\Run-Wolfram-Container.ps1
+          cd "./mathematica"
+          ./Run-Wolfram-Container.sh
