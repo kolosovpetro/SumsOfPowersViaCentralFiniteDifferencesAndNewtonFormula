@@ -44,13 +44,13 @@ It is assumed that Wolfram Engine (with Wolfram script is installed on the machi
 
 # Run equation tests (Docker: Bash)
 
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "GenerateExamplesInPolynomialForm.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "GenerateExamplesInPolynomialFormR0.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "ValidateOrdinarySumsOfPowers.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "ValidateDoubleSumsOfPowers.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "ValidateMultifoldSumsOfPowers.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "ValidateMultifoldBinomialSumsOfPowers.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "ValidateOrdinarySumsOfPowersAtZero.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "ValidateDoubleSumsOfPowersAtZero.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZero.txt"
-- .\mathematica\Run-Wolfram-Container.sh -MathematicaFileName "ValidateMultifoldSumsOfPowersAtZeroBinomialForm.txt"
+- ./Run-Wolfram-Container.sh "GenerateExamplesInPolynomialForm.txt"
+- ./Run-Wolfram-Container.sh "GenerateExamplesInPolynomialFormR0.txt"
+- ./Run-Wolfram-Container.sh "ValidateOrdinarySumsOfPowers.txt"
+- ./Run-Wolfram-Container.sh "ValidateDoubleSumsOfPowers.txt"
+- ./Run-Wolfram-Container.sh "ValidateMultifoldSumsOfPowers.txt"
+- ./Run-Wolfram-Container.sh "ValidateMultifoldBinomialSumsOfPowers.txt"
+- ./Run-Wolfram-Container.sh "ValidateOrdinarySumsOfPowersAtZero.txt"
+- ./Run-Wolfram-Container.sh "ValidateDoubleSumsOfPowersAtZero.txt"
+- ./Run-Wolfram-Container.sh "ValidateMultifoldSumsOfPowersAtZero.txt"
+- ./Run-Wolfram-Container.sh "ValidateMultifoldSumsOfPowersAtZeroBinomialForm.txt"
