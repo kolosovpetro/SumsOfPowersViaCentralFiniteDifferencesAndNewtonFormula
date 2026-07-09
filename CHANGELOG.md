@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [2.1.0] - 09-July-2026
+
+### Changed
+
+- Mathematica tests in Docker
+- Mathematica tests in Github actions
+- Mathematica documentation
+- Add tables for: central factorial numbers of the second kind
+
 ## [2.0.1] - 01-July-2026
 
 ### Changed

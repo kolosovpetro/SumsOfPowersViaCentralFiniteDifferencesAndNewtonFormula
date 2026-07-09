@@ -9,9 +9,15 @@ in terms of central factorial numbers of the second kind $T(n,k)$
   \end{align*}
   where $T(2m,2k)$ are central factorial numbers of the second kind.
 \end{proposition}
-See the sequence \href{https://oeis.org/A008957}{\texttt{A008957}} in the
-OEIS~\cite{sloane2003line} for central factorial numbers of the second kind.
-It is quite interesting to notice that Proposition~\eqref{prop:knuth-odd-powers-sum}
+See the sequences \href{https://oeis.org/A008957}{\texttt{A008957}},
+and \href{https://oeis.org/A036969}{\texttt{A036969}},
+and \href{https://oeis.org/A269945}{\texttt{A269945}} in the
+OEIS~\cite{sloane2003line} for central factorial numbers of the second
+kind $T(n,k)$.
+For example,
+\input{tables/01_fig_central_factorial_numbers_2n_2k_t_0.tex}
+It is quite interesting to notice that
+Proposition~\eqref{prop:knuth-odd-powers-sum}
 originates from centered
 Newton's formula for powers~\eqref{lem:central-newtons-formula-for-powers}
 evaluated at zero.
@@ -19,7 +25,8 @@ By central Newton's formula, for $m\geq 1$, we have
 \begin{align*}
   n^{2m} = \sum_{k=1}^{2m} \frac{\centralFactorial{n}{k}}{k!} \cdot \delta^{k} 0^{2m}
 \end{align*}
-The iteration for $k=0$ can be omitted because $\delta^{0} 0^{2m} = 0$.
+The iteration for $k=0$ can be omitted because $\delta^{0} 0^{2m} = 0$,
+for $m \geq 1$.
 Now, we observe that central difference $\delta^k 0^m$ satisfies the parity of
 arguments $m$ and $k$, such that
 \begin{align*}
@@ -196,3 +203,5 @@ factorial numbers of the second kind
 \end{align*}
 Thus, we have discussed quite remarkable results, that follow from
 centered Newton's formula evaluated at zero.
+For example,
+\input{tables/02_fig_central_factorial_numbers_t_0.tex}
