@@ -28,4 +28,6 @@ jobs:
         src/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.bib
         src/sections
         src/metadata
+        src/examples
+        src/tables
       working_directory_for_latex: 'src'
