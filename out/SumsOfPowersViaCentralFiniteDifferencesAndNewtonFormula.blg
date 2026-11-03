@@ -1,13 +1,11 @@
-This is BibTeX, Version 0.99e
+This is BibTeX, Version 0.99d (TeX Live 2025/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: E:\RiderProjects\04_LATEX\SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula\out\SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.aux
-Reallocating 'name_of_file' (item size: 1) to 6 items.
+The top-level auxiliary file: SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.aux
 The style file: unsrt.bst
-Reallocating 'name_of_file' (item size: 1) to 56 items.
 Database file #1: SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula.bib
 You've used 11 entries,
             1791 wiz_defined-function locations,
-            515 strings with 5787 characters,
+            514 strings with 5560 characters,
 and the built_in function-call counts, 1887 in all, are:
 = -- 172
 > -- 54

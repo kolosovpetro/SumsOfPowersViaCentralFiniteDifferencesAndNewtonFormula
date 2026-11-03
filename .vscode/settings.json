@@ -26,6 +26,8 @@
   "css.validate": false,
   "powershell.scriptAnalysis.enable": false,
   "cSpell.words": [
+    "BIBINPUTS",
+    "bibtex",
     "Blaise",
     "Bohner",
     "Butzer",
@@ -33,6 +35,7 @@
     "coniectandi",
     "Conjectandi",
     "CROSSREFS",
+    "Eeuo",
     "eprint",
     "Eulerian",
     "Faulhaber",
