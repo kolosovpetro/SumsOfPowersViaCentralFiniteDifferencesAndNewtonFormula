@@ -1,13 +1,21 @@
-Knuth, D. E. (1993). Johann Faulhaber and sums of powers. Mathematics of Computation, 61(203), 277–294. https://arxiv.org/abs/math/9207222
+Knuth, D. E. (1993). Johann Faulhaber and sums of powers. *Mathematics of Computation, 61*(203), 277–294. https://arxiv.org/abs/math/9207222
 
-Newton, I., & Chittenden, N. W. (1850). Newton's Principia: The mathematical principles of natural philosophy. New-York: D. Adee. https://archive.org/details/bub_gb_KaAIAAAAIAAJ/page/466/mode/2up
+Steffensen, J. F. (1933). On the Definition of the Central Factorial. *Journal of the Institute of Actuaries (1886–1994), 64*(2), 165–168. https://www.jstor.org/stable/41137516
 
-Sloane, N. J. A., et al. (2003). The on-line encyclopedia of integer sequences. https://oeis.org/
+Butzer, P. L., Schmidt, K., Stark, E. L., & Vogt, L. (1989). Central Factorial Numbers: Their Main Properties and Some Applications. *Numerical Functional Analysis and Optimization, 10*(5–6), 419–488. https://doi.org/10.1080/01630568908816313
 
-Steffensen, J. F. (1927). Interpolation. Williams & Wilkins. https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8
+Steffensen, J. F. (1927). *Interpolation*. Williams & Wilkins. https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8
 
-Carlitz, L., & Riordan, J. (1963). The divided central differences of zero. Canadian Journal of Mathematics, 15, 94–100. https://doi.org/10.4153/CJM-1963-010-8
+Riordan, J. (1968). *Combinatorial Identities* (Vol. 217). Wiley, New York. https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758
 
-Riordan, J. (1968). Combinatorial identities (Vol. 217). Wiley New York. https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758
+Graham, R. L., Knuth, D. E., & Patashnik, O. (1994). *Concrete Mathematics: A Foundation for Computer Science* (2nd ed.). Addison-Wesley. https://archive.org/details/concrete-mathematics
 
-Butzer, P. L., Schmidt, K., Stark, E. L., & Vogt, L. (1989). Central factorial numbers; their main properties and some applications. Numerical Functional Analysis and Optimization, 10(5–6), 419–488. https://doi.org/10.1080/01630568908816313
+Knuth, D. E. (1992). Two Notes on Notation. arXiv:math/9205211. https://arxiv.org/abs/math/9205211
+
+Kolosov, P. (2026, June). *Sums of Powers of Integers: A Complete Framework for Closed Formulas*. Zenodo. https://doi.org/10.5281/zenodo.20548019
+
+Kolosov, P. (2025, December). *Newton's Interpolation Formula and Sums of Powers*. Zenodo. https://doi.org/10.5281/zenodo.18040979
+
+Kolosov, P. (2026, January). *Sums of Powers via Backward Finite Differences and Newton's Formula*. Zenodo. https://doi.org/10.5281/zenodo.18118011
+
+Sloane, N. J. A., et al. (2003). *The On-Line Encyclopedia of Integer Sequences*. OEIS. https://oeis.org/

@@ -12,6 +12,20 @@ In this manuscript, we derive closed formulas for multifold sums of powers of in
 - [Sums of powers via backward finite differences and Newton's formula (2026)](https://github.com/kolosovpetro/SumsOfPowersViaBackwardFiniteDifferencesAndNewtonFormula)
 - [Sums of powers of integers: A complete framework for closed formulas (2026)](https://github.com/kolosovpetro/SumsOfPowersACompleteFrameworkForClosedForms)
 
+## References
+
+1. Knuth, D. E. (1993). Johann Faulhaber and sums of powers. *Mathematics of Computation, 61*(203), 277–294. https://arxiv.org/abs/math/9207222
+2. Steffensen, J. F. (1933). On the Definition of the Central Factorial. *Journal of the Institute of Actuaries (1886–1994), 64*(2), 165–168. https://www.jstor.org/stable/41137516
+3. Butzer, P. L., Schmidt, K., Stark, E. L., & Vogt, L. (1989). Central Factorial Numbers: Their Main Properties and Some Applications. *Numerical Functional Analysis and Optimization, 10*(5–6), 419–488. https://doi.org/10.1080/01630568908816313
+4. Steffensen, J. F. (1927). *Interpolation*. Williams & Wilkins. https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8
+5. Riordan, J. (1968). *Combinatorial Identities* (Vol. 217). Wiley, New York. https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758
+6. Graham, R. L., Knuth, D. E., & Patashnik, O. (1994). *Concrete Mathematics: A Foundation for Computer Science* (2nd ed.). Addison-Wesley. https://archive.org/details/concrete-mathematics
+7. Knuth, D. E. (1992). Two Notes on Notation. arXiv:math/9205211. https://arxiv.org/abs/math/9205211
+8. Kolosov, P. (2026, June). *Sums of Powers of Integers: A Complete Framework for Closed Formulas*. Zenodo. https://doi.org/10.5281/zenodo.20548019
+9. Kolosov, P. (2025, December). *Newton's Interpolation Formula and Sums of Powers*. Zenodo. https://doi.org/10.5281/zenodo.18040979
+10. Kolosov, P. (2026, January). *Sums of Powers via Backward Finite Differences and Newton's Formula*. Zenodo. https://doi.org/10.5281/zenodo.18118011
+11. Sloane, N. J. A., et al. (2003). *The On-Line Encyclopedia of Integer Sequences*. OEIS. https://oeis.org/
+
 ## OEIS
 
 ### Central factorial numbers
@@ -48,16 +62,3 @@ In this manuscript, we derive closed formulas for multifold sums of powers of in
 - **Sources:** https://github.com/kolosovpetro/SumsOfPowersViaCentralFiniteDifferencesAndNewtonFormula
 - **ORCID:** https://orcid.org/0000-0002-6544-8880
 - **Email:** kolosovp94@gmail.com
-
-## References
-
-- Knuth, D. E. (1993). Johann Faulhaber and sums of powers. Mathematics of Computation, 61(203), 277–294. https://arxiv.org/abs/math/9207222
-- Butzer, P. L., Schmidt, K., Stark, E. L., & Vogt, L. (1989). Central factorial numbers; their main properties and some applications. Numerical Functional Analysis and Optimization, 10(5–6), 419–488. https://doi.org/10.1080/01630568908816313
-- Steffensen, J. F. (1933). On the definition of the central factorial. Journal of the Institute of Actuaries (1886–1994), 64(2), 165–168. https://www.jstor.org/stable/41137516
-- Steffensen, J. F. (1927). Interpolation. Williams & Wilkins. https://www.amazon.com/-/de/Interpolation-Second-Dover-Books-Mathematics-ebook/dp/B00GHQVON8
-- Riordan, J. (1968). Combinatorial identities. Wiley, New York. https://www.amazon.com/-/de/Combinatorial-Identities-Probability-Mathematical-Statistics/dp/0471722758
-- Graham, R. L., Knuth, D. E., & Patashnik, O. (1994). Concrete Mathematics: A Foundation for Computer Science (2nd ed.). Addison-Wesley Publishing Company, Inc. https://archive.org/details/concrete-mathematics
-- Knuth, D. E. (1992). Two notes on notation. https://arxiv.org/abs/math/9205211
-- Kolosov, P. (2026). Sums of powers of integers: A complete framework for closed formulas. https://doi.org/10.5281/zenodo.20548019
-- Kolosov, P. (2025). Newton's interpolation formula and sums of powers. https://doi.org/10.5281/zenodo.18040979
-- Kolosov, P. (2026). Sums of powers via backward finite differences and Newton's formula. https://doi.org/10.5281/zenodo.18118011
