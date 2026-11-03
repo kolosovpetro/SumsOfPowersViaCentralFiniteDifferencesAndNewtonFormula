@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [2.2.0] - 04-November-2026
+
+### Added
+
+- Codex math-writing skill for this repository
+- WSL Ubuntu installer scripts for TeX Live, BibTeX, tex-fmt, and Pandoc
+
+### Changed
+
+- Move the binomial decomposition lemma to the preliminaries
+- Improve math-writing rules and apply them to the manuscript
+- Sync the README references with the bibliography
+- Update Wolfram Docker runner and setup documentation for license-file mounting
+
+### Fixed
+
+- Correct reference formatting and remove periods after `cases` environments
+
 ## [2.1.0] - 09-July-2026
 
 ### Changed
