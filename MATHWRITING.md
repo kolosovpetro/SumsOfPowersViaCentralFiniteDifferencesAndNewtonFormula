@@ -121,3 +121,6 @@ Use this checklist when drafting, editing, or reviewing the paper. Apply it to p
       - Section titles
       - Subsection titles
       - Theorem, lemma, definition, remark, and example headings
+
+22. Remove unused references in *.bib file.
+23. Arrange references in *.bib file in order as they used in paper.

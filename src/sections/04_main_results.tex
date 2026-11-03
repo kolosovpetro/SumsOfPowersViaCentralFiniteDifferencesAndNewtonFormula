@@ -1,9 +1,5 @@
-We start our discussion from Lemma~\eqref{lem:central-newtons-formula-for-powers},
-which yields backward Newton's interpolation formula for powers.
-Therefore, by applying
-Lemma~\eqref{lem:central-factorials-binomial-form}
-to Newton's interpolation formula~\eqref{lem:central-newtons-formula-for-powers},
-for non-negative integers $n,m$ and an arbitrary integer $t$ yields
+We begin with Lemma~\eqref{lem:central-newtons-formula-for-powers}, which gives Newton's interpolation formula for powers.
+Applying Lemma~\eqref{lem:central-factorials-binomial-form} to this formula, for non-negative integers $n$ and $m$ and an arbitrary integer $t$, gives
 \begin{align*}
   n^m
   &= \frac{\centralFactorial{(n-t)}{0}}{0!} \delta^{0} t^m
@@ -22,21 +18,16 @@ By expanding the brackets, we have
     t\binom{n-t+\frac{k}{2}-1}{k-1}
   \right].
 \end{align*}
-Now we notice that sum above
-has an additional factor $n$ in its binomial basis
-$n\binom{n-t+\frac{k}{2}-1}{k-1}$,
-preventing us from using centered
-hockey-stick identity~\eqref{lem:centered-hockey-stick-identity}
-for closed form.
-Thus, consider the following Lemma
+The sum above contains the additional factor $n$ in its binomial basis, $n\binom{n-t+\frac{k}{2}-1}{k-1}$, which prevents direct application of the centered hockey-stick identity in Lemma~\eqref{lem:centered-hockey-stick-identity}.
+We first establish the following lemma.
 \begin{lemma}[Binomial decomposition]
   \label{lem:binomial-decomposition}
-  For non-negative integers $r,n,m$
+  Let $r$, $n$, and $m$ be nonnegative integers.
   \begin{align*}
     n \binom{n+r}{m} = (m+1) \binom{n+r}{m+1} - (r-m) \binom{n+r}{m}.
   \end{align*}
   \begin{proof}
-    By expanding the brackets yields,
+    Expanding the right-hand side gives
     \begin{align*}
       n \binom{n+r}{m}
       = m \binom{n+r}{m+1} + \binom{n+r}{m+1} - r \binom{n+r}{m}
@@ -44,7 +35,7 @@ Thus, consider the following Lemma
     \end{align*}
     Recall the extraction property of binomial coefficients
     $\binom{n}{k+1} = \frac{n-k}{k+1} \binom{n}{k}$.
-    Therefore, by extraction property
+    The extraction property then gives
     \begin{align*}
       \binom{n+r}{m+1} = \frac{n+r-m}{m+1} \binom{n+r}{m}.
     \end{align*}
@@ -55,7 +46,7 @@ Thus, consider the following Lemma
       + \frac{n+r-m}{m+1} \binom{n+r}{m}
       - r \binom{n+r}{m} + m \binom{n+r}{m}.
     \end{align*}
-    By factoring out binomial coefficient $\binom{n+r}{m}$ yields
+    Factoring out the binomial coefficient $\binom{n+r}{m}$ gives
     \begin{align*}
       n \binom{n+r}{m}
       &= \binom{n+r}{m} \left[ m \frac{n+r-m}{m+1} + \frac{n+r-m}{m+1} - r + m \right] \\
@@ -65,17 +56,14 @@ Thus, consider the following Lemma
     This completes the proof.
   \end{proof}
 \end{lemma}
-Hence, by setting
-$r \rightarrow -t+\frac{k}{2} -1$,
-and $m \rightarrow k-1$
-into Lemma~\eqref{lem:binomial-decomposition} gives
+Substituting $r=-t+\frac{k}{2}-1$ and $m=k-1$ into Lemma~\eqref{lem:binomial-decomposition} gives
 \begin{align*}
   n \binom{n-t+\frac{k}{2} -1}{k-1}
   = k \binom{n-t+\frac{k}{2}-1}{k}
   + \left [t+\frac{k}{2} \right ]
   \binom{n-t+\frac{k}{2}-1}{k-1}.
 \end{align*}
-Because, by binomial decomposition~\eqref{lem:binomial-decomposition}, we have
+For clarity, applying Lemma~\eqref{lem:binomial-decomposition} directly gives
 \begin{align*}
   n \tbinom{n-t+\frac{k}{2} -1}{k-1}
   &=
@@ -103,8 +91,7 @@ Thus,
     t \binom{n-t+\frac{k}{2}-1}{k-1}
   \right].
 \end{align*}
-By collapsing the terms $t \binom{n-t+\frac{k}{2}-1}{k-1}$, and by simplifying
-the factors $k$ yields
+Combining the terms involving $t\binom{n-t+\frac{k}{2}-1}{k-1}$ and simplifying the factors of $k$ gives
 \begin{align*}
   n^m
   = t^m
@@ -116,7 +103,7 @@ the factors $k$ yields
     \binom{n-t+\frac{k}{2}-1}{k-1}
   \right] \delta^{k} t^m.
 \end{align*}
-We move the term $t^m$ under the summation, thus
+We absorb the term $t^m$ into the sum to obtain
 \begin{align*}
   n^m
   = \sum_{k=0}^{m}
@@ -127,10 +114,8 @@ We move the term $t^m$ under the summation, thus
     \binom{n-t+\frac{k}{2}-1}{k-1}
   \right] \delta^{k} t^m.
 \end{align*}
-Now, we simplify the binomial basis
-$\binom{n-t+\frac{k}{2}-1}{k}+\frac{1}{2}\binom{n-t+\frac{k}{2}-1}{k-1}$
-to get rid of fractions inside of it.
-Let $a=n-t+\frac{k}{2}-1$, then
+We now simplify the binomial basis $\binom{n-t+\frac{k}{2}-1}{k}+\frac{1}{2}\binom{n-t+\frac{k}{2}-1}{k-1}$ to remove the fractional coefficient.
+Set $a=n-t+\frac{k}{2}-1$.
 \begin{align*}
   \binom{a}{k} + \frac{1}{2} \binom{a}{k-1}
   = \frac{1}{2}
@@ -153,22 +138,15 @@ Therefore,
     \binom{n-t+\frac{k}{2}}{k-1}
   \right] \delta^{k} t^m.
 \end{align*}
-Note that we do not bother ourselves about fractions in upper index of binomial
-coefficients $\binom{n-t+\frac{k}{2}-1}{k}$, and $\binom{n-t+\frac{k}{2}}{k-1}$,
-because binomial coefficient
-$\binom{n}{k}$ is
-a polynomial in $n$.
-The well-known identity in unsigned Stirling numbers of the first kind $\stirlingi{n}{k}$
-shows it explicitly
+The upper indices of the binomial coefficients may be fractional, because $\binom{n}{k}$ is a polynomial in $n$.
+The identity involving the unsigned Stirling numbers of the first kind $\stirlingi{n}{k}$ makes this explicit:
 \begin{align*}
   \binom{n}{k}
   = \sum_{j=0}^{k} \frac{(-1)^{k-j}}{k!} \stirlingi{k}{j} n^j.
 \end{align*}
-For example,
+The following example illustrates the identity.
 \input{examples/01_newtons_formula_for_cubes.tex}
-Hence, we can utilize centered hockey-stick
-identity~\eqref{lem:centered-hockey-stick-identity}
-for closed formula for sums of powers, because
+We can now apply the centered hockey-stick identity in Lemma~\eqref{lem:centered-hockey-stick-identity} to obtain a closed formula for sums of powers:
 \begin{align*}
   \KnuthRFoldSum{1}{n}{m}
   = \frac{1}{2}
@@ -179,17 +157,17 @@ for closed formula for sums of powers, because
     \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}}{k-1}
   \right] \delta^{k} t^m.
 \end{align*}
-Therefore, by Lemma~\eqref{lem:centered-hockey-stick-identity}
+Applying Lemma~\eqref{lem:centered-hockey-stick-identity} gives
 \begin{align*}
   \begin{cases}
     \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k} &= \binom{n -t + \frac{k}{2} +0}{k+1} - \binom{0 -t + \tfrac{k}{2}}{k+1}, \\
     \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}}{k-1} &= \binom{n -t + \frac{k}{2} +1}{k+1} - \binom{1 -t + \tfrac{k}{2}}{k+1}.
-  \end{cases}
+  \end{cases}.
 \end{align*}
-Thus, closed formula for ordinary sums of powers follows
+We obtain the following closed formula for ordinary sums of powers.
 \begin{proposition}[Ordinary sums of powers]
   \label{prop:ordinary-sums-of-powers}
-  For non-negative integers $n,m$, and an arbitrary integer $t$
+  Let $n$ and $m$ be nonnegative integers, and let $t$ be an arbitrary integer.
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
     = \frac{1}{2}
@@ -200,21 +178,19 @@ Thus, closed formula for ordinary sums of powers follows
     \right] \delta^{k} t^m.
   \end{align*}
 \end{proposition}
-For example,
+The following example illustrates the formula.
 \input{examples/02_ordinary_sums_of_cubes.tex}
-Similarly,
-by setting $r=0$, and $r=1$ into Lemma~\eqref{lem:centered-hockey-stick-identity},
-we have
+Similarly, setting $r=0$ and $r=1$ in Lemma~\eqref{lem:centered-hockey-stick-identity} gives
 \begin{align*}
   \begin{cases}
     \sum_{j=1}^{n} \binom{j -t + \frac{k}{2} +0}{k+1} &= \binom{n -t + \frac{k}{2} +1}{k+2} - \binom{1 -t + \tfrac{k}{2}}{k+2}, \\
     \sum_{j=1}^{n} \binom{j -t + \frac{k}{2} +1}{k+1} &= \binom{n -t + \frac{k}{2} + 2}{k+2} - \binom{2 -t + \tfrac{k}{2}}{k+2}.
-  \end{cases}
+  \end{cases}.
 \end{align*}
-Hence,
+We can now state the formula for double sums of powers.
 \begin{proposition}[Double sums of powers]
   \label{prop:double-sums-of-powers}
-  For non-negative integers $n,m$, and an arbitrary integer $t$
+  Let $n$ and $m$ be nonnegative integers, and let $t$ be an arbitrary integer.
   \begin{align*}
     \KnuthRFoldSum{2}{n}{m}
     &= \frac{1}{2}
@@ -235,12 +211,12 @@ Hence,
     \Bigg] \delta^{k} t^m.
   \end{align*}
 \end{proposition}
-For example,
+The following example illustrates the double-sum formula.
 \input{examples/03_double_sums_of_cubes.tex}
-Thus, in general
+The general case is as follows.
 \begin{theorem}[Multifold sums of powers]
   \label{thm:multifold-sums-of-powers}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  Let $r$, $n$, and $m$ be nonnegative integers, and let $t$ be an arbitrary integer.
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     &= \frac{1}{2}
@@ -259,11 +235,10 @@ Thus, in general
     \Bigg] \delta^{k} t^{m}.
   \end{align*}
 \end{theorem}
-By Lemma~\eqref{lem:multifold-sum-of-zero-powers} pure binomial form
-follows
+Lemma~\eqref{lem:multifold-sum-of-zero-powers} gives the following formula in binomial form.
 \begin{proposition}[Multifold Binomial sums of powers]
   \label{prop:multifold-binomial-sums-of-powers}
-  For non-negative integers $r,n,m$, and an arbitrary integer $t$
+  Let $r$, $n$, and $m$ be nonnegative integers, and let $t$ be an arbitrary integer.
   \begin{align*}
     \KnuthRFoldSum{r}{n}{m}
     &= \frac{1}{2}
@@ -282,11 +257,6 @@ follows
     \Bigg] \delta^{k} t^{m}.
   \end{align*}
 \end{proposition}
-Therefore, we have successfully derived
-multifold formulas for sums of powers, in closed form.
-The work~\cite{kolosov2026interpolation} provides
-implementation of algorithm proposed in~\cite[Alg. (11.2)]{kolosov2026framework},
-in terms of forward finite differences $\Delta$, and Newton's formula.
-Similarly, the work~\cite{kolosov2026backward} discusses multifold formulas
-for sums of powers in terms of backward differences $\nabla$, and
-Newton's formula.
+We have therefore derived closed formulas for multifold sums of powers.
+The work~\cite{kolosov2026interpolation} implements the algorithm proposed in~\cite[Alg.~(11.2)]{kolosov2026framework} using forward finite differences $\Delta$ and Newton's formula.
+Similarly,~\cite{kolosov2026backward} discusses multifold formulas for sums of powers using backward differences $\nabla$ and Newton's formula.
