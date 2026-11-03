@@ -1,5 +1,5 @@
 This section introduces the lemmas, definitions, and conventions used in the main results.
-We use Donald Knuth's notation for \emph{multifold sums of powers}~\cite{knuth1993johann} because it is concise.
+We use Donald Knuth's notation for \emph{multifold sums of powers} as given in~\cite{knuth1993johann} because it is concise.
 \begin{definition} [Multifold sums of powers]
   \label{def:multifold-sums-of-powers-recurrence}
   For non-negative integers $r$, $n$, and $m$, define the \emph{multifold sums of powers} recursively by
@@ -20,7 +20,7 @@ We define the falling factorial notation as follows.
       1, & \mathrm{if \; } k = 0, \\
       n(n-1)(n-2)\cdots(n-k+1) = \prod_{j=0}^{k-1} (n-j), & \mathrm{if \; } k > 0, \\
       0, & \mathrm{otherwise}.
-    \end{cases}.
+    \end{cases}
   \end{align*}
 \end{definition}
 We define the central factorial notation as follows.
@@ -35,14 +35,14 @@ We define the central factorial notation as follows.
       n \left( n + \frac{k}{2} -1 \right)\left( n + \frac{k}{2} -2 \right)
       \cdots \left( n - \frac{k}{2} +1 \right)
       = n \fallingFactorial{n+\frac{k}{2}-1}{k-1}, \quad & \mathrm{if \; } k>0,
-    \end{cases},
+    \end{cases}
   \end{align*}
   where
   $\fallingFactorial{n+\frac{k}{2}-1}{k-1}
   = \prod_{j=0}^{k-2} \left( n+\frac{k}{2}-1 -j \right)$
   is a falling factorial.
 \end{definition}
-For further discussion of generalized factorials, see J. F. Steffensen's work~\cite{steffensen1933definition}.
+For further discussion of generalized factorials, see J. F. Steffensen's treatment in~\cite{steffensen1933definition}.
 
 \begin{lemma}[Central Newton's formula]
   Let $f$ be a function defined on the integers, and let $x$ and $t$ be arbitrary integers.
@@ -57,7 +57,7 @@ For further discussion of generalized factorials, see J. F. Steffensen's work~\c
   \end{align*}
   and $\centralFactorial{(x-t)}{k}$ denotes the central factorial defined in Definition~\eqref{def:central-factorials}.
   \begin{proof}
-    See~\cite[p.~462]{butzer1989central},~\cite[Section 2, Equation (19)]{steffensen1927interpolation}, and~\cite[Section 6, Equation (21)]{riordan1968combinatorial}.
+    Proofs of the central Newton formula are given in~\cite[p.~462]{butzer1989central}, in~\cite[Section 2, Equation (19)]{steffensen1927interpolation}, and in~\cite[Section 6, Equation (21)]{riordan1968combinatorial}.
   \end{proof}
 \end{lemma}
 The specialization to powers gives the following lemma.
@@ -85,10 +85,10 @@ The central factorial identity has the following binomial form.
       \frac{\centralFactorial{n}{k}}{k!}
       &= \frac{n}{k!}\fallingFactorial{n+\frac{k}{2}-1}{k-1}
       = \frac{n}{k (k-1)!} \fallingFactorial{n+\frac{k}{2}-1}{k-1}
-      = \frac{n}{k} \binom{n+\frac{k}{2}-1}{k-1},
+      = \frac{n}{k} \tbinom{n+\frac{k}{2}-1}{k-1},
     \end{align*}
     by the falling-factorial identity
-    $\frac{\fallingFactorial{x}{n}}{n!} = \binom{x}{n}$.
+    $\frac{\fallingFactorial{x}{n}}{n!} = \tbinom{x}{n}$.
   \end{proof}
 \end{lemma}
 % We have
@@ -135,10 +135,10 @@ We also use the generalized hockey-stick identity.
   \end{align*}
   \begin{proof}
     We have
-    $\sum_{k=a}^{b} \binom{k}{j}
-    = \binom{a}{j} + \binom{a+1}{j} + \cdots + \binom{b}{j}
-    = \left( \sum_{k=0}^{b} \binom{k}{j} \right) - \left( \sum_{k=0}^{a-1} \binom{k}{j} \right)$.
-    The hockey-stick identity $\sum_{k=0}^{n} \binom{k}{j} = \binom{n+1}{j+1}$ therefore gives
+    $\tsum_{k=a}^{b} \tbinom{k}{j}
+    = \tbinom{a}{j} + \tbinom{a+1}{j} + \cdots + \tbinom{b}{j}
+    = \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right) - \left( \tsum_{k=0}^{a-1} \tbinom{k}{j} \right)$.
+    The hockey-stick identity $\tsum_{k=0}^{n} \tbinom{k}{j} = \tbinom{n+1}{j+1}$ therefore gives
     \begin{align*}
       \tsum_{k=a}^{b} \tbinom{k}{j}
       = \left( \tsum_{k=0}^{b} \tbinom{k}{j} \right) - \left( \tsum_{k=0}^{a-1} \tbinom{k}{j} \right)
@@ -178,20 +178,20 @@ The following formula gives the multifold sum of zeroth powers.
       \item When $r=0$, Definition~\eqref{def:multifold-sums-of-powers-recurrence} gives $\KnuthRFoldSum{0}{n}{0} = 1$.
       \item When $r=1$, we have
         $\KnuthRFoldSum{1}{n}{0}
-        = \sum_{k=1}^{n} 1 = \binom{n}{1}$.
+        = \tsum_{k=1}^{n} 1 = \tbinom{n}{1}$.
       \item When $r=2$, we have
         $\KnuthRFoldSum{2}{n}{0}
-        = \sum_{k=1}^{n} \binom{k}{1}
-        = \binom{n+1}{2}$.
+        = \tsum_{k=1}^{n} \tbinom{k}{1}
+        = \tbinom{n+1}{2}$.
       \item When $r=3$, we have
         $\KnuthRFoldSum{3}{n}{0}
-        = \sum_{k=1}^{n} \binom{k+1}{2}
-        = \binom{n+2}{3}$.
+        = \tsum_{k=1}^{n} \tbinom{k+1}{2}
+        = \tbinom{n+2}{3}$.
       \item For general $r$, the hockey-stick identity gives
         $\KnuthRFoldSum{r}{n}{0}
-        =  \sum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0}
-        =  \sum_{k=1}^{n} \binom{k+r-2}{r-1}
-        = \binom{r+n-1}{r}$.
+        =  \tsum_{k=1}^{n} \KnuthRFoldSum{r-1}{k}{0}
+        =  \tsum_{k=1}^{n} \tbinom{k+r-2}{r-1}
+        = \tbinom{r+n-1}{r}$.
     \end{enumerate}
     This completes the proof.
   \end{proof}
@@ -202,4 +202,4 @@ Throughout, we use the following convention.
     x^0 = 1.
   \end{align*}
 \end{convention}
-Donald Knuth discusses the convention $x^0=1$ for all $x$, including zero, in Concrete Mathematics~\cite[p.~162]{graham1994concrete} and in~\cite{knuth1992notesnotation}.
+Donald Knuth discusses the convention $x^0=1$ for all $x$, including zero, in Concrete Mathematics, as described in~\cite[p.~162]{graham1994concrete} and in his notes in~\cite{knuth1992notesnotation}.

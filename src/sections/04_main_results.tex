@@ -29,29 +29,29 @@ We first establish the following lemma.
   \begin{proof}
     Expanding the right-hand side gives
     \begin{align*}
-      n \binom{n+r}{m}
-      = m \binom{n+r}{m+1} + \binom{n+r}{m+1} - r \binom{n+r}{m}
-      + m \binom{n+r}{m}.
+      n \tbinom{n+r}{m}
+      = m \tbinom{n+r}{m+1} + \tbinom{n+r}{m+1} - r \tbinom{n+r}{m}
+      + m \tbinom{n+r}{m}.
     \end{align*}
     Recall the extraction property of binomial coefficients
-    $\binom{n}{k+1} = \frac{n-k}{k+1} \binom{n}{k}$.
+    $\tbinom{n}{k+1} = \frac{n-k}{k+1} \tbinom{n}{k}$.
     The extraction property then gives
     \begin{align*}
-      \binom{n+r}{m+1} = \frac{n+r-m}{m+1} \binom{n+r}{m}.
+      \tbinom{n+r}{m+1} = \frac{n+r-m}{m+1} \tbinom{n+r}{m}.
     \end{align*}
     Thus,
     \begin{align*}
-      n \binom{n+r}{m}
-      &= m \frac{n+r-m}{m+1} \binom{n+r}{m}
-      + \frac{n+r-m}{m+1} \binom{n+r}{m}
-      - r \binom{n+r}{m} + m \binom{n+r}{m}.
+      n \tbinom{n+r}{m}
+      &= m \frac{n+r-m}{m+1} \tbinom{n+r}{m}
+      + \frac{n+r-m}{m+1} \tbinom{n+r}{m}
+      - r \tbinom{n+r}{m} + m \tbinom{n+r}{m}.
     \end{align*}
-    Factoring out the binomial coefficient $\binom{n+r}{m}$ gives
+    Factoring out the binomial coefficient $\tbinom{n+r}{m}$ gives
     \begin{align*}
-      n \binom{n+r}{m}
-      &= \binom{n+r}{m} \left[ m \frac{n+r-m}{m+1} + \frac{n+r-m}{m+1} - r + m \right] \\
-      &= \binom{n+r}{m} \left[ (m+1) \frac{n+r-m}{m+1} - r + m \right] \\
-      &= \binom{n+r}{m}n.
+      n \tbinom{n+r}{m}
+      &= \tbinom{n+r}{m} \left[ m \frac{n+r-m}{m+1} + \frac{n+r-m}{m+1} - r + m \right] \\
+      &= \tbinom{n+r}{m} \left[ (m+1) \frac{n+r-m}{m+1} - r + m \right] \\
+      &= \tbinom{n+r}{m}n.
     \end{align*}
     This completes the proof.
   \end{proof}
@@ -258,5 +258,5 @@ Lemma~\eqref{lem:multifold-sum-of-zero-powers} gives the following formula in bi
   \end{align*}
 \end{proposition}
 We have therefore derived closed formulas for multifold sums of powers.
-The work~\cite{kolosov2026interpolation} implements the algorithm proposed in~\cite[Alg.~(11.2)]{kolosov2026framework} using forward finite differences $\Delta$ and Newton's formula.
-Similarly,~\cite{kolosov2026backward} discusses multifold formulas for sums of powers using backward differences $\nabla$ and Newton's formula.
+An implementation using forward finite differences $\Delta$ and Newton's formula is given in~\cite{kolosov2026interpolation}; it follows the algorithm proposed in~\cite[Alg.~(11.2)]{kolosov2026framework}.
+A discussion of multifold formulas using backward differences $\nabla$ and Newton's formula is given in~\cite{kolosov2026backward}.

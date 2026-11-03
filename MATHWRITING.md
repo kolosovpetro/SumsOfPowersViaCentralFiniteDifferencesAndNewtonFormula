@@ -125,3 +125,8 @@ Use this checklist when drafting, editing, or reviewing the paper. Apply it to p
 22. Remove unused references in *.bib file.
 23. Arrange references in *.bib file in order as they used in paper.
 24. For every reference add its number in comment, the line before reference goes.
+25. For every reference always use terms "in", "from", "given by"
+  - Bad: Donald Knuth gives a formula for sums of odd powers in terms of the central factorial numbers of the second kind $T(n,k)$~\cite{knuth1993johann}.
+  - Good: Donald Knuth gives a formula for sums of odd powers in terms of the central factorial numbers of the second kind $T(n,k)$ in~\cite{knuth1993johann}.
+  - Ignore: "in the OEIS~\cite{...}"
+26. In proof environment use \tbinom, \tsum
