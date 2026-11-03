@@ -130,3 +130,6 @@ Use this checklist when drafting, editing, or reviewing the paper. Apply it to p
   - Good: Donald Knuth gives a formula for sums of odd powers in terms of the central factorial numbers of the second kind $T(n,k)$ in~\cite{knuth1993johann}.
   - Ignore: "in the OEIS~\cite{...}"
 26. In proof environment use \tbinom, \tsum
+27. Do not use period after cases environment
+  - Bad: \end{cases}.
+  - Good: \end{cases}

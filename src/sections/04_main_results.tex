@@ -18,44 +18,7 @@ By expanding the brackets, we have
     t\binom{n-t+\frac{k}{2}-1}{k-1}
   \right].
 \end{align*}
-The sum above contains the additional factor $n$ in its binomial basis, $n\binom{n-t+\frac{k}{2}-1}{k-1}$, which prevents direct application of the centered hockey-stick identity in Lemma~\eqref{lem:centered-hockey-stick-identity}.
-We first establish the following lemma.
-\begin{lemma}[Binomial decomposition]
-  \label{lem:binomial-decomposition}
-  Let $r$, $n$, and $m$ be nonnegative integers.
-  \begin{align*}
-    n \binom{n+r}{m} = (m+1) \binom{n+r}{m+1} - (r-m) \binom{n+r}{m}.
-  \end{align*}
-  \begin{proof}
-    Expanding the right-hand side gives
-    \begin{align*}
-      n \tbinom{n+r}{m}
-      = m \tbinom{n+r}{m+1} + \tbinom{n+r}{m+1} - r \tbinom{n+r}{m}
-      + m \tbinom{n+r}{m}.
-    \end{align*}
-    Recall the extraction property of binomial coefficients
-    $\tbinom{n}{k+1} = \frac{n-k}{k+1} \tbinom{n}{k}$.
-    The extraction property then gives
-    \begin{align*}
-      \tbinom{n+r}{m+1} = \frac{n+r-m}{m+1} \tbinom{n+r}{m}.
-    \end{align*}
-    Thus,
-    \begin{align*}
-      n \tbinom{n+r}{m}
-      &= m \frac{n+r-m}{m+1} \tbinom{n+r}{m}
-      + \frac{n+r-m}{m+1} \tbinom{n+r}{m}
-      - r \tbinom{n+r}{m} + m \tbinom{n+r}{m}.
-    \end{align*}
-    Factoring out the binomial coefficient $\tbinom{n+r}{m}$ gives
-    \begin{align*}
-      n \tbinom{n+r}{m}
-      &= \tbinom{n+r}{m} \left[ m \frac{n+r-m}{m+1} + \frac{n+r-m}{m+1} - r + m \right] \\
-      &= \tbinom{n+r}{m} \left[ (m+1) \frac{n+r-m}{m+1} - r + m \right] \\
-      &= \tbinom{n+r}{m}n.
-    \end{align*}
-    This completes the proof.
-  \end{proof}
-\end{lemma}
+The binomial decomposition in Lemma~\eqref{lem:binomial-decomposition} handles this factor.
 Substituting $r=-t+\frac{k}{2}-1$ and $m=k-1$ into Lemma~\eqref{lem:binomial-decomposition} gives
 \begin{align*}
   n \binom{n-t+\frac{k}{2} -1}{k-1}
@@ -162,7 +125,7 @@ Applying Lemma~\eqref{lem:centered-hockey-stick-identity} gives
   \begin{cases}
     \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}-1}{k} &= \binom{n -t + \frac{k}{2} +0}{k+1} - \binom{0 -t + \tfrac{k}{2}}{k+1}, \\
     \sum_{j=1}^{n} \binom{j-t+\frac{k}{2}}{k-1} &= \binom{n -t + \frac{k}{2} +1}{k+1} - \binom{1 -t + \tfrac{k}{2}}{k+1}.
-  \end{cases}.
+  \end{cases}
 \end{align*}
 We obtain the following closed formula for ordinary sums of powers.
 \begin{proposition}[Ordinary sums of powers]
@@ -185,7 +148,7 @@ Similarly, setting $r=0$ and $r=1$ in Lemma~\eqref{lem:centered-hockey-stick-ide
   \begin{cases}
     \sum_{j=1}^{n} \binom{j -t + \frac{k}{2} +0}{k+1} &= \binom{n -t + \frac{k}{2} +1}{k+2} - \binom{1 -t + \tfrac{k}{2}}{k+2}, \\
     \sum_{j=1}^{n} \binom{j -t + \frac{k}{2} +1}{k+1} &= \binom{n -t + \frac{k}{2} + 2}{k+2} - \binom{2 -t + \tfrac{k}{2}}{k+2}.
-  \end{cases}.
+  \end{cases}
 \end{align*}
 We can now state the formula for double sums of powers.
 \begin{proposition}[Double sums of powers]
