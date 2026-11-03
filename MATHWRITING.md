@@ -124,3 +124,4 @@ Use this checklist when drafting, editing, or reviewing the paper. Apply it to p
 
 22. Remove unused references in *.bib file.
 23. Arrange references in *.bib file in order as they used in paper.
+24. For every reference add its number in comment, the line before reference goes.
