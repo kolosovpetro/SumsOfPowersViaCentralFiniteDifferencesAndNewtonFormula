@@ -28,6 +28,7 @@ tests
 *.annotated.pdf
 #out
 mathematica/Licensing
+.mathpass
 
 ## JetBrains
 .idea
