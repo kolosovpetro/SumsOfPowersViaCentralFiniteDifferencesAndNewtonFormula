@@ -17,13 +17,13 @@ fi
 
 SCRIPT_CODE="$(cat "$MATHEMATICA_FILE_NAME")"
 
-echo "================================================= $MATHEMATICA_FILE_NAME ================================================="
+echo "================================================= BEGIN: $MATHEMATICA_FILE_NAME ================================================="
 
 docker run --rm \
   -v "$LICENSE_FILE:/home/wolframengine/.WolframEngine/Licensing/mathpass:ro" \
   wolframresearch/wolframengine:15.0 \
   wolframscript -code "$SCRIPT_CODE"
 
-echo "================================================= $MATHEMATICA_FILE_NAME ================================================="
+echo "================================================= END: $MATHEMATICA_FILE_NAME ================================================="
 
 cd "$CURRENT_DIR"

@@ -185,20 +185,20 @@ The general case is as follows.
   \label{thm:multifold-sums-of-powers}
   Let $r$, $n$, and $m$ be nonnegative integers, and let $t$ be an arbitrary integer.
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     &= \frac{1}{2}
     \sum_{k=0}^{m}
     \Bigg[
-      \binom{n-t+\frac{k}{2}+r-1}{k+r}
+      \binom{n-t+\frac{k}{2}+r}{k+r+1}
       +
-      \binom{n-t+\frac{k}{2}+r}{k+r} \\
+      \binom{n-t+\frac{k}{2}+r+1}{k+r+1} \\
       &-
-      \sum_{s=0}^{r-1}
+      \sum_{s=0}^{r}
       \Bigg(
         \binom{s-t+\frac{k}{2}}{k+s+1}
         +
         \binom{s-t+\frac{k}{2}+1}{k+s+1}
-      \Bigg) \KnuthRFoldSum{r-1-s}{n}{0}
+      \Bigg) \KnuthRFoldSum{r-s}{n}{0}
     \Bigg] \delta^{k} t^{m}.
   \end{align*}
 \end{theorem}
@@ -206,21 +206,38 @@ Lemma~\eqref{lem:multifold-sum-of-zero-powers} gives the following formula in bi
 \begin{proposition}[Multifold Binomial sums of powers]
   \label{prop:multifold-binomial-sums-of-powers}
   Let $r$, $n$, and $m$ be nonnegative integers, and let $t$ be an arbitrary integer.
+  %   \begin{align*}
+  %     \KnuthRFoldSum{r}{n}{m}
+  %     &= \frac{1}{2}
+  %     \sum_{k=0}^{m}
+  %     \Bigg[
+  %       \binom{n-t+\frac{k}{2}+r-1}{k+r}
+  %       +
+  %       \binom{n-t+\frac{k}{2}+r}{k+r} \\
+  %       &-
+  %       \sum_{s=0}^{r-1}
+  %       \Bigg(
+  %         \binom{s-t+\frac{k}{2}}{k+s+1}
+  %         +
+  %         \binom{s-t+\frac{k}{2}+1}{k+s+1}
+  %       \Bigg) \binom{r-s+n-2}{r-s-1}
+  %     \Bigg] \delta^{k} t^{m}.
+  %   \end{align*}
   \begin{align*}
-    \KnuthRFoldSum{r}{n}{m}
+    \KnuthRFoldSum{r+1}{n}{m}
     &= \frac{1}{2}
     \sum_{k=0}^{m}
     \Bigg[
-      \binom{n-t+\frac{k}{2}+r-1}{k+r}
+      \binom{n-t+\frac{k}{2}+r}{k+r+1}
       +
-      \binom{n-t+\frac{k}{2}+r}{k+r} \\
+      \binom{n-t+\frac{k}{2}+r+1}{k+r+1} \\
       &-
-      \sum_{s=0}^{r-1}
+      \sum_{s=0}^{r}
       \Bigg(
         \binom{s-t+\frac{k}{2}}{k+s+1}
         +
         \binom{s-t+\frac{k}{2}+1}{k+s+1}
-      \Bigg) \binom{r-s+n-2}{r-s-1}
+      \Bigg) \binom{r-s+n-1}{r-s}
     \Bigg] \delta^{k} t^{m}.
   \end{align*}
 \end{proposition}

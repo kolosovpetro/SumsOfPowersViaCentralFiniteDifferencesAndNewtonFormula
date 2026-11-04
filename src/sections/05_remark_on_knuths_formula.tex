@@ -98,9 +98,9 @@ Setting $r=0$ and $t=\frac{1}{2}$ in Lemma~\eqref{lem:centered-hockey-stick-iden
   Let $n$ and $m$ be nonnegative integers.
   \begin{align*}
     \KnuthRFoldSum{1}{n}{m}
-    = \sum_{k=0}^{m} \frac{1}{k+1}
+    = \sum_{k=0}^{m}
     \left[ \binom{n+\frac{k}{2}+\frac{1}{2}}{k+1} - \binom{\frac{k}{2}+\frac{1}{2}}{k+1}\right]
-    \delta^{k+1} 0^{m+1}.
+    \frac{\delta^{k+1} 0^{m+1}}{k+1}.
   \end{align*}
 \end{proposition}
 The formula can also be written in terms of central factorial numbers of the second kind:
@@ -116,13 +116,13 @@ Setting $r=1$ and $t=\frac{1}{2}$ in Lemma~\eqref{lem:centered-hockey-stick-iden
   Let $n$ and $m$ be nonnegative integers.
   \begin{align*}
     \KnuthRFoldSum{2}{n}{m}
-    = \sum_{k=0}^{m} \frac{1}{k+1}
+    = \sum_{k=0}^{m}
     \left[
       \binom{n+\frac{k}{2}+\frac{3}{2}}{k+2}
       - \binom{\frac{k}{2}+\frac{1}{2}}{k+1} \KnuthRFoldSum{1}{n}{0}
       - \binom{\frac{k}{2}+\frac{3}{2}}{k+2} \KnuthRFoldSum{0}{n}{0}
     \right]
-    \delta^{k+1} 0^{m+1}.
+    \frac{\delta^{k+1} 0^{m+1}}{k+1}.
   \end{align*}
 \end{proposition}
 The general formula is as follows.
