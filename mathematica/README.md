@@ -8,11 +8,13 @@
 ## Get Free Developer License
 
 - Register user account in Wolfram (https://account.wolfram.com/login/oauth2/sign-in)
+- Follow the steps: https://www.wolfram.com/engine/free-license/
 - Run `docker run -it --rm wolframresearch/wolframengine:15.0 bash`
 - Inside interactive container: `wolframscript`
-- Follow the steps: https://www.wolfram.com/engine/free-license/
-- Copy license file: `docker cp <container-id>:/home/wolframengine/.WolframEngine/Licensing/mathpass .\mathpass`
-- Mount license file and test wolframscript: `.\Test-Wolfram-Container.ps1`
+  - Enter login and password
+- Copy the license file from the activated container to this directory as `.mathpass`
+  - `docker cp <container-id>:/home/wolframengine/.WolframEngine/Licensing/mathpass .\mathpass`
+- Run: `.\Test-Wolfram-Container.ps1`
 
 # Run equation tests (Windows: Powershell)
 
