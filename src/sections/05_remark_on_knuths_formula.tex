@@ -10,7 +10,11 @@ Donald Knuth gives a formula for sums of odd powers in terms of the central fact
 The sequences \href{https://oeis.org/A008957}{\texttt{A008957}}, \href{https://oeis.org/A036969}{\texttt{A036969}}, and \href{https://oeis.org/A269945}{\texttt{A269945}} list central factorial numbers of the second kind $T(n,k)$ in the OEIS, as described in~\cite{sloane2003line}.
 Table~\ref{tab:central-factorial-numbers-t0-even} lists initial values of $T(2n,2k)$.
 \input{tables/01_fig_central_factorial_numbers_2n_2k_t_0.tex}
-Evaluating Lemma~\eqref{lem:central-newtons-formula-for-powers} at zero yields Proposition~\eqref{prop:knuth-odd-powers-sum}.
+It is interesting to notice that Proposition~\eqref{prop:knuth-odd-powers-sum}
+directly follows
+from Central Newton's Formula in Lemma~\eqref{lem:central-newtons-formula-for-powers},
+evaluated
+at zero.
 For $m\geq 1$, the formula gives
 \begin{align*}
   n^{2m} = \sum_{k=1}^{2m} \frac{\centralFactorial{n}{k}}{k!} \cdot \delta^{k} 0^{2m}.
