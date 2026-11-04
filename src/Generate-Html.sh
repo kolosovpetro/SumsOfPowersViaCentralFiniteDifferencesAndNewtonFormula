@@ -35,7 +35,7 @@ done
 
 printf 'Generating %s from %s...\n' "$output_file" "$latex_file"
 pandoc "$latex_file" \
-  --mathjax \
+  --mathjax=https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js \
   --standalone \
   --citeproc \
   --metadata=lang:en \
