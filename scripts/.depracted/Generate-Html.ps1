@@ -10,6 +10,7 @@ $LatexFileName = (Get-ChildItem -Filter "*.tex" | Select-Object -First 1).BaseNa
 Write-Host "Latex file: $LatexFileName"  -ForegroundColor Magenta
 
 pandoc "$LatexFileName.tex" --mathjax --standalone --citeproc `
+    --metadata=lang:en `
     --bibliography="$LatexFileName.bib" `
     --csl=chicago-author-date.csl -o index.html
 

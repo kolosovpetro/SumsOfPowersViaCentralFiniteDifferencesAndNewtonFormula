@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <link rel="canonical" href="https://kolosovpetro.github.io/sums-of-powers-central-differences/" />
-  <meta name="keywords" content="sums of powers, Newton interpolation formula, finite differences, binomial coefficients, Faulhaber's formula, Bernoulli numbers, Bernoulli polynomials, interpolation, approximation, discrete convolution, combinatorics, polynomial identities, central factorial numbers, Stirling numbers, Eulerian numbers, Worpitzky identity, Pascal's triangle, OEIS" />
-  <meta name="description" content="We derive closed-form expressions for multifold sums of powers using Newton’s central differences formula, evaluated at an arbitrary integer point. Knuth’s formula for odd-power sums emerges naturally at zero, and Mathematica code is provided to verify the results." />
+  <meta name="description" content="Closed-form formulas for ordinary, double, and multifold sums of integer powers using the central Newton interpolation formula and central finite differences, with Mathematica verification." />
+  <meta name="keywords" content="sums of powers, power sums, multifold sums, central finite differences, Newton interpolation formula, binomial sums, central factorial numbers, Stirling numbers, Eulerian numbers, Faulhaber's formula" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Sums of Powers via Central Finite Differences and Newton's Formula" />
+  <meta property="og:description" content="Closed-form formulas for ordinary, double, and multifold sums of integer powers using the central Newton interpolation formula and central finite differences, with Mathematica verification." />
+  <meta property="og:url" content="https://kolosovpetro.github.io/sums-of-powers-central-differences/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="citation_title" content="Sums of Powers via Central Finite Differences and Newton's Formula" />
+  <meta name="citation_author" content="Kolosov, Petro" />
+  <meta name="citation_publication_date" content="2026/01/24" />
+  <meta name="citation_doi" content="10.5281/zenodo.18096789" />
+  <meta name="citation_public_url" content="https://kolosovpetro.github.io/sums-of-powers-central-differences/" />
+  <meta name="citation_abstract" content="We derive closed-form formulas for ordinary, double, and multifold sums of integer powers using the central Newton interpolation formula and central finite differences. The formulas hold at arbitrary integer centers and yield binomially weighted sum identities, along with representations using Stirling numbers of the second kind and Eulerian numbers." />
+  <meta name="citation_keywords" content="sums of powers" />
+  <meta name="citation_keywords" content="central finite differences" />
+  <meta name="citation_keywords" content="Newton interpolation formula" />
+  <meta name="citation_keywords" content="multifold sums" />
+  <meta name="citation_keywords" content="binomial sums" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Petro Kolosov" />
   <meta name="dcterms.date" content="2026-01-24" />
-  <title>Sums of powers via central finite differences and Newton’s formula</title>
+  <title>Sums of Powers via Central Finite Differences and Newton's Formula</title>
   <style>
     /* Default styles provided by pandoc.
     ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -211,20 +227,19 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Sums of powers via central finite differences and
-Newton’s formula</h1>
+<h1 class="title">Sums of Powers via Central Finite Differences and
+Newton's Formula</h1>
 <p class="author">Petro Kolosov</p>
 <p class="date">2026-01-24</p>
 <div class="abstract">
 <div class="abstract-title">Abstract</div>
-<p>In this manuscript, we derive closed-form expressions for multifold
-sums of powers using Newton’s interpolation formula in central
-differences, evaluated at an arbitrary integer point <span
-class="math inline">\(t\)</span>. We further show that Knuth’s formula
-for multifold sums of odd powers arises naturally from Newton’s
-interpolation formula in central differences evaluated at zero.
-Additionally, we provide Wolfram Mathematica programs to validate the
-main results.</p>
+<p>We derive closed-form formulas for ordinary, double, and multifold
+sums of integer powers using the central Newton interpolation formula and
+central finite differences. The formulas hold at arbitrary integer
+centers and yield binomially weighted sum identities, along with
+representations using Stirling numbers of the second kind and Eulerian
+numbers. We include Wolfram Mathematica programs to verify the
+identities.</p>
 </div>
 </header>
 <p><a href="#fn1" class="footnote-ref" id="fnref1"
