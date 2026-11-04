@@ -26,11 +26,11 @@ if ($UpdateMetadata) {
     Write-Host "Fixing encoding ..."
 }
 
-$EncodingScriptPath = "$PSScriptRoot/../scripts/Test-Encoding.ps1"
+# $EncodingScriptPath = "$PSScriptRoot/../scripts/Test-Encoding.ps1"
 
-& $EncodingScriptPath -Autofix
+# & $EncodingScriptPath -Autofix
 
-Write-Host "Fix encoding is complete." -ForegroundColor Green
+# Write-Host "Fix encoding is complete." -ForegroundColor Green
 
 Write-Host "Exit Code: $LASTEXITCODE" -ForegroundColor Green
 Write-Host "Changing Powershell Directory to $InitialDirectory ... " -ForegroundColor Green
