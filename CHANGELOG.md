@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 ## [2.2.1] - 04-November-2026
 
+- Update multifold theorem and proposition formulas
+- Update multifold Mathematica validation programs to match the theorem and proposition formulas
 - Manuscript flow updates
 
 ## [2.2.0] - 04-November-2026
