@@ -21,14 +21,5 @@ jobs:
     with:
       mathematica-directory: ./mathematica
       wolfram-image: wolframresearch/wolframengine:15.0
-      wolfram-scripts: |
-        ValidateOrdinarySumsOfPowers.txt
-        ValidateDoubleSumsOfPowers.txt
-        ValidateMultifoldSumsOfPowers.txt
-        ValidateMultifoldBinomialSumsOfPowers.txt
-        ValidateOrdinarySumsOfPowersAtZero.txt
-        ValidateDoubleSumsOfPowersAtZero.txt
-        ValidateMultifoldSumsOfPowersAtZero.txt
-        ValidateMultifoldSumsOfPowersAtZeroBinomialForm.txt
     secrets:
       WOLFRAM_LICENSE_FILE: ${{ secrets.WOLFRAM_LICENSE_FILE }}
