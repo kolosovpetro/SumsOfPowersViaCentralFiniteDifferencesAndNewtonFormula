@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 ### Deprecated
 
-- Move the previous shell and PowerShell build and Wolfram runner scripts under `scripts/.depracted`
+- Move the previous shell and PowerShell build and Wolfram runner scripts under `scripts/.deprecated`
 
 ## [2.2.1] - 04-November-2026
 
