@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 05-November-2026
+
+### Added
+
+- Python scripts for building the LaTeX document, generating HTML, and updating Pandoc metadata
+- A Mathematica test runner, Wolfram container validation, and license-copying helper
+
+### Changed
+
+- Reorganize Mathematica examples, notebooks, and validation scripts into dedicated directories
+- Use the shared Mathematica GitHub Actions workflow
+- Pin the WSL Pandoc installer to version 3.13 and support amd64 and arm64 packages
+
+### Deprecated
+
+- Move the previous shell and PowerShell build and Wolfram runner scripts under `scripts/.depracted`
+
 ## [2.2.1] - 04-November-2026
 
 - Update multifold theorem and proposition formulas
