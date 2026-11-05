@@ -1,4 +1,4 @@
-name: Mathematica
+name: 'Mathematica'
 
 on:
   push:
@@ -16,36 +16,10 @@ on:
 
 jobs:
   mathematica:
-    name: Mathematica
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Fetch Sources
-        uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-
-      - name: Pull Wolfram image
-        run: docker pull wolframresearch/wolframengine:15.0
-
-      - name: Copy License File
-        shell: bash
-        run: |
-          cd "./mathematica"
-          echo "$WOLFRAM_LICENSE_FILE" > .mathpass
-        env:
-          WOLFRAM_LICENSE_FILE: ${{ secrets.WOLFRAM_LICENSE_FILE }}
-
-      - name: Run WolframScript in Docker
-        shell: bash
-        run: |
-          cd "./mathematica"
-          chmod +x Run-Wolfram-Container.sh
-          ./Run-Wolfram-Container.sh "ValidateOrdinarySumsOfPowers.txt"
-          ./Run-Wolfram-Container.sh "ValidateDoubleSumsOfPowers.txt"
-          ./Run-Wolfram-Container.sh "ValidateMultifoldSumsOfPowers.txt"
-          ./Run-Wolfram-Container.sh "ValidateMultifoldBinomialSumsOfPowers.txt"
-          ./Run-Wolfram-Container.sh "ValidateOrdinarySumsOfPowersAtZero.txt"
-          ./Run-Wolfram-Container.sh "ValidateDoubleSumsOfPowersAtZero.txt"
-          ./Run-Wolfram-Container.sh "ValidateMultifoldSumsOfPowersAtZero.txt"
-          ./Run-Wolfram-Container.sh "ValidateMultifoldSumsOfPowersAtZeroBinomialForm.txt"
+    uses: kolosovpetro/github-latex-template/.github/workflows/mathematica-template.yml@main
+    #secrets: inherit
+    with:
+      mathematica-directory: ./mathematica
+      wolfram-image: wolframresearch/wolframengine:15.0
+    secrets:
+      WOLFRAM_LICENSE_FILE: ${{ secrets.WOLFRAM_LICENSE_FILE }}
