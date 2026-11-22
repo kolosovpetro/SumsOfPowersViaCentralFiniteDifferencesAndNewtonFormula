@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec/v2.0.0.html).
 
-## [2.3.0] - 05-November-2026
+## [2.3.0] - Nov 22, 2026
 
 ### Added
 
@@ -17,18 +17,19 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Reorganize Mathematica examples, notebooks, and validation scripts into dedicated directories
 - Use the shared Mathematica GitHub Actions workflow
 - Pin the WSL Pandoc installer to version 3.13 and support amd64 and arm64 packages
+- Adjust CI to point to tag v2.1.0
 
 ### Deprecated
 
 - Move the previous shell and PowerShell build and Wolfram runner scripts under `scripts/.deprecated`
 
-## [2.2.1] - 04-November-2026
+## [2.2.1] - Nov 4, 2026
 
 - Update multifold theorem and proposition formulas
 - Update multifold Mathematica validation programs to match the theorem and proposition formulas
 - Manuscript flow updates
 
-## [2.2.0] - 04-November-2026
+## [2.2.0] - Nov 4, 2026
 
 ### Added
 
@@ -46,7 +47,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 - Correct reference formatting and remove periods after `cases` environments
 
-## [2.1.0] - 09-July-2026
+## [2.1.0] - Jul 9, 2026
 
 ### Changed
 
@@ -55,13 +56,13 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Mathematica documentation
 - Add tables for: central factorial numbers of the second kind
 
-## [2.0.1] - 01-July-2026
+## [2.0.1] - Jul 1, 2026
 
 ### Changed
 
 - Abstract quick fix
 
-## [2.0.0] - 01-July-2026
+## [2.0.0] - Jul 1, 2026
 
 ### Changed
 
@@ -88,7 +89,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Add Mathematica validation for new formulas
 - Add multifold sums of powers formula at zero binomial form
 
-## [1.6.3] - 24-Jan-2026
+## [1.6.3] - Jan 24, 2026
 
 ### Changed
 
@@ -97,13 +98,13 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Vs Code config: disable latex build on save
 - Fix comma in keywords
 
-## [1.6.2] - 21-Jan-2026
+## [1.6.2] - Jan 21, 2026
 
 ### Changed
 
 - Remove border lines
 
-## [1.6.1] - 21-Jan-2026
+## [1.6.1] - Jan 21, 2026
 
 ### Changed
 
@@ -113,7 +114,7 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 - Improve grammar
 - Improve punctuation
 
-## [1.6.0] - 19-Jan-2026
+## [1.6.0] - Jan 19, 2026
 
 ### Changed
 
@@ -131,7 +132,7 @@ Riordan power identity for definition of T(n,k).
 - Add proof of proposition 115
 - Grammar improvements
 
-## [1.5.0] - 18-Jan-2026
+## [1.5.0] - Jan 18, 2026
 
 ### Changed
 
@@ -144,7 +145,7 @@ Riordan power identity for definition of T(n,k).
 - Add formula for binomial centered sums of powers
 - Update abstract
 
-## [1.4.0] - 18-Jan-2026
+## [1.4.0] - Jan 18, 2026
 
 ### Changed
 
@@ -153,7 +154,7 @@ Riordan power identity for definition of T(n,k).
 - Update Mathematica documentation
 - Add reference string to README
 
-## [1.3.0] - 17-Jan-2026
+## [1.3.0] - Jan 17, 2026
 
 ### Changed
 
@@ -169,13 +170,13 @@ Riordan power identity for definition of T(n,k).
 - Update abstract
 - Update conclusions
 
-## [1.2.1] - 07-Jan-2026
+## [1.2.1] - Jan 7, 2026
 
 ### Changed
 
 - Add examples
 
-## [1.2.0] - 07-Jan-2026
+## [1.2.0] - Jan 7, 2026
 
 ### Changed
 
@@ -187,7 +188,7 @@ Riordan power identity for definition of T(n,k).
 - Enable pandoc in github actions
 - Improve manuscript flow
 
-## [1.1.0] - 03-Jan-2026
+## [1.1.0] - Jan 3, 2026
 
 ### Changed
 
@@ -195,7 +196,7 @@ Riordan power identity for definition of T(n,k).
 - Update bibliography
 - Update README
 
-## [1.0.1] - 30-Dec-2025
+## [1.0.1] - Dec 30, 2025
 
 ### Changed
 
@@ -204,7 +205,7 @@ Riordan power identity for definition of T(n,k).
 - Update citation
 - Update README
 
-## [1.0.0] - 30-Dec-2025
+## [1.0.0] - Dec 30, 2025
 
 ### Changed
 
